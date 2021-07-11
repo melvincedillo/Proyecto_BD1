@@ -1,0 +1,11 @@
+C:\Users\M.Elias Cedillo\Desktop\Proyecto_BD1\Rentadora\bin\Debug\Rentadora.exe.config
+C:\Users\M.Elias Cedillo\Desktop\Proyecto_BD1\Rentadora\bin\Debug\Rentadora.exe
+C:\Users\M.Elias Cedillo\Desktop\Proyecto_BD1\Rentadora\bin\Debug\Rentadora.pdb
+C:\Users\M.Elias Cedillo\Desktop\Proyecto_BD1\Rentadora\obj\Debug\Rentadora.csproj.AssemblyReference.cache
+C:\Users\M.Elias Cedillo\Desktop\Proyecto_BD1\Rentadora\obj\Debug\Rentadora.Properties.Resources.resources
+C:\Users\M.Elias Cedillo\Desktop\Proyecto_BD1\Rentadora\obj\Debug\Rentadora.csproj.GenerateResource.cache
+C:\Users\M.Elias Cedillo\Desktop\Proyecto_BD1\Rentadora\obj\Debug\Rentadora.csproj.CoreCompileInputs.cache
+C:\Users\M.Elias Cedillo\Desktop\Proyecto_BD1\Rentadora\obj\Debug\Rentadora.exe
+C:\Users\M.Elias Cedillo\Desktop\Proyecto_BD1\Rentadora\obj\Debug\Rentadora.pdb
+C:\Users\M.Elias Cedillo\Desktop\Proyecto_BD1\Rentadora\obj\Debug\Rentadora.Form2.resources
+C:\Users\M.Elias Cedillo\Desktop\Proyecto_BD1\Rentadora\obj\Debug\Rentadora.Form1.resources
