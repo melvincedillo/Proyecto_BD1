@@ -15,11 +15,13 @@ grant
     alter any procedure,
     drop any procedure,
     create session
-to adminDB;
+to adminBD;
 
 create user rentadora identified by iselias default tablespace system quota unlimited on system;
+grant adminBD to rentadora;
 
 --rol para usuarios de lectura-escritura
+create role escritura;
 grant 
     update any table, 
     insert any table, 
@@ -30,6 +32,7 @@ grant
 to escritura;
 
 --rol para usuarios de solo lectura
+create role lectura;
 grant
     select any table, 
     execute any procedure,

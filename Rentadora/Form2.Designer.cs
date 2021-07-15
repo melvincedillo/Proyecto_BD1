@@ -55,7 +55,7 @@ namespace Rentadora
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.BackColor = System.Drawing.SystemColors.Desktop;
+            this.splitContainer1.Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.splitContainer1.Panel1.Controls.Add(this.exit);
             this.splitContainer1.Panel1.Controls.Add(this.userTxt);
             this.splitContainer1.Panel1.Controls.Add(this.label1);
@@ -72,16 +72,17 @@ namespace Rentadora
             this.splitContainer1.Panel2.Controls.Add(this.solicitudes);
             this.splitContainer1.Panel2.ForeColor = System.Drawing.SystemColors.ControlText;
             this.splitContainer1.Size = new System.Drawing.Size(819, 405);
-            this.splitContainer1.SplitterDistance = 197;
+            this.splitContainer1.SplitterDistance = 196;
             this.splitContainer1.TabIndex = 0;
             // 
             // exit
             // 
-            this.exit.BackColor = System.Drawing.Color.PaleGreen;
-            this.exit.Location = new System.Drawing.Point(3, 367);
+            this.exit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.exit.Location = new System.Drawing.Point(69, 342);
             this.exit.Name = "exit";
-            this.exit.Size = new System.Drawing.Size(39, 35);
+            this.exit.Size = new System.Drawing.Size(55, 27);
             this.exit.TabIndex = 7;
+            this.exit.Text = "Salir";
             this.exit.UseVisualStyleBackColor = false;
             this.exit.Click += new System.EventHandler(this.exit_Click);
             // 
@@ -89,7 +90,7 @@ namespace Rentadora
             // 
             this.userTxt.AutoSize = true;
             this.userTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userTxt.Location = new System.Drawing.Point(75, 64);
+            this.userTxt.Location = new System.Drawing.Point(80, 60);
             this.userTxt.Name = "userTxt";
             this.userTxt.Size = new System.Drawing.Size(34, 16);
             this.userTxt.TabIndex = 6;
@@ -108,7 +109,7 @@ namespace Rentadora
             // autos
             // 
             this.autos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.autos.Location = new System.Drawing.Point(41, 318);
+            this.autos.Location = new System.Drawing.Point(42, 301);
             this.autos.Name = "autos";
             this.autos.Size = new System.Drawing.Size(113, 35);
             this.autos.TabIndex = 5;
@@ -118,7 +119,7 @@ namespace Rentadora
             // contrato
             // 
             this.contrato.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.contrato.Location = new System.Drawing.Point(41, 195);
+            this.contrato.Location = new System.Drawing.Point(42, 178);
             this.contrato.Name = "contrato";
             this.contrato.Size = new System.Drawing.Size(113, 35);
             this.contrato.TabIndex = 4;
@@ -128,7 +129,7 @@ namespace Rentadora
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(41, 154);
+            this.button4.Location = new System.Drawing.Point(42, 137);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(113, 35);
             this.button4.TabIndex = 3;
@@ -138,7 +139,7 @@ namespace Rentadora
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(41, 236);
+            this.button3.Location = new System.Drawing.Point(42, 219);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(113, 35);
             this.button3.TabIndex = 2;
@@ -148,7 +149,7 @@ namespace Rentadora
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(41, 277);
+            this.button2.Location = new System.Drawing.Point(42, 260);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(113, 35);
             this.button2.TabIndex = 1;
@@ -180,9 +181,10 @@ namespace Rentadora
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(819, 405);
+            this.ControlBox = false;
             this.Controls.Add(this.splitContainer1);
             this.Name = "Form2";
-            this.Text = "Form2";
+            this.Text = "INICIO";
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);

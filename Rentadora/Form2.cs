@@ -19,7 +19,7 @@ namespace Rentadora
             InitializeComponent();
             userTxt.Text = Variable.usuario;
 
-            ora.Open();
+            /*ora.Open();
             OracleCommand comando = new OracleCommand("system.solicitudes", ora);
             comando.CommandType = System.Data.CommandType.StoredProcedure;
             comando.Parameters.Add("prueba", OracleType.Cursor).Direction = ParameterDirection.Output;
@@ -30,7 +30,7 @@ namespace Rentadora
             adaptador.Fill(tabla);
 
             solicitudes.DataSource = tabla;
-            ora.Close();
+            ora.Close();*/
         }
 
         private void exit_Click(object sender, EventArgs e)
