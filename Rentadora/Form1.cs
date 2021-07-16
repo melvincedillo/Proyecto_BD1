@@ -32,8 +32,8 @@ namespace Rentadora
                 oracle.Open();
                 Variable.usuario = usuarioTxt.Text;
                 oracle.Close();
-                Form2 exito = new Form2();
-                exito.Show();
+                fmrPrincipal entrar = new fmrPrincipal();
+                entrar.Show();
                 this.Hide();
             }catch
             {

@@ -7,5 +7,5 @@ C:\Users\M.Elias Cedillo\Desktop\Proyecto_BD1\Rentadora\obj\Debug\Rentadora.cspr
 C:\Users\M.Elias Cedillo\Desktop\Proyecto_BD1\Rentadora\obj\Debug\Rentadora.csproj.CoreCompileInputs.cache
 C:\Users\M.Elias Cedillo\Desktop\Proyecto_BD1\Rentadora\obj\Debug\Rentadora.exe
 C:\Users\M.Elias Cedillo\Desktop\Proyecto_BD1\Rentadora\obj\Debug\Rentadora.pdb
-C:\Users\M.Elias Cedillo\Desktop\Proyecto_BD1\Rentadora\obj\Debug\Rentadora.Form2.resources
 C:\Users\M.Elias Cedillo\Desktop\Proyecto_BD1\Rentadora\obj\Debug\Rentadora.Form1.resources
+C:\Users\M.Elias Cedillo\Desktop\Proyecto_BD1\Rentadora\obj\Debug\Rentadora.fmrPrincipal.resources
