@@ -15,6 +15,7 @@ namespace Rentadora
         public fmrPrincipal()
         {
             InitializeComponent();
+            textNameUser.Text = Variable.usuario;
         }
 
         private void salir_Click(object sender, EventArgs e)
@@ -22,6 +23,53 @@ namespace Rentadora
             Variable.conexion = "";
             Variable.Login.Show();
             this.Close();
+        }
+
+        public void seleccionarBoton(Button sender) {
+            solicitud.ForeColor = Color.White;
+            cliente.ForeColor = Color.White;
+            contrato.ForeColor = Color.White;
+            historial.ForeColor = Color.White;
+            empleados.ForeColor = Color.White;
+            auto.ForeColor = Color.White;
+
+            sender.Capture = true;
+
+            if (sender.Capture) {
+                sender.ForeColor = Color.FromArgb(0, 192, 0);
+                flecha.Visible = true;
+                flecha.Top = sender.Top;
+            }
+        }
+
+        private void solicitud_Click(object sender, EventArgs e)
+        {
+            seleccionarBoton((Button)sender);
+        }
+
+        private void contrato_Click(object sender, EventArgs e)
+        {
+            seleccionarBoton((Button)sender);
+        }
+
+        private void cliente_Click(object sender, EventArgs e)
+        {
+            seleccionarBoton((Button)sender);
+        }
+
+        private void historial_Click(object sender, EventArgs e)
+        {
+            seleccionarBoton((Button)sender);
+        }
+
+        private void empleados_Click(object sender, EventArgs e)
+        {
+            seleccionarBoton((Button)sender);
+        }
+
+        private void auto_Click(object sender, EventArgs e)
+        {
+            seleccionarBoton((Button)sender);
         }
     }
 }
