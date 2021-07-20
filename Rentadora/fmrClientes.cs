@@ -22,11 +22,10 @@ namespace Rentadora
         }
 
         private void mostrarClientes() {
-            oracle.Open();
             OracleCommand comando = new OracleCommand("rentadora.clientes", oracle);
             comando.CommandType = System.Data.CommandType.StoredProcedure;
             comando.Parameters.Add("registros", OracleType.Cursor).Direction = ParameterDirection.Output;
-
+            oracle.Open();
             OracleDataAdapter adaptador = new OracleDataAdapter();
             adaptador.SelectCommand = comando;
             DataTable table = new DataTable();
@@ -34,6 +33,10 @@ namespace Rentadora
             dgvClientes.DataSource = table;
 
             oracle.Close();
+        }
+
+        public void cargarDepartamentos() { 
+            
         }
     }
 }

@@ -35,10 +35,17 @@ namespace Rentadora
             // 
             // dgvClientes
             // 
+            this.dgvClientes.AllowDrop = true;
+            this.dgvClientes.AllowUserToOrderColumns = true;
+            this.dgvClientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvClientes.BackgroundColor = System.Drawing.Color.White;
+            this.dgvClientes.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvClientes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvClientes.Location = new System.Drawing.Point(499, 143);
+            this.dgvClientes.EnableHeadersVisualStyles = false;
+            this.dgvClientes.Location = new System.Drawing.Point(12, 136);
             this.dgvClientes.Name = "dgvClientes";
-            this.dgvClientes.Size = new System.Drawing.Size(489, 348);
+            this.dgvClientes.Size = new System.Drawing.Size(627, 402);
             this.dgvClientes.TabIndex = 0;
             // 
             // fmrClientes
