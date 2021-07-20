@@ -32,22 +32,25 @@ namespace Rentadora
             this.Pcabeza = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.Plateral = new System.Windows.Forms.Panel();
-            this.contrato = new System.Windows.Forms.Button();
+            this.auto = new System.Windows.Forms.Button();
+            this.empleados = new System.Windows.Forms.Button();
             this.cliente = new System.Windows.Forms.Button();
+            this.historial = new System.Windows.Forms.Button();
+            this.contrato = new System.Windows.Forms.Button();
             this.solicitud = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.textNameUser = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.historial = new System.Windows.Forms.Button();
-            this.empleados = new System.Windows.Forms.Button();
-            this.auto = new System.Windows.Forms.Button();
+            this.Pfmrs = new System.Windows.Forms.Panel();
+            this.btnMenu = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.salir = new System.Windows.Forms.Button();
             this.flecha = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.Pcabeza.SuspendLayout();
             this.Plateral.SuspendLayout();
+            this.Pfmrs.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.flecha)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -80,6 +83,7 @@ namespace Rentadora
             // Plateral
             // 
             this.Plateral.BackColor = System.Drawing.Color.Black;
+            this.Plateral.Controls.Add(this.btnMenu);
             this.Plateral.Controls.Add(this.auto);
             this.Plateral.Controls.Add(this.empleados);
             this.Plateral.Controls.Add(this.cliente);
@@ -91,29 +95,45 @@ namespace Rentadora
             this.Plateral.Controls.Add(this.textNameUser);
             this.Plateral.Controls.Add(this.label3);
             this.Plateral.Controls.Add(this.pictureBox1);
-            this.Plateral.Controls.Add(this.label2);
             this.Plateral.Dock = System.Windows.Forms.DockStyle.Left;
             this.Plateral.Location = new System.Drawing.Point(0, 0);
             this.Plateral.Name = "Plateral";
             this.Plateral.Size = new System.Drawing.Size(200, 600);
             this.Plateral.TabIndex = 3;
             // 
-            // contrato
+            // auto
             // 
-            this.contrato.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.contrato.FlatAppearance.BorderSize = 0;
-            this.contrato.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.contrato.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.contrato.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.contrato.ForeColor = System.Drawing.Color.White;
-            this.contrato.Location = new System.Drawing.Point(33, 322);
-            this.contrato.Name = "contrato";
-            this.contrato.Size = new System.Drawing.Size(125, 32);
-            this.contrato.TabIndex = 5;
-            this.contrato.Text = "Contrato";
-            this.contrato.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.contrato.UseVisualStyleBackColor = true;
-            this.contrato.Click += new System.EventHandler(this.contrato_Click);
+            this.auto.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.auto.FlatAppearance.BorderSize = 0;
+            this.auto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.auto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.auto.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.auto.ForeColor = System.Drawing.Color.White;
+            this.auto.Location = new System.Drawing.Point(32, 474);
+            this.auto.Name = "auto";
+            this.auto.Size = new System.Drawing.Size(124, 32);
+            this.auto.TabIndex = 8;
+            this.auto.Text = "Autos";
+            this.auto.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.auto.UseVisualStyleBackColor = true;
+            this.auto.Click += new System.EventHandler(this.auto_Click);
+            // 
+            // empleados
+            // 
+            this.empleados.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.empleados.FlatAppearance.BorderSize = 0;
+            this.empleados.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.empleados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.empleados.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.empleados.ForeColor = System.Drawing.Color.White;
+            this.empleados.Location = new System.Drawing.Point(32, 436);
+            this.empleados.Name = "empleados";
+            this.empleados.Size = new System.Drawing.Size(125, 32);
+            this.empleados.TabIndex = 7;
+            this.empleados.Text = "Empleados";
+            this.empleados.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.empleados.UseVisualStyleBackColor = true;
+            this.empleados.Click += new System.EventHandler(this.empleados_Click);
             // 
             // cliente
             // 
@@ -131,6 +151,40 @@ namespace Rentadora
             this.cliente.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.cliente.UseVisualStyleBackColor = true;
             this.cliente.Click += new System.EventHandler(this.cliente_Click);
+            // 
+            // historial
+            // 
+            this.historial.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.historial.FlatAppearance.BorderSize = 0;
+            this.historial.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.historial.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.historial.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.historial.ForeColor = System.Drawing.Color.White;
+            this.historial.Location = new System.Drawing.Point(33, 360);
+            this.historial.Name = "historial";
+            this.historial.Size = new System.Drawing.Size(125, 32);
+            this.historial.TabIndex = 6;
+            this.historial.Text = "Historial";
+            this.historial.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.historial.UseVisualStyleBackColor = true;
+            this.historial.Click += new System.EventHandler(this.historial_Click);
+            // 
+            // contrato
+            // 
+            this.contrato.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.contrato.FlatAppearance.BorderSize = 0;
+            this.contrato.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.contrato.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.contrato.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.contrato.ForeColor = System.Drawing.Color.White;
+            this.contrato.Location = new System.Drawing.Point(33, 322);
+            this.contrato.Name = "contrato";
+            this.contrato.Size = new System.Drawing.Size(125, 32);
+            this.contrato.TabIndex = 5;
+            this.contrato.Text = "Contrato";
+            this.contrato.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.contrato.UseVisualStyleBackColor = true;
+            this.contrato.Click += new System.EventHandler(this.contrato_Click);
             // 
             // solicitud
             // 
@@ -186,67 +240,31 @@ namespace Rentadora
             this.label3.TabIndex = 1;
             this.label3.Text = "BIENVENIDO";
             // 
-            // label2
+            // Pfmrs
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.Control;
-            this.label2.Location = new System.Drawing.Point(61, 210);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(69, 24);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "MENÚ";
+            this.Pfmrs.Controls.Add(this.label2);
+            this.Pfmrs.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Pfmrs.Location = new System.Drawing.Point(200, 50);
+            this.Pfmrs.Name = "Pfmrs";
+            this.Pfmrs.Size = new System.Drawing.Size(1000, 550);
+            this.Pfmrs.TabIndex = 4;
             // 
-            // historial
+            // btnMenu
             // 
-            this.historial.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.historial.FlatAppearance.BorderSize = 0;
-            this.historial.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.historial.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.historial.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.historial.ForeColor = System.Drawing.Color.White;
-            this.historial.Location = new System.Drawing.Point(33, 360);
-            this.historial.Name = "historial";
-            this.historial.Size = new System.Drawing.Size(125, 32);
-            this.historial.TabIndex = 6;
-            this.historial.Text = "Historial";
-            this.historial.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.historial.UseVisualStyleBackColor = true;
-            this.historial.Click += new System.EventHandler(this.historial_Click);
-            // 
-            // empleados
-            // 
-            this.empleados.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.empleados.FlatAppearance.BorderSize = 0;
-            this.empleados.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.empleados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.empleados.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.empleados.ForeColor = System.Drawing.Color.White;
-            this.empleados.Location = new System.Drawing.Point(32, 436);
-            this.empleados.Name = "empleados";
-            this.empleados.Size = new System.Drawing.Size(125, 32);
-            this.empleados.TabIndex = 7;
-            this.empleados.Text = "Empleados";
-            this.empleados.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.empleados.UseVisualStyleBackColor = true;
-            this.empleados.Click += new System.EventHandler(this.empleados_Click);
-            // 
-            // auto
-            // 
-            this.auto.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.auto.FlatAppearance.BorderSize = 0;
-            this.auto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.auto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.auto.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.auto.ForeColor = System.Drawing.Color.White;
-            this.auto.Location = new System.Drawing.Point(32, 474);
-            this.auto.Name = "auto";
-            this.auto.Size = new System.Drawing.Size(124, 32);
-            this.auto.TabIndex = 8;
-            this.auto.Text = "Autos";
-            this.auto.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.auto.UseVisualStyleBackColor = true;
-            this.auto.Click += new System.EventHandler(this.auto_Click);
+            this.btnMenu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMenu.FlatAppearance.BorderSize = 0;
+            this.btnMenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMenu.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMenu.ForeColor = System.Drawing.Color.White;
+            this.btnMenu.Location = new System.Drawing.Point(66, 207);
+            this.btnMenu.Name = "btnMenu";
+            this.btnMenu.Size = new System.Drawing.Size(80, 32);
+            this.btnMenu.TabIndex = 9;
+            this.btnMenu.Text = "MENÚ";
+            this.btnMenu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMenu.UseVisualStyleBackColor = true;
+            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
             // 
             // pictureBox2
             // 
@@ -296,11 +314,21 @@ namespace Rentadora
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(381, 157);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(103, 13);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "ESTE ES EL INICIO";
+            // 
             // fmrPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1200, 600);
+            this.Controls.Add(this.Pfmrs);
             this.Controls.Add(this.Pcabeza);
             this.Controls.Add(this.Plateral);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -311,6 +339,8 @@ namespace Rentadora
             this.Pcabeza.PerformLayout();
             this.Plateral.ResumeLayout(false);
             this.Plateral.PerformLayout();
+            this.Pfmrs.ResumeLayout(false);
+            this.Pfmrs.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.flecha)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -326,7 +356,6 @@ namespace Rentadora
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label textNameUser;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button contrato;
@@ -337,5 +366,8 @@ namespace Rentadora
         private System.Windows.Forms.Button empleados;
         private System.Windows.Forms.Button auto;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Panel Pfmrs;
+        private System.Windows.Forms.Button btnMenu;
+        private System.Windows.Forms.Label label2;
     }
 }

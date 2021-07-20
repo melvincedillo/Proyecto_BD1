@@ -45,31 +45,66 @@ namespace Rentadora
         private void solicitud_Click(object sender, EventArgs e)
         {
             seleccionarBoton((Button)sender);
+            abrirFormEnPanel(new fmrSolicitudes());
         }
 
         private void contrato_Click(object sender, EventArgs e)
         {
             seleccionarBoton((Button)sender);
+            abrirFormEnPanel(new fmrContratos());
         }
 
         private void cliente_Click(object sender, EventArgs e)
         {
             seleccionarBoton((Button)sender);
+            abrirFormEnPanel(new fmrClientes());
         }
 
         private void historial_Click(object sender, EventArgs e)
         {
             seleccionarBoton((Button)sender);
+            abrirFormEnPanel(new fmrHistorial());
         }
 
         private void empleados_Click(object sender, EventArgs e)
         {
             seleccionarBoton((Button)sender);
+            abrirFormEnPanel(new fmrEmpleados());
         }
 
         private void auto_Click(object sender, EventArgs e)
         {
             seleccionarBoton((Button)sender);
+            abrirFormEnPanel(new fmrAutos());
+        }
+
+        private Form formActivado = null;
+
+        private void abrirFormEnPanel(Form formHijo) {
+            if (formActivado != null) {
+                formActivado.Close();
+            }
+            formActivado = formHijo;
+            formHijo.TopLevel = false;
+            formHijo.Dock = DockStyle.Fill;
+            Pfmrs.Controls.Add(formHijo);
+            Pfmrs.Tag = formHijo;
+            formHijo.BringToFront();
+            formHijo.Show();
+        }
+
+        private void btnMenu_Click(object sender, EventArgs e)
+        {
+            solicitud.ForeColor = Color.White;
+            cliente.ForeColor = Color.White;
+            contrato.ForeColor = Color.White;
+            historial.ForeColor = Color.White;
+            empleados.ForeColor = Color.White;
+            auto.ForeColor = Color.White;
+            flecha.Visible = false;
+            if (formActivado != null) {
+                formActivado.Close();
+            }
         }
     }
 }
