@@ -18,14 +18,20 @@ namespace Rentadora
         public fmrClientes()
         {
             InitializeComponent();
+        }
+
+
+        private void fmrClientes_Load(object sender, EventArgs e)
+        {
             mostrarClientes();
+            cargarDepartamentos();
         }
 
         private void mostrarClientes() {
-            OracleCommand comando = new OracleCommand("rentadora.clientes", oracle);
+            oracle.Open();
+            OracleCommand comando = new OracleCommand("rentadora.select_clientes", oracle);
             comando.CommandType = System.Data.CommandType.StoredProcedure;
             comando.Parameters.Add("registros", OracleType.Cursor).Direction = ParameterDirection.Output;
-            oracle.Open();
             OracleDataAdapter adaptador = new OracleDataAdapter();
             adaptador.SelectCommand = comando;
             DataTable table = new DataTable();
@@ -35,8 +41,33 @@ namespace Rentadora
             oracle.Close();
         }
 
-        public void cargarDepartamentos() { 
-            
+        private void cargarDepartamentos() {
+            oracle.Open();
+            OracleCommand departamentos = new OracleCommand("select departamento from departamento", oracle);
+            OracleDataReader registro = departamentos.ExecuteReader();
+            while (registro.Read()) {
+                cbDepartamento.Items.Add(registro["departamento"].ToString());
+            }
+            oracle.Close();
+        }
+
+        private void cargarMunicipios(int id) {
+            oracle.Open();
+            OracleCommand departamentos = new OracleCommand("select municipio from municipio where departamentoid =" + id, oracle);
+            OracleDataReader registro = departamentos.ExecuteReader();
+            while (registro.Read())
+            {
+                cbMunicipio.Items.Add(registro["municipio"].ToString());
+            }
+            oracle.Close();
+        }
+
+        private void cbDepartamento_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cbMunicipio.Items.Clear();
+            cbMunicipio.Text = "";
+            int dep = cbDepartamento.SelectedIndex;
+            cargarMunicipios(dep + 1);
         }
     }
 }

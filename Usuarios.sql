@@ -14,7 +14,13 @@ grant
     create any procedure,
     alter any procedure,
     drop any procedure,
-    create session
+    create session,
+    alter any trigger, 
+    alter any SEQUENCE, 
+    create any TRIGGER, 
+    create any SEQUENCE, 
+    drop any TRIGGER, 
+    DROP any SEQUENCE 
 to adminBD;
 
 create user rentadora identified by iselias default tablespace system quota unlimited on system;
@@ -28,7 +34,10 @@ grant
     select any table,  
     delete any table, 
     execute any procedure,
-    create session
+    create session,
+    alter any trigger, 
+    alter any SEQUENCE,
+    create any TRIGGER
 to escritura;
 
 --rol para usuarios de solo lectura
