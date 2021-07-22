@@ -106,11 +106,5 @@ namespace Rentadora
                 formActivado.Close();
             }
         }
-
-        private void fmrPrincipal_Load(object sender, EventArgs e)
-        {
-            this.Size = Screen.PrimaryScreen.WorkingArea.Size;
-            this.Location = Screen.PrimaryScreen.WorkingArea.Location;
-        }
     }
 }
