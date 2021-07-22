@@ -58,11 +58,12 @@ namespace Rentadora
             // 
             // Pcabeza
             // 
+            this.Pcabeza.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.Pcabeza.BackColor = System.Drawing.Color.White;
             this.Pcabeza.Controls.Add(this.pictureBox2);
             this.Pcabeza.Controls.Add(this.salir);
             this.Pcabeza.Controls.Add(this.label1);
-            this.Pcabeza.Dock = System.Windows.Forms.DockStyle.Top;
             this.Pcabeza.Location = new System.Drawing.Point(200, 0);
             this.Pcabeza.Name = "Pcabeza";
             this.Pcabeza.Size = new System.Drawing.Size(1000, 50);
@@ -308,8 +309,10 @@ namespace Rentadora
             // 
             // Pfmrs
             // 
+            this.Pfmrs.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.Pfmrs.Controls.Add(this.label2);
-            this.Pfmrs.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Pfmrs.Location = new System.Drawing.Point(200, 50);
             this.Pfmrs.Name = "Pfmrs";
             this.Pfmrs.Size = new System.Drawing.Size(1000, 550);
