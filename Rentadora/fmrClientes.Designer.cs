@@ -51,9 +51,10 @@ namespace Rentadora
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.add_cliente = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
+            this.add_cliente = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label12 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -273,14 +274,16 @@ namespace Rentadora
             this.panel1.Size = new System.Drawing.Size(391, 550);
             this.panel1.TabIndex = 21;
             // 
-            // panel2
+            // label11
             // 
-            this.panel2.Controls.Add(this.dgvClientes);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(391, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(609, 550);
-            this.panel2.TabIndex = 22;
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.Location = new System.Drawing.Point(23, 20);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(324, 24);
+            this.label11.TabIndex = 22;
+            this.label11.Text = "DATOS PERSONALES CLIENTE";
             // 
             // add_cliente
             // 
@@ -295,16 +298,25 @@ namespace Rentadora
             this.add_cliente.Text = "AGREGAR CLIENTE";
             this.add_cliente.UseVisualStyleBackColor = false;
             // 
-            // label11
+            // panel2
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(23, 20);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(324, 24);
-            this.label11.TabIndex = 22;
-            this.label11.Text = "DATOS PERSONALES CLIENTE";
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.Controls.Add(this.label12);
+            this.panel2.Controls.Add(this.dgvClientes);
+            this.panel2.Location = new System.Drawing.Point(391, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(609, 550);
+            this.panel2.TabIndex = 22;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(495, 528);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(111, 13);
+            this.label12.TabIndex = 23;
+            this.label12.Text = "SEGUNDO NOMBRE";
             // 
             // fmrClientes
             // 
@@ -321,6 +333,7 @@ namespace Rentadora
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -352,5 +365,6 @@ namespace Rentadora
         private System.Windows.Forms.Button add_cliente;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
     }
 }

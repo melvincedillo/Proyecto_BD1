@@ -30,30 +30,30 @@ namespace Rentadora
         private void InitializeComponent()
         {
             this.Pcabeza = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.salir = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.Plateral = new System.Windows.Forms.Panel();
+            this.btnMenu = new System.Windows.Forms.Button();
             this.auto = new System.Windows.Forms.Button();
             this.empleados = new System.Windows.Forms.Button();
             this.cliente = new System.Windows.Forms.Button();
             this.historial = new System.Windows.Forms.Button();
+            this.flecha = new System.Windows.Forms.PictureBox();
             this.contrato = new System.Windows.Forms.Button();
             this.solicitud = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.textNameUser = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.Pfmrs = new System.Windows.Forms.Panel();
-            this.btnMenu = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.salir = new System.Windows.Forms.Button();
-            this.flecha = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.Pfmrs = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.Pcabeza.SuspendLayout();
-            this.Plateral.SuspendLayout();
-            this.Pfmrs.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.Plateral.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.flecha)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.Pfmrs.SuspendLayout();
             this.SuspendLayout();
             // 
             // Pcabeza
@@ -67,6 +67,34 @@ namespace Rentadora
             this.Pcabeza.Name = "Pcabeza";
             this.Pcabeza.Size = new System.Drawing.Size(1000, 50);
             this.Pcabeza.TabIndex = 2;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.Image = global::Rentadora.Properties.Resources.cars_crashing_clip_art_car_vector_logo_png_288492_free_car_vector_png_920_595;
+            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 4;
+            this.pictureBox2.TabStop = false;
+            // 
+            // salir
+            // 
+            this.salir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.salir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.salir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.salir.ForeColor = System.Drawing.Color.Transparent;
+            this.salir.Image = global::Rentadora.Properties.Resources.Salir;
+            this.salir.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.salir.Location = new System.Drawing.Point(930, -6);
+            this.salir.Name = "salir";
+            this.salir.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.salir.Size = new System.Drawing.Size(69, 59);
+            this.salir.TabIndex = 0;
+            this.salir.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.salir.UseVisualStyleBackColor = true;
+            this.salir.Click += new System.EventHandler(this.salir_Click);
             // 
             // label1
             // 
@@ -100,6 +128,23 @@ namespace Rentadora
             this.Plateral.Name = "Plateral";
             this.Plateral.Size = new System.Drawing.Size(200, 600);
             this.Plateral.TabIndex = 3;
+            // 
+            // btnMenu
+            // 
+            this.btnMenu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMenu.FlatAppearance.BorderSize = 0;
+            this.btnMenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMenu.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMenu.ForeColor = System.Drawing.Color.White;
+            this.btnMenu.Location = new System.Drawing.Point(66, 207);
+            this.btnMenu.Name = "btnMenu";
+            this.btnMenu.Size = new System.Drawing.Size(80, 32);
+            this.btnMenu.TabIndex = 9;
+            this.btnMenu.Text = "MENÚ";
+            this.btnMenu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMenu.UseVisualStyleBackColor = true;
+            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
             // 
             // auto
             // 
@@ -168,6 +213,17 @@ namespace Rentadora
             this.historial.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.historial.UseVisualStyleBackColor = true;
             this.historial.Click += new System.EventHandler(this.historial_Click);
+            // 
+            // flecha
+            // 
+            this.flecha.Image = global::Rentadora.Properties.Resources.Flecha;
+            this.flecha.Location = new System.Drawing.Point(163, 282);
+            this.flecha.Name = "flecha";
+            this.flecha.Size = new System.Drawing.Size(37, 34);
+            this.flecha.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.flecha.TabIndex = 0;
+            this.flecha.TabStop = false;
+            this.flecha.Visible = false;
             // 
             // contrato
             // 
@@ -240,70 +296,6 @@ namespace Rentadora
             this.label3.TabIndex = 1;
             this.label3.Text = "BIENVENIDO";
             // 
-            // Pfmrs
-            // 
-            this.Pfmrs.Controls.Add(this.label2);
-            this.Pfmrs.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Pfmrs.Location = new System.Drawing.Point(200, 50);
-            this.Pfmrs.Name = "Pfmrs";
-            this.Pfmrs.Size = new System.Drawing.Size(1000, 550);
-            this.Pfmrs.TabIndex = 4;
-            // 
-            // btnMenu
-            // 
-            this.btnMenu.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMenu.FlatAppearance.BorderSize = 0;
-            this.btnMenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMenu.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMenu.ForeColor = System.Drawing.Color.White;
-            this.btnMenu.Location = new System.Drawing.Point(66, 207);
-            this.btnMenu.Name = "btnMenu";
-            this.btnMenu.Size = new System.Drawing.Size(80, 32);
-            this.btnMenu.TabIndex = 9;
-            this.btnMenu.Text = "MENÚ";
-            this.btnMenu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMenu.UseVisualStyleBackColor = true;
-            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.Image = global::Rentadora.Properties.Resources.cars_crashing_clip_art_car_vector_logo_png_288492_free_car_vector_png_920_595;
-            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(100, 50);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 4;
-            this.pictureBox2.TabStop = false;
-            // 
-            // salir
-            // 
-            this.salir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.salir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.salir.ForeColor = System.Drawing.Color.Transparent;
-            this.salir.Image = global::Rentadora.Properties.Resources.Salir;
-            this.salir.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.salir.Location = new System.Drawing.Point(930, -6);
-            this.salir.Name = "salir";
-            this.salir.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.salir.Size = new System.Drawing.Size(69, 59);
-            this.salir.TabIndex = 0;
-            this.salir.TextAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.salir.UseVisualStyleBackColor = true;
-            this.salir.Click += new System.EventHandler(this.salir_Click);
-            // 
-            // flecha
-            // 
-            this.flecha.Image = global::Rentadora.Properties.Resources.Flecha;
-            this.flecha.Location = new System.Drawing.Point(163, 282);
-            this.flecha.Name = "flecha";
-            this.flecha.Size = new System.Drawing.Size(37, 34);
-            this.flecha.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.flecha.TabIndex = 0;
-            this.flecha.TabStop = false;
-            this.flecha.Visible = false;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Rentadora.Properties.Resources.Administrador;
@@ -313,6 +305,15 @@ namespace Rentadora
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            // 
+            // Pfmrs
+            // 
+            this.Pfmrs.Controls.Add(this.label2);
+            this.Pfmrs.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Pfmrs.Location = new System.Drawing.Point(200, 50);
+            this.Pfmrs.Name = "Pfmrs";
+            this.Pfmrs.Size = new System.Drawing.Size(1000, 550);
+            this.Pfmrs.TabIndex = 4;
             // 
             // label2
             // 
@@ -335,15 +336,16 @@ namespace Rentadora
             this.Name = "fmrPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fmrPrincipal";
+            this.Load += new System.EventHandler(this.fmrPrincipal_Load);
             this.Pcabeza.ResumeLayout(false);
             this.Pcabeza.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.Plateral.ResumeLayout(false);
             this.Plateral.PerformLayout();
-            this.Pfmrs.ResumeLayout(false);
-            this.Pfmrs.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.flecha)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.Pfmrs.ResumeLayout(false);
+            this.Pfmrs.PerformLayout();
             this.ResumeLayout(false);
 
         }

@@ -25,13 +25,17 @@ namespace Rentadora
         {
             mostrarClientes();
             cargarDepartamentos();
+            this.Size = Screen.PrimaryScreen.WorkingArea.Size;
+            this.Location = Screen.PrimaryScreen.WorkingArea.Location;
         }
 
         private void mostrarClientes() {
             oracle.Open();
+
             OracleCommand comando = new OracleCommand("rentadora.select_clientes", oracle);
             comando.CommandType = System.Data.CommandType.StoredProcedure;
             comando.Parameters.Add("registros", OracleType.Cursor).Direction = ParameterDirection.Output;
+
             OracleDataAdapter adaptador = new OracleDataAdapter();
             adaptador.SelectCommand = comando;
             DataTable table = new DataTable();

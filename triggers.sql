@@ -1,5 +1,6 @@
 create SEQUENCE cliente_secuencia START WITH 10;
 create SEQUENCE direccion_secuencia START WITH 10;
+create SEQUENCE nice START WITH 10;
 
 --Auto incremental cliente
 create or REPLACE TRIGGER cliente_tri

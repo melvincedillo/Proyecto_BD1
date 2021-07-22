@@ -1,6 +1,6 @@
 --Procedimiento para mostrar clientes
 
-create or replace procedure select_clientes(registros out SYS_REFCURSOR)
+create or replace procedure select_clientes(id varchar2, registros out SYS_REFCURSOR)
     as
     begin
         open registros for
