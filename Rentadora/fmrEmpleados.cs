@@ -22,7 +22,7 @@ namespace Rentadora
 
         private void fmrEmpleados_Load(object sender, EventArgs e)
         {
-            //mostrarEmpleados();
+            mostrarEmpleados();
             cargarSucursales();
         }
 
@@ -51,6 +51,7 @@ namespace Rentadora
             }
             oracle.Close();
         }
+
 
         /*
         private void cbSucursal_SelectedIndexChanged(object sender, EventArgs e)
