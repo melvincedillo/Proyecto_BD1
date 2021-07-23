@@ -29,6 +29,8 @@ namespace Rentadora
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvClientes = new System.Windows.Forms.DataGridView();
             this.cbDepartamento = new System.Windows.Forms.ComboBox();
             this.cbMunicipio = new System.Windows.Forms.ComboBox();
@@ -51,9 +53,16 @@ namespace Rentadora
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.mnid = new System.Windows.Forms.Label();
+            this.drid = new System.Windows.Forms.Label();
+            this.clid = new System.Windows.Forms.Label();
+            this.cancelar = new System.Windows.Forms.Button();
+            this.aceptar = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.add_cliente = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.editar_cliente = new System.Windows.Forms.Button();
+            this.delete_cliente = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             this.panel1.SuspendLayout();
@@ -62,21 +71,44 @@ namespace Rentadora
             // 
             // dgvClientes
             // 
-            this.dgvClientes.AllowDrop = true;
+            this.dgvClientes.AllowUserToAddRows = false;
+            this.dgvClientes.AllowUserToDeleteRows = false;
             this.dgvClientes.AllowUserToOrderColumns = true;
             this.dgvClientes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvClientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvClientes.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvClientes.BackgroundColor = System.Drawing.Color.White;
             this.dgvClientes.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvClientes.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvClientes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvClientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvClientes.EnableHeadersVisualStyles = false;
-            this.dgvClientes.Location = new System.Drawing.Point(16, 184);
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial Narrow", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(8);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvClientes.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvClientes.Location = new System.Drawing.Point(16, 122);
             this.dgvClientes.Name = "dgvClientes";
-            this.dgvClientes.Size = new System.Drawing.Size(561, 249);
+            this.dgvClientes.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvClientes.RowHeadersVisible = false;
+            this.dgvClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvClientes.Size = new System.Drawing.Size(581, 322);
             this.dgvClientes.TabIndex = 0;
+            this.dgvClientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientes_CellClick);
             // 
             // cbDepartamento
             // 
@@ -94,6 +126,7 @@ namespace Rentadora
             this.cbMunicipio.Name = "cbMunicipio";
             this.cbMunicipio.Size = new System.Drawing.Size(143, 21);
             this.cbMunicipio.TabIndex = 2;
+            this.cbMunicipio.SelectedIndexChanged += new System.EventHandler(this.cbMunicipio_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -249,6 +282,11 @@ namespace Rentadora
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.DimGray;
+            this.panel1.Controls.Add(this.mnid);
+            this.panel1.Controls.Add(this.drid);
+            this.panel1.Controls.Add(this.clid);
+            this.panel1.Controls.Add(this.cancelar);
+            this.panel1.Controls.Add(this.aceptar);
             this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.add_cliente);
             this.panel1.Controls.Add(this.cIdentidad);
@@ -277,6 +315,65 @@ namespace Rentadora
             this.panel1.Size = new System.Drawing.Size(391, 550);
             this.panel1.TabIndex = 21;
             // 
+            // mnid
+            // 
+            this.mnid.AutoSize = true;
+            this.mnid.Location = new System.Drawing.Point(337, 122);
+            this.mnid.Name = "mnid";
+            this.mnid.Size = new System.Drawing.Size(36, 13);
+            this.mnid.TabIndex = 27;
+            this.mnid.Text = "SEXO";
+            // 
+            // drid
+            // 
+            this.drid.AutoSize = true;
+            this.drid.Location = new System.Drawing.Point(337, 92);
+            this.drid.Name = "drid";
+            this.drid.Size = new System.Drawing.Size(36, 13);
+            this.drid.TabIndex = 26;
+            this.drid.Text = "SEXO";
+            // 
+            // clid
+            // 
+            this.clid.AutoSize = true;
+            this.clid.Location = new System.Drawing.Point(337, 58);
+            this.clid.Name = "clid";
+            this.clid.Size = new System.Drawing.Size(36, 13);
+            this.clid.TabIndex = 25;
+            this.clid.Text = "SEXO";
+            // 
+            // cancelar
+            // 
+            this.cancelar.BackColor = System.Drawing.Color.Red;
+            this.cancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.cancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cancelar.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.cancelar.Location = new System.Drawing.Point(59, 464);
+            this.cancelar.Name = "cancelar";
+            this.cancelar.Size = new System.Drawing.Size(82, 38);
+            this.cancelar.TabIndex = 24;
+            this.cancelar.Text = "CANCELAR";
+            this.cancelar.UseVisualStyleBackColor = false;
+            this.cancelar.Click += new System.EventHandler(this.cancelar_Click);
+            // 
+            // aceptar
+            // 
+            this.aceptar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.aceptar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.aceptar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
+            this.aceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.aceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.aceptar.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.aceptar.Location = new System.Drawing.Point(230, 464);
+            this.aceptar.Name = "aceptar";
+            this.aceptar.Size = new System.Drawing.Size(77, 38);
+            this.aceptar.TabIndex = 23;
+            this.aceptar.Text = "ACEPTAR";
+            this.aceptar.UseVisualStyleBackColor = false;
+            this.aceptar.Click += new System.EventHandler(this.aceptar_Click);
+            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -291,37 +388,75 @@ namespace Rentadora
             // add_cliente
             // 
             this.add_cliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.add_cliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.add_cliente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
             this.add_cliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.add_cliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.add_cliente.Location = new System.Drawing.Point(114, 473);
+            this.add_cliente.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.add_cliente.Location = new System.Drawing.Point(147, 464);
             this.add_cliente.Name = "add_cliente";
-            this.add_cliente.Size = new System.Drawing.Size(133, 34);
+            this.add_cliente.Size = new System.Drawing.Size(77, 38);
             this.add_cliente.TabIndex = 21;
-            this.add_cliente.Text = "AGREGAR CLIENTE";
+            this.add_cliente.Text = "AGREGAR";
             this.add_cliente.UseVisualStyleBackColor = false;
+            this.add_cliente.Click += new System.EventHandler(this.add_cliente_Click);
             // 
             // panel2
             // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.editar_cliente);
+            this.panel2.Controls.Add(this.delete_cliente);
             this.panel2.Controls.Add(this.label12);
             this.panel2.Controls.Add(this.dgvClientes);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(391, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(609, 550);
             this.panel2.TabIndex = 22;
             // 
+            // editar_cliente
+            // 
+            this.editar_cliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.editar_cliente.BackgroundImage = global::Rentadora.Properties.Resources.png_transparent_human_figure_human_behavior_neck_microphone_hand_male_user_edit_microphone_hand_smiley_thumbnail;
+            this.editar_cliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.editar_cliente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
+            this.editar_cliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.editar_cliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editar_cliente.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.editar_cliente.Location = new System.Drawing.Point(220, 464);
+            this.editar_cliente.Name = "editar_cliente";
+            this.editar_cliente.Size = new System.Drawing.Size(63, 63);
+            this.editar_cliente.TabIndex = 24;
+            this.editar_cliente.UseVisualStyleBackColor = false;
+            this.editar_cliente.Click += new System.EventHandler(this.editar_cliente_Click);
+            // 
+            // delete_cliente
+            // 
+            this.delete_cliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.delete_cliente.BackgroundImage = global::Rentadora.Properties.Resources.unnamed;
+            this.delete_cliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.delete_cliente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
+            this.delete_cliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.delete_cliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.delete_cliente.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.delete_cliente.Location = new System.Drawing.Point(314, 464);
+            this.delete_cliente.Name = "delete_cliente";
+            this.delete_cliente.Size = new System.Drawing.Size(63, 63);
+            this.delete_cliente.TabIndex = 23;
+            this.delete_cliente.UseVisualStyleBackColor = false;
+            this.delete_cliente.Click += new System.EventHandler(this.delete_cliente_Click);
+            // 
             // label12
             // 
-            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(495, 528);
+            this.label12.BackColor = System.Drawing.Color.Transparent;
+            this.label12.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.Black;
+            this.label12.Location = new System.Drawing.Point(106, 58);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(111, 13);
+            this.label12.Size = new System.Drawing.Size(407, 24);
             this.label12.TabIndex = 23;
-            this.label12.Text = "SEGUNDO NOMBRE";
+            this.label12.Text = "LISTADO DE CLIENTES EN EL SISTEMA";
             // 
             // fmrClientes
             // 
@@ -371,5 +506,12 @@ namespace Rentadora
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Button delete_cliente;
+        private System.Windows.Forms.Button cancelar;
+        private System.Windows.Forms.Button aceptar;
+        private System.Windows.Forms.Button editar_cliente;
+        private System.Windows.Forms.Label drid;
+        private System.Windows.Forms.Label clid;
+        private System.Windows.Forms.Label mnid;
     }
 }

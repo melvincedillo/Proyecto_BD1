@@ -184,5 +184,14 @@
   <ItemGroup>
     <None Include="Resources\cars-crashing-clip-art-car-vector-logo-png-288492-free-car-vector-png-920_595.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unnamed %281%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unnamed.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\png-transparent-human-figure-human-behavior-neck-microphone-hand-male-user-edit-microphone-hand-smiley-thumbnail.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
