@@ -22,7 +22,7 @@ namespace Rentadora
 
         private void fmrEmpleados_Load(object sender, EventArgs e)
         {
-            mostrarEmpleados();
+            //mostrarEmpleados();
             cargarSucursales();
         }
 
@@ -43,7 +43,7 @@ namespace Rentadora
         private void cargarSucursales()
         {
             oracle.Open();
-            OracleCommand sucursales = new OracleCommand("select sucursal from sucursal", oracle);
+            OracleCommand sucursales = new OracleCommand("select sucursal from rentadora.sucursal", oracle);
             OracleDataReader empleado = sucursales.ExecuteReader();
             while (empleado.Read())
             {
