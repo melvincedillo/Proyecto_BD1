@@ -22,7 +22,7 @@ namespace Rentadora
 
         private void fmrEmpleados_Load(object sender, EventArgs e)
         {
-            mostrarEmpleados();
+            //mostrarEmpleados();
             cargarSucursales();
         }
 
