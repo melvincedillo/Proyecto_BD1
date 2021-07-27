@@ -105,8 +105,9 @@ namespace Rentadora
             this.dgvClientes.Name = "dgvClientes";
             this.dgvClientes.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvClientes.RowHeadersVisible = false;
+            this.dgvClientes.RowHeadersWidth = 62;
             this.dgvClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvClientes.Size = new System.Drawing.Size(581, 322);
+            this.dgvClientes.Size = new System.Drawing.Size(448, 253);
             this.dgvClientes.TabIndex = 0;
             this.dgvClientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientes_CellClick);
             // 
@@ -312,7 +313,7 @@ namespace Rentadora
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(391, 550);
+            this.panel1.Size = new System.Drawing.Size(391, 481);
             this.panel1.TabIndex = 21;
             // 
             // mnid
@@ -323,6 +324,7 @@ namespace Rentadora
             this.mnid.Size = new System.Drawing.Size(36, 13);
             this.mnid.TabIndex = 27;
             this.mnid.Text = "SEXO";
+            this.mnid.Click += new System.EventHandler(this.mnid_Click);
             // 
             // drid
             // 
@@ -411,7 +413,7 @@ namespace Rentadora
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(391, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(609, 550);
+            this.panel2.Size = new System.Drawing.Size(476, 481);
             this.panel2.TabIndex = 22;
             // 
             // editar_cliente
@@ -462,7 +464,7 @@ namespace Rentadora
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1000, 550);
+            this.ClientSize = new System.Drawing.Size(867, 481);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

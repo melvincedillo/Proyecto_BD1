@@ -31,6 +31,8 @@ namespace Rentadora
         {
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cancelar = new System.Windows.Forms.Button();
+            this.aceptar = new System.Windows.Forms.Button();
             this.add_empleado = new System.Windows.Forms.Button();
             this.cbSucursal = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -55,6 +57,10 @@ namespace Rentadora
             this.cNombreEmpleado = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.idSucur = new System.Windows.Forms.Label();
+            this.idEmp = new System.Windows.Forms.Label();
+            this.delete_empleado = new System.Windows.Forms.Button();
+            this.editar_empleado = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.dgvEmpleados = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
@@ -79,7 +85,9 @@ namespace Rentadora
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.panel1.BackColor = System.Drawing.Color.LightCoral;
+            this.panel1.BackColor = System.Drawing.Color.LightGray;
+            this.panel1.Controls.Add(this.cancelar);
+            this.panel1.Controls.Add(this.aceptar);
             this.panel1.Controls.Add(this.add_empleado);
             this.panel1.Controls.Add(this.cbSucursal);
             this.panel1.Controls.Add(this.label12);
@@ -105,31 +113,59 @@ namespace Rentadora
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(391, 588);
+            this.panel1.Size = new System.Drawing.Size(391, 599);
             this.panel1.TabIndex = 1;
+            // 
+            // cancelar
+            // 
+            this.cancelar.BackColor = System.Drawing.Color.Firebrick;
+            this.cancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cancelar.Location = new System.Drawing.Point(53, 485);
+            this.cancelar.Margin = new System.Windows.Forms.Padding(2);
+            this.cancelar.Name = "cancelar";
+            this.cancelar.Size = new System.Drawing.Size(81, 33);
+            this.cancelar.TabIndex = 25;
+            this.cancelar.Text = "Cancelar";
+            this.cancelar.UseVisualStyleBackColor = false;
+            this.cancelar.Click += new System.EventHandler(this.cancelar_Click_1);
+            // 
+            // aceptar
+            // 
+            this.aceptar.BackColor = System.Drawing.Color.SandyBrown;
+            this.aceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.aceptar.Location = new System.Drawing.Point(234, 485);
+            this.aceptar.Margin = new System.Windows.Forms.Padding(2);
+            this.aceptar.Name = "aceptar";
+            this.aceptar.Size = new System.Drawing.Size(84, 33);
+            this.aceptar.TabIndex = 24;
+            this.aceptar.Text = "Actualizar Empleado";
+            this.aceptar.UseVisualStyleBackColor = false;
+            this.aceptar.Click += new System.EventHandler(this.aceptar_Click);
             // 
             // add_empleado
             // 
             this.add_empleado.BackColor = System.Drawing.Color.SandyBrown;
             this.add_empleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.add_empleado.Location = new System.Drawing.Point(136, 485);
-            this.add_empleado.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.add_empleado.Location = new System.Drawing.Point(145, 485);
+            this.add_empleado.Margin = new System.Windows.Forms.Padding(2);
             this.add_empleado.Name = "add_empleado";
-            this.add_empleado.Size = new System.Drawing.Size(111, 33);
+            this.add_empleado.Size = new System.Drawing.Size(73, 33);
             this.add_empleado.TabIndex = 23;
             this.add_empleado.Text = "Crear Empleado";
             this.add_empleado.UseVisualStyleBackColor = false;
+            this.add_empleado.Click += new System.EventHandler(this.add_empleado_Click);
             // 
             // cbSucursal
             // 
             this.cbSucursal.FormattingEnabled = true;
-            this.cbSucursal.Location = new System.Drawing.Point(93, 157);
-            this.cbSucursal.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbSucursal.Location = new System.Drawing.Point(105, 449);
+            this.cbSucursal.Margin = new System.Windows.Forms.Padding(2);
             this.cbSucursal.Name = "cbSucursal";
             this.cbSucursal.Size = new System.Drawing.Size(168, 21);
             this.cbSucursal.TabIndex = 22;
+            this.cbSucursal.SelectedIndexChanged += new System.EventHandler(this.cbSucursal_SelectedIndexChanged);
             // 
             // label12
             // 
@@ -149,7 +185,7 @@ namespace Rentadora
             "FEMENINO",
             "MASCULINO"});
             this.cbSexo.Location = new System.Drawing.Point(31, 354);
-            this.cbSexo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbSexo.Margin = new System.Windows.Forms.Padding(2);
             this.cbSexo.Name = "cbSexo";
             this.cbSexo.Size = new System.Drawing.Size(82, 21);
             this.cbSexo.TabIndex = 20;
@@ -168,7 +204,7 @@ namespace Rentadora
             // dpFecha_ingreso
             // 
             this.dpFecha_ingreso.Location = new System.Drawing.Point(136, 397);
-            this.dpFecha_ingreso.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dpFecha_ingreso.Margin = new System.Windows.Forms.Padding(2);
             this.dpFecha_ingreso.Name = "dpFecha_ingreso";
             this.dpFecha_ingreso.Size = new System.Drawing.Size(173, 20);
             this.dpFecha_ingreso.TabIndex = 18;
@@ -187,7 +223,7 @@ namespace Rentadora
             // cH_Extras
             // 
             this.cH_Extras.Location = new System.Drawing.Point(265, 354);
-            this.cH_Extras.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cH_Extras.Margin = new System.Windows.Forms.Padding(2);
             this.cH_Extras.Name = "cH_Extras";
             this.cH_Extras.Size = new System.Drawing.Size(85, 20);
             this.cH_Extras.TabIndex = 16;
@@ -206,7 +242,7 @@ namespace Rentadora
             // cSueldo
             // 
             this.cSueldo.Location = new System.Drawing.Point(136, 354);
-            this.cSueldo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cSueldo.Margin = new System.Windows.Forms.Padding(2);
             this.cSueldo.Name = "cSueldo";
             this.cSueldo.Size = new System.Drawing.Size(102, 20);
             this.cSueldo.TabIndex = 14;
@@ -225,7 +261,7 @@ namespace Rentadora
             // cIdentidad
             // 
             this.cIdentidad.Location = new System.Drawing.Point(81, 301);
-            this.cIdentidad.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cIdentidad.Margin = new System.Windows.Forms.Padding(2);
             this.cIdentidad.Name = "cIdentidad";
             this.cIdentidad.Size = new System.Drawing.Size(215, 20);
             this.cIdentidad.TabIndex = 12;
@@ -244,7 +280,7 @@ namespace Rentadora
             // cS_Apellido
             // 
             this.cS_Apellido.Location = new System.Drawing.Point(191, 248);
-            this.cS_Apellido.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cS_Apellido.Margin = new System.Windows.Forms.Padding(2);
             this.cS_Apellido.Name = "cS_Apellido";
             this.cS_Apellido.Size = new System.Drawing.Size(144, 20);
             this.cS_Apellido.TabIndex = 10;
@@ -252,7 +288,7 @@ namespace Rentadora
             // cP_Apellido
             // 
             this.cP_Apellido.Location = new System.Drawing.Point(19, 248);
-            this.cP_Apellido.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cP_Apellido.Margin = new System.Windows.Forms.Padding(2);
             this.cP_Apellido.Name = "cP_Apellido";
             this.cP_Apellido.Size = new System.Drawing.Size(144, 20);
             this.cP_Apellido.TabIndex = 9;
@@ -282,7 +318,7 @@ namespace Rentadora
             // cS_Nombre
             // 
             this.cS_Nombre.Location = new System.Drawing.Point(191, 194);
-            this.cS_Nombre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cS_Nombre.Margin = new System.Windows.Forms.Padding(2);
             this.cS_Nombre.Name = "cS_Nombre";
             this.cS_Nombre.Size = new System.Drawing.Size(144, 20);
             this.cS_Nombre.TabIndex = 6;
@@ -290,7 +326,7 @@ namespace Rentadora
             // cP_Nombre
             // 
             this.cP_Nombre.Location = new System.Drawing.Point(19, 194);
-            this.cP_Nombre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cP_Nombre.Margin = new System.Windows.Forms.Padding(2);
             this.cP_Nombre.Name = "cP_Nombre";
             this.cP_Nombre.Size = new System.Drawing.Size(144, 20);
             this.cP_Nombre.TabIndex = 5;
@@ -320,7 +356,7 @@ namespace Rentadora
             // cNombreEmpleado
             // 
             this.cNombreEmpleado.Location = new System.Drawing.Point(31, 129);
-            this.cNombreEmpleado.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cNombreEmpleado.Margin = new System.Windows.Forms.Padding(2);
             this.cNombreEmpleado.Name = "cNombreEmpleado";
             this.cNombreEmpleado.Size = new System.Drawing.Size(264, 20);
             this.cNombreEmpleado.TabIndex = 2;
@@ -342,18 +378,74 @@ namespace Rentadora
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.Firebrick;
+            this.panel2.Controls.Add(this.idSucur);
+            this.panel2.Controls.Add(this.idEmp);
+            this.panel2.Controls.Add(this.delete_empleado);
+            this.panel2.Controls.Add(this.editar_empleado);
             this.panel2.Controls.Add(this.label13);
             this.panel2.Controls.Add(this.dgvEmpleados);
             this.panel2.Location = new System.Drawing.Point(389, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(685, 588);
+            this.panel2.Size = new System.Drawing.Size(685, 599);
             this.panel2.TabIndex = 2;
+            // 
+            // idSucur
+            // 
+            this.idSucur.AutoSize = true;
+            this.idSucur.Location = new System.Drawing.Point(101, 85);
+            this.idSucur.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.idSucur.Name = "idSucur";
+            this.idSucur.Size = new System.Drawing.Size(43, 13);
+            this.idSucur.TabIndex = 27;
+            this.idSucur.Text = "idSucur";
+            // 
+            // idEmp
+            // 
+            this.idEmp.AutoSize = true;
+            this.idEmp.Location = new System.Drawing.Point(34, 85);
+            this.idEmp.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.idEmp.Name = "idEmp";
+            this.idEmp.Size = new System.Drawing.Size(36, 13);
+            this.idEmp.TabIndex = 26;
+            this.idEmp.Text = "idEmp";
+            // 
+            // delete_empleado
+            // 
+            this.delete_empleado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.delete_empleado.BackgroundImage = global::Rentadora.Properties.Resources.unnamed;
+            this.delete_empleado.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.delete_empleado.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
+            this.delete_empleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.delete_empleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.delete_empleado.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.delete_empleado.Location = new System.Drawing.Point(298, 470);
+            this.delete_empleado.Name = "delete_empleado";
+            this.delete_empleado.Size = new System.Drawing.Size(63, 63);
+            this.delete_empleado.TabIndex = 26;
+            this.delete_empleado.UseVisualStyleBackColor = false;
+            this.delete_empleado.Click += new System.EventHandler(this.delete_empleado_Click_1);
+            // 
+            // editar_empleado
+            // 
+            this.editar_empleado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.editar_empleado.BackgroundImage = global::Rentadora.Properties.Resources.png_transparent_human_figure_human_behavior_neck_microphone_hand_male_user_edit_microphone_hand_smiley_thumbnail;
+            this.editar_empleado.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.editar_empleado.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
+            this.editar_empleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.editar_empleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editar_empleado.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.editar_empleado.Location = new System.Drawing.Point(199, 470);
+            this.editar_empleado.Name = "editar_empleado";
+            this.editar_empleado.Size = new System.Drawing.Size(63, 63);
+            this.editar_empleado.TabIndex = 25;
+            this.editar_empleado.UseVisualStyleBackColor = false;
+            this.editar_empleado.Click += new System.EventHandler(this.editar_empleado_Click);
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.BackColor = System.Drawing.Color.LightCoral;
+            this.label13.BackColor = System.Drawing.Color.LightGray;
             this.label13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label13.Font = new System.Drawing.Font("Stencil", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.SystemColors.HighlightText;
@@ -370,19 +462,20 @@ namespace Rentadora
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvEmpleados.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dgvEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEmpleados.Location = new System.Drawing.Point(26, 142);
-            this.dgvEmpleados.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvEmpleados.Location = new System.Drawing.Point(37, 110);
+            this.dgvEmpleados.Margin = new System.Windows.Forms.Padding(2);
             this.dgvEmpleados.Name = "dgvEmpleados";
             this.dgvEmpleados.RowHeadersWidth = 62;
             this.dgvEmpleados.RowTemplate.Height = 28;
-            this.dgvEmpleados.Size = new System.Drawing.Size(566, 387);
+            this.dgvEmpleados.Size = new System.Drawing.Size(566, 328);
             this.dgvEmpleados.TabIndex = 0;
+            this.dgvEmpleados.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmpleados_CellClick);
             // 
             // fmrEmpleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1000, 550);
+            this.ClientSize = new System.Drawing.Size(867, 492);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -428,5 +521,11 @@ namespace Rentadora
         private System.Windows.Forms.TextBox cNombreEmpleado;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Button editar_empleado;
+        private System.Windows.Forms.Button delete_empleado;
+        private System.Windows.Forms.Button aceptar;
+        private System.Windows.Forms.Button cancelar;
+        private System.Windows.Forms.Label idEmp;
+        private System.Windows.Forms.Label idSucur;
     }
 }

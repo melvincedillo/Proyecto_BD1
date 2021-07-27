@@ -264,5 +264,10 @@ namespace Rentadora
             idmunicipio = idmunicipios[cbMunicipio.SelectedIndex];
             mnid.Text = idmunicipio.ToString();
         }
+
+        private void mnid_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
