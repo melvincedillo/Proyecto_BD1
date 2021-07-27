@@ -85,13 +85,107 @@ create or replace procedure select_empleados(empleado out SYS_REFCURSOR)
         end;
         
 -- Procedimiento para eliminar empleado
+
+create or replace procedure delete_empleado (idE rentadora.empleado.empleadoid%TYPE)
+    as
+    begin
+        delete from rentadora.empleado where empleadoid = idE;
+    end;
+
 --Procedimiento para actualizar empleado
+
+create or replace procedure update_empleado(nb VARCHAR,pn VARCHAR, 
+sn VARCHAR, pa VARCHAR, sa VARCHAR, tid VARCHAR, sld FLOAT,he FLOAT,fi DATE, sex VARCHAR, sc INT, idE INT)
+    as
+        vNE varchar(30) := nb;
+        vPN varchar(20) := pn;
+        vSN varchar(20) := sn;
+        vPA varchar(20) := pa;
+        vSA varchar(20) := sa;
+        vTID varchar(20) := tid;
+        VSLD float := sld;
+        VHE float := he;
+        VFI date := fi;
+        vSEX varchar2(15) := sex;
+        vSC int := sc;
+        vIDE int := idE;
+    begin
+        update empleado set nombre=vNE, p_nombre = vPN, s_nombre = vSN, p_apellido = vPA, s_apellido = vSA, identidad = vTID, sueldo = vSLD,horasextras=vHE,fecha_ingreso=vFI, sexo = vSEX, sucursalid= vSC where empleadoid = vIDE;
+    EXCEPTION
+        WHEN NO_DATA_FOUND THEN
+            null;
+    end update_empleado;
+
 --Procedimiento para insertar empleado
-create or replace procedure insert_empleado(nb VARCHAR,pn VARCHAR, sn VARCHAR, pa VARCHAR, sa VARCHAR, tid VARCHAR, sld FLOAT,he FLOAT,fi DATE, sex VARCHAR, sc INT)
+create or replace procedure insert_empleado(nb VARCHAR,pn VARCHAR, 
+sn VARCHAR, pa VARCHAR, sa VARCHAR, tid VARCHAR, sld FLOAT,he FLOAT,fi DATE, sex VARCHAR, sc INT)
     as
     begin
         insert into empleado (nombre,p_nombre, s_nombre,p_apellido,s_apellido,identidad,sueldo,horasextras,fecha_ingreso,sexo,sucursalid) 
         values (nb, pn, sn, pa, sa, tid, sld, he, fi, sex, sc);
+    end;
+
+
+--Procedimiento para seleccionar Autos
+
+create or replace procedure select_vehiculos(vehiculo out SYS_REFCURSOR)
+    as
+    begin
+        open vehiculo for
+            SELECT 
+                v.vehiculoID AS ID, 
+                v.placa,
+                v.costo_vehiculo AS Costo,
+                m.modelo AS Modelo,
+                c.color AS Color,
+                e.estado AS Estado
+            FROM 
+                vehiculo v
+            INNER JOIN Modelo m ON m.modeloID=v.modeloID
+            INNER JOIN Color c ON c.colorID=v.colorID
+            INNER JOIN Estado e ON e.estadoID=v.estadoID;
+        end;
+
+--Procedimiento para eliminar Auto
+
+create or replace procedure delete_vehiculo (idV rentadora.vehiculo.vehiculoid%TYPE)
+    as
+    begin
+        delete from rentadora.vehiculo where vehiculoid = idV;
+    end;
+
+--Procedimiento para actualizar auto
+
+create or replace procedure update_vehiculo(placa VARCHAR,fecha DATE, costo FLOAT, cb INT, modelo INT,mar INT, color INT, tv INT, vers INT, est INT, seguro FLOAT, idV INT)
+    as
+        vPLACA varchar(30) := placa;
+        vFECHA date := fecha;
+        vCOSTO float := costo;
+        vCB int := cb;
+        vModelo int := modelo;
+        vMAR int := mar;
+        vCOLOR int := color;
+        vTV int:= tv;
+        vVers int := vers;
+        vEST int := est;
+        vSEGURO float := seguro;
+        vIDV int := idV;
+    begin
+        update vehiculo set placa=vPLACA, fecha_adquisicion=vFECHA,costo_vehiculo=vCOSTO, combustibleid=vCB, modeloid=vModelo, marcaid=vMar,
+        colorid=vCOLOR, tipo_vehiculoid=vTV,versionid=vVers,estadoid=vEST,seguro=vSEGURO where vehiculoid = vIDV;
+    EXCEPTION
+        WHEN NO_DATA_FOUND THEN
+            null;
+    end update_vehiculo;
+
+
+--Procedimiento para insertar auto
+
+create or replace procedure insert_vehiculos(placa VARCHAR,fecha DATE, costo FLOAT, cb INT, modelo INT,mar INT, color INT, tv INT, vers INT, est INT, seguro FLOAT)
+    as
+    begin
+        insert into vehiculo (placa,fecha_adquisicion,costo_vehiculo,combustibleid,modeloid,marcaid,colorid,tipo_vehiculoid,versionid,estadoid,seguro) 
+        values (placa,fecha,costo,cb,modelo,mar,color,tv,vers,est,seguro);
     end;
     
 
