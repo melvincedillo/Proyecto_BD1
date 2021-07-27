@@ -393,7 +393,7 @@ namespace Rentadora
             // idSucur
             // 
             this.idSucur.AutoSize = true;
-            this.idSucur.Location = new System.Drawing.Point(101, 85);
+            this.idSucur.Location = new System.Drawing.Point(74, 110);
             this.idSucur.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.idSucur.Name = "idSucur";
             this.idSucur.Size = new System.Drawing.Size(43, 13);
@@ -403,7 +403,7 @@ namespace Rentadora
             // idEmp
             // 
             this.idEmp.AutoSize = true;
-            this.idEmp.Location = new System.Drawing.Point(34, 85);
+            this.idEmp.Location = new System.Drawing.Point(34, 110);
             this.idEmp.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.idEmp.Name = "idEmp";
             this.idEmp.Size = new System.Drawing.Size(36, 13);
@@ -419,7 +419,7 @@ namespace Rentadora
             this.delete_empleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.delete_empleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.delete_empleado.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.delete_empleado.Location = new System.Drawing.Point(298, 470);
+            this.delete_empleado.Location = new System.Drawing.Point(295, 427);
             this.delete_empleado.Name = "delete_empleado";
             this.delete_empleado.Size = new System.Drawing.Size(63, 63);
             this.delete_empleado.TabIndex = 26;
@@ -435,7 +435,7 @@ namespace Rentadora
             this.editar_empleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.editar_empleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.editar_empleado.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.editar_empleado.Location = new System.Drawing.Point(199, 470);
+            this.editar_empleado.Location = new System.Drawing.Point(171, 427);
             this.editar_empleado.Name = "editar_empleado";
             this.editar_empleado.Size = new System.Drawing.Size(63, 63);
             this.editar_empleado.TabIndex = 25;
@@ -462,12 +462,12 @@ namespace Rentadora
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvEmpleados.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dgvEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEmpleados.Location = new System.Drawing.Point(37, 110);
+            this.dgvEmpleados.Location = new System.Drawing.Point(37, 129);
             this.dgvEmpleados.Margin = new System.Windows.Forms.Padding(2);
             this.dgvEmpleados.Name = "dgvEmpleados";
             this.dgvEmpleados.RowHeadersWidth = 62;
             this.dgvEmpleados.RowTemplate.Height = 28;
-            this.dgvEmpleados.Size = new System.Drawing.Size(566, 328);
+            this.dgvEmpleados.Size = new System.Drawing.Size(547, 279);
             this.dgvEmpleados.TabIndex = 0;
             this.dgvEmpleados.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmpleados_CellClick);
             // 
