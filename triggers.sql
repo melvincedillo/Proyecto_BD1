@@ -1,6 +1,7 @@
 create SEQUENCE cliente_secuencia START WITH 10;
 create SEQUENCE direccion_secuencia START WITH 10;
 create SEQUENCE empleado_secuencia START WITH 10;
+create SEQUENCE vehiculo_secuencia START WITH 10;
 
 
 --Auto incremental cliente
@@ -23,7 +24,7 @@ create or replace trigger direccion_tri
         from dual;
     end;
 
---Autoincremental empleado
+
 --AutoIncremenral empleado
 create or replace trigger empleado_tri
     before insert on empleado
@@ -31,6 +32,16 @@ create or replace trigger empleado_tri
     begin
         select empleado_secuencia.NEXTVAL
         into :new.empleadoid
+        from dual;
+    end;
+
+--Autoincremental Auto
+create or replace trigger vehiculo_tri
+    before insert on vehiculo
+        for EACH row
+    begin
+        select vehiculo_secuencia.NEXTVAL
+        into :new.vehiculoid
         from dual;
     end;
     
