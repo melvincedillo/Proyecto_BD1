@@ -31,8 +31,14 @@ INSERT INTO MUNICIPIO VALUES(7,'Comayagua', 3);
 INSERT INTO MUNICIPIO VALUES(8,'Ajuterique', 3);
 INSERT INTO MUNICIPIO VALUES(9,'El Rosario', 3);
 
+--Direcciones
+INSERT INTO DIRECCION (municipioid, direccion) VALUES (1, 'Col. Los Andes');
+INSERT INTO DIRECCION (municipioid, direccion) VALUES (3, 'Telamar');
+
 --Sucursales
 INSERT INTO SUCURSAL VALUES (1, 'RENTA CAR', 10);
+INSERT INTO SUCURSAL VALUES (2, 'ALAMO', 34);
+INSERT INTO SUCURSAL VALUES (3, 'HERTZ', 35);
 
 --Empleados
 INSERT INTO EMPLEADO(nombre, p_nombre,s_nombre,p_apellido,s_apellido,identidad,sueldo, horasextras,fecha_ingreso,sexo,sucursalid) VALUES
