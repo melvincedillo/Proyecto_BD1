@@ -159,12 +159,12 @@ namespace Rentadora
                 comando.Parameters.Add("idC", OracleType.Int32).Direction = ParameterDirection.Output;
                 comando.ExecuteNonQuery();
                 idcliente = Convert.ToInt32(comando.Parameters["idC"].Value);
+                oracle.Close();
 
                 insertarTelefono(tel1.Text, 1);
                 insertarTelefono(tel2.Text, 2);
                 insertarTelefono(tel3.Text, 3);
-            } catch { }
-            oracle.Close();
+            } catch { oracle.Close(); }
         }
 
         private void dgvClientes_CellClick(object sender, DataGridViewCellEventArgs e)
