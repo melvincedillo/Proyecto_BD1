@@ -289,7 +289,7 @@ namespace Rentadora
             }
             catch
             {
-                MessageBox.Show("Error al actualizar Empleado");
+                MessageBox.Show("Error al actualizar Auto");
             }
             oracle.Close();
         }
