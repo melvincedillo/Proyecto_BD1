@@ -29,6 +29,7 @@ CREATE TABLE DIRECCION(
 
 CREATE TABLE TIPO_RENTA(
 	tipo_rentaID INT,
+    costo float,
 	tipo_renta VARCHAR(20) NOT NULL,
 	CONSTRAINT tipo_rentaPK PRIMARY KEY (tipo_rentaID)
 );
@@ -286,10 +287,10 @@ INSERT INTO MUNICIPIO VALUES(8,'Ajuterique', 3);
 INSERT INTO MUNICIPIO VALUES(9,'El Rosario', 3);
 
 --Insertando datos tabla Tipo_Renta
-INSERT INTO TIPO_RENTA VALUES(1,300,'Por Hora');
-INSERT INTO TIPO_RENTA VALUES(2,1500,'Por Dia');
-INSERT INTO TIPO_RENTA VALUES(3,20000,'Por Mes');
-INSERT INTO TIPO_RENTA VALUES(4,60000,'Por Año');
+INSERT INTO TIPO_RENTA VALUES(1,'Por Hora', 300);
+INSERT INTO TIPO_RENTA VALUES(2,'Por Dia', 1500);
+INSERT INTO TIPO_RENTA VALUES(3,'Por Mes', 15000);
+INSERT INTO TIPO_RENTA VALUES(4,'Por Año', 60000);
 
 --Insertando datos Version
 INSERT INTO VERSION VALUES(1,'JAPONES');
@@ -405,7 +406,7 @@ INSERT INTO DIRECCION VALUES (11, 2, 4, 'aldea el tablon, casa 50');
 INSERT INTO DIRECCION VALUES (12, 9, 3, 'aldea san fernado, casa 2');
 
 --Insertando Sucursal
-INSERT INTO SUCURSAL VALUES (1, 'RENTA CAR', 1);
+INSERT INTO SUCURSAL VALUES (1, 'RENTA CAR', 2);
 
 delete from direccion;
 --Insertando datos tabla Empleado
