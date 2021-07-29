@@ -207,7 +207,6 @@ CREATE TABLE CLIENTExREFERENCIA(
 create table SOLICITUD(
     solicitudID int,
     fecha_solicitud date not null,
-    tipo_rentaID INT not null,
     subtotal float not null,
     sucursalID int not null,
     vehiculoID int not null,
@@ -220,13 +219,14 @@ create table SOLICITUD(
     CONSTRAINT sucursalSolicitudPK foreign key(sucursalID) references SUCURSAL(sucursalID),
     CONSTRAINT vehiculoSolicitudPK foreign key(vehiculoID) references VEHICULO(vehiculoID),
     CONSTRAINT clienteSolicitudPK foreign key(clienteID) references CLIENTE(clienteID),
-    CONSTRAINT rentaSolicitudPK foreign key(tipo_rentaID) references TIPO_RENTA(tipo_rentaID),
     CONSTRAINT empleadoSolicitudPK foreign key(empleadoid) references EMPLEADO(empleadoID)
 );
 
 alter table solicitud add empleadoid int;
 alter table solicitud add CONSTRAINT empleadoSolicitudPK foreign key(empleadoid) references EMPLEADO(empleadoID);
 alter table solicitud add estado varchar(10);
+alter table solicitud drop CONSTRAINT rentaSolicitudPK;
+alter table solicitud drop column tipo_rentaID;
 
 create table CONTRATO(
     contratoID int,
