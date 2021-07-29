@@ -248,13 +248,6 @@ namespace Rentadora
 
         }
 
-        private void dgvAutos_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            idvehiculo = Convert.ToInt32(dgvAutos.SelectedRows[0].Cells[0].Value);
-
-            //Label para verificar que se seleccione el empleado con el id correcto
-            idAuto.Text = idvehiculo.ToString();
-        }
 
         private void aceptar_Click(object sender, EventArgs e)
         {
@@ -276,7 +269,6 @@ namespace Rentadora
                 oracle.Open();
                 OracleCommand comando = new OracleCommand("rentadora.update_vehiculo", oracle);
                 comando.CommandType = System.Data.CommandType.StoredProcedure;
-                comando.Parameters.Add("idV", OracleType.Int32).Value = idvehiculo;
                 comando.Parameters.Add("placa", OracleType.VarChar).Value = cPlaca.Text;
                 comando.Parameters.Add("fecha", OracleType.DateTime).Value = dpFecha_Adq.Text;
                 comando.Parameters.Add("costo", OracleType.Float).Value = cCosto_Vehiculo.Text;
@@ -363,6 +355,14 @@ namespace Rentadora
             aceptar.Visible = false;
             cancelar.Visible = false;
             limpiarForm();
+        }
+
+        private void dgvAutos_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            idvehiculo = Convert.ToInt32(dgvAutos.SelectedRows[0].Cells[0].Value);
+
+            //Label para verificar que se seleccione el empleado con el id correcto
+            idAuto.Text = idvehiculo.ToString();
         }
     }
 }

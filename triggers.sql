@@ -12,7 +12,7 @@ create or REPLACE TRIGGER cliente_tri
         select cliente_secuencia.NEXTVAL
         into :new.clienteid
         from dual;
-    end;
+    end cliente_tri;
 
 --Autoincremental direccion
 create or replace trigger direccion_tri
@@ -22,7 +22,7 @@ create or replace trigger direccion_tri
         select direccion_secuencia.NEXTVAL
         into :new.direccionid
         from dual;
-    end;
+    end direccion_tri;
 
 
 --AutoIncremenral empleado
@@ -33,7 +33,7 @@ create or replace trigger empleado_tri
         select empleado_secuencia.NEXTVAL
         into :new.empleadoid
         from dual;
-    end;
+    end empleado_tri;
 
 --Autoincremental Auto
 create or replace trigger vehiculo_tri
@@ -43,5 +43,5 @@ create or replace trigger vehiculo_tri
         select vehiculo_secuencia.NEXTVAL
         into :new.vehiculoid
         from dual;
-    end;
+    end vehiculo_tri;
     

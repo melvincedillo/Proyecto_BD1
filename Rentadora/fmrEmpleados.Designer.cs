@@ -29,6 +29,8 @@ namespace Rentadora
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.cancelar = new System.Windows.Forms.Button();
@@ -115,7 +117,7 @@ namespace Rentadora
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(391, 599);
+            this.panel1.Size = new System.Drawing.Size(391, 657);
             this.panel1.TabIndex = 1;
             // 
             // cancelar
@@ -378,16 +380,16 @@ namespace Rentadora
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.Firebrick;
+            this.panel2.Controls.Add(this.dgvEmpleados);
             this.panel2.Controls.Add(this.idSucur);
             this.panel2.Controls.Add(this.idEmp);
             this.panel2.Controls.Add(this.delete_empleado);
             this.panel2.Controls.Add(this.editar_empleado);
             this.panel2.Controls.Add(this.label13);
-            this.panel2.Controls.Add(this.dgvEmpleados);
             this.panel2.Location = new System.Drawing.Point(389, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(685, 599);
+            this.panel2.Size = new System.Drawing.Size(818, 657);
             this.panel2.TabIndex = 2;
             // 
             // idSucur
@@ -412,6 +414,7 @@ namespace Rentadora
             // 
             // delete_empleado
             // 
+            this.delete_empleado.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.delete_empleado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.delete_empleado.BackgroundImage = global::Rentadora.Properties.Resources.unnamed;
             this.delete_empleado.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -419,7 +422,7 @@ namespace Rentadora
             this.delete_empleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.delete_empleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.delete_empleado.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.delete_empleado.Location = new System.Drawing.Point(295, 427);
+            this.delete_empleado.Location = new System.Drawing.Point(323, 470);
             this.delete_empleado.Name = "delete_empleado";
             this.delete_empleado.Size = new System.Drawing.Size(63, 63);
             this.delete_empleado.TabIndex = 26;
@@ -428,6 +431,7 @@ namespace Rentadora
             // 
             // editar_empleado
             // 
+            this.editar_empleado.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.editar_empleado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.editar_empleado.BackgroundImage = global::Rentadora.Properties.Resources.png_transparent_human_figure_human_behavior_neck_microphone_hand_male_user_edit_microphone_hand_smiley_thumbnail;
             this.editar_empleado.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -435,7 +439,7 @@ namespace Rentadora
             this.editar_empleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.editar_empleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.editar_empleado.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.editar_empleado.Location = new System.Drawing.Point(171, 427);
+            this.editar_empleado.Location = new System.Drawing.Point(229, 470);
             this.editar_empleado.Name = "editar_empleado";
             this.editar_empleado.Size = new System.Drawing.Size(63, 63);
             this.editar_empleado.TabIndex = 25;
@@ -457,25 +461,50 @@ namespace Rentadora
             // 
             // dgvEmpleados
             // 
+            this.dgvEmpleados.AllowUserToAddRows = false;
+            this.dgvEmpleados.AllowUserToDeleteRows = false;
+            this.dgvEmpleados.AllowUserToOrderColumns = true;
             this.dgvEmpleados.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvEmpleados.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.dgvEmpleados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvEmpleados.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvEmpleados.BackgroundColor = System.Drawing.Color.White;
+            this.dgvEmpleados.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvEmpleados.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvEmpleados.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvEmpleados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEmpleados.Location = new System.Drawing.Point(37, 129);
-            this.dgvEmpleados.Margin = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial Narrow", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(8);
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvEmpleados.DefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvEmpleados.Location = new System.Drawing.Point(18, 129);
             this.dgvEmpleados.Name = "dgvEmpleados";
-            this.dgvEmpleados.RowHeadersWidth = 62;
-            this.dgvEmpleados.RowTemplate.Height = 28;
-            this.dgvEmpleados.Size = new System.Drawing.Size(547, 279);
-            this.dgvEmpleados.TabIndex = 0;
-            this.dgvEmpleados.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmpleados_CellClick);
+            this.dgvEmpleados.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvEmpleados.RowHeadersVisible = false;
+            this.dgvEmpleados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvEmpleados.Size = new System.Drawing.Size(581, 322);
+            this.dgvEmpleados.TabIndex = 28;
+            this.dgvEmpleados.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmpleados_CellClick_1);
             // 
             // fmrEmpleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(867, 492);
+            this.ClientSize = new System.Drawing.Size(1000, 550);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -496,7 +525,6 @@ namespace Rentadora
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.DataGridView dgvEmpleados;
         private System.Windows.Forms.Button add_empleado;
         private System.Windows.Forms.ComboBox cbSucursal;
         private System.Windows.Forms.Label label12;
@@ -527,5 +555,6 @@ namespace Rentadora
         private System.Windows.Forms.Button cancelar;
         private System.Windows.Forms.Label idEmp;
         private System.Windows.Forms.Label idSucur;
+        private System.Windows.Forms.DataGridView dgvEmpleados;
     }
 }

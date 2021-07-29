@@ -29,6 +29,8 @@ namespace Rentadora
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.cSeguro = new System.Windows.Forms.TextBox();
             this.cb_Version = new System.Windows.Forms.ComboBox();
@@ -381,11 +383,11 @@ namespace Rentadora
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Firebrick;
+            this.panel2.Controls.Add(this.dgvAutos);
             this.panel2.Controls.Add(this.idAuto);
             this.panel2.Controls.Add(this.delete_auto);
             this.panel2.Controls.Add(this.editar_auto);
             this.panel2.Controls.Add(this.label13);
-            this.panel2.Controls.Add(this.dgvAutos);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(391, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
@@ -405,6 +407,7 @@ namespace Rentadora
             // 
             // delete_auto
             // 
+            this.delete_auto.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.delete_auto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.delete_auto.BackgroundImage = global::Rentadora.Properties.Resources.unnamed;
             this.delete_auto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -421,6 +424,7 @@ namespace Rentadora
             // 
             // editar_auto
             // 
+            this.editar_auto.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.editar_auto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.editar_auto.BackgroundImage = global::Rentadora.Properties.Resources.png_transparent_human_figure_human_behavior_neck_microphone_hand_male_user_edit_microphone_hand_smiley_thumbnail;
             this.editar_auto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -450,19 +454,44 @@ namespace Rentadora
             // 
             // dgvAutos
             // 
+            this.dgvAutos.AllowUserToAddRows = false;
+            this.dgvAutos.AllowUserToDeleteRows = false;
+            this.dgvAutos.AllowUserToOrderColumns = true;
             this.dgvAutos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvAutos.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.dgvAutos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvAutos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvAutos.BackgroundColor = System.Drawing.Color.White;
+            this.dgvAutos.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvAutos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvAutos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvAutos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvAutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAutos.Location = new System.Drawing.Point(37, 110);
-            this.dgvAutos.Margin = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial Narrow", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(8);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvAutos.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvAutos.Location = new System.Drawing.Point(16, 110);
             this.dgvAutos.Name = "dgvAutos";
-            this.dgvAutos.RowHeadersWidth = 62;
-            this.dgvAutos.RowTemplate.Height = 28;
-            this.dgvAutos.Size = new System.Drawing.Size(547, 279);
-            this.dgvAutos.TabIndex = 0;
-            this.dgvAutos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAutos_CellClick);
+            this.dgvAutos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvAutos.RowHeadersVisible = false;
+            this.dgvAutos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvAutos.Size = new System.Drawing.Size(581, 322);
+            this.dgvAutos.TabIndex = 4;
+            this.dgvAutos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAutos_CellClick_1);
             // 
             // fmrAutos
             // 
@@ -511,7 +540,6 @@ namespace Rentadora
         private System.Windows.Forms.Button delete_auto;
         private System.Windows.Forms.Button editar_auto;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.DataGridView dgvAutos;
         private System.Windows.Forms.TextBox cSeguro;
         private System.Windows.Forms.ComboBox cb_Version;
         private System.Windows.Forms.ComboBox cbTipo_Vehiculo;
@@ -519,5 +547,6 @@ namespace Rentadora
         private System.Windows.Forms.ComboBox cbMarca;
         private System.Windows.Forms.ComboBox cbModelo;
         private System.Windows.Forms.ComboBox cbCombustible;
+        private System.Windows.Forms.DataGridView dgvAutos;
     }
 }

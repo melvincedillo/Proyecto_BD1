@@ -50,23 +50,36 @@ namespace Rentadora
         }
 
         private void cargarDepartamentos() {
-            oracle.Open();
-            OracleCommand departamentos = new OracleCommand("select departamento from departamento", oracle);
-            OracleDataReader registro = departamentos.ExecuteReader();
-            while (registro.Read()) {
-                cbDepartamento.Items.Add(registro["departamento"].ToString());
+            try
+            {
+                oracle.Open();
+                OracleCommand departamentos = new OracleCommand("select departamento from rentadora.departamento", oracle);
+                OracleDataReader registro = departamentos.ExecuteReader();
+                while (registro.Read())
+                {
+                    cbDepartamento.Items.Add(registro["departamento"].ToString());
+                }
+            }
+            catch {
+                MessageBox.Show("Error al cargar departamentos");
             }
             oracle.Close();
         }
 
         private void cargarMunicipios(int id) {
-            oracle.Open();
-            OracleCommand departamentos = new OracleCommand("select municipioid, municipio from municipio where departamentoid =" + id, oracle);
-            OracleDataReader registro = departamentos.ExecuteReader();
-            while (registro.Read())
+            try
             {
-                cbMunicipio.Items.Add(registro["municipio"].ToString());
-                idmunicipios.Add(Int32.Parse(registro["municipioid"].ToString()));
+                oracle.Open();
+                OracleCommand departamentos = new OracleCommand("select municipioid, municipio from rentadora.municipio where departamentoid =" + id, oracle);
+                OracleDataReader registro = departamentos.ExecuteReader();
+                while (registro.Read())
+                {
+                    cbMunicipio.Items.Add(registro["municipio"].ToString());
+                    idmunicipios.Add(Int32.Parse(registro["municipioid"].ToString()));
+                }
+            }
+            catch {
+                MessageBox.Show("Error al cargar municipios");
             }
             oracle.Close();
         }
@@ -101,9 +114,14 @@ namespace Rentadora
             cIdentidad.Text = "";
             cRtn.Text = "";
             cSexo.Text = "";
-            cDireccion.Text = "";
+            tel1.Text = "";
+            tel2.Text = "";
+            tel3.Text = "";
             cbDepartamento.Text = "";
             cbMunicipio.Text = "";
+            col_aldea.Text = "";
+            casa.Text = "";
+            calle.Text = "";
         }
 
 
@@ -113,12 +131,16 @@ namespace Rentadora
                 OracleCommand comando = new OracleCommand("rentadora.insert_direccion", oracle);
                 comando.CommandType = System.Data.CommandType.StoredProcedure;
                 comando.Parameters.Add("idM", OracleType.Int32).Value = idmunicipio;
-                comando.Parameters.Add("dir", OracleType.VarChar).Value = cDireccion.Text;
+                comando.Parameters.Add("colonia", OracleType.VarChar).Value = col_aldea.Text;
+                comando.Parameters.Add("callea", OracleType.VarChar).Value = calle.Text;
+                comando.Parameters.Add("casaa", OracleType.Int32).Value = Convert.ToInt32(casa.Text);
                 comando.Parameters.Add("iddir", OracleType.Int32).Direction = ParameterDirection.Output;
                 comando.ExecuteNonQuery();
                 iddireccion = Convert.ToInt32(comando.Parameters["iddir"].Value);
-                oracle.Close();
-            } catch { }
+            } catch {
+                MessageBox.Show("Imposible crear direccion");
+            }
+            oracle.Close();
         }
 
         private void crearCliente() {
@@ -134,10 +156,15 @@ namespace Rentadora
                 comando.Parameters.Add("rtn", OracleType.VarChar).Value = cRtn.Text;
                 comando.Parameters.Add("sex", OracleType.VarChar).Value = cSexo.Text;
                 comando.Parameters.Add("dir", OracleType.Int32).Value = iddireccion;
+                comando.Parameters.Add("idC", OracleType.Int32).Direction = ParameterDirection.Output;
                 comando.ExecuteNonQuery();
-                oracle.Close();
+                idcliente = Convert.ToInt32(comando.Parameters["idC"].Value);
 
-            } catch {}
+                insertarTelefono(tel1.Text, 1);
+                insertarTelefono(tel2.Text, 2);
+                insertarTelefono(tel3.Text, 3);
+            } catch { }
+            oracle.Close();
         }
 
         private void dgvClientes_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -196,6 +223,9 @@ namespace Rentadora
         private void aceptar_Click(object sender, EventArgs e)
         {
             updateCliente();
+            update_tel_cliente(tel1.Text, 1);
+            update_tel_cliente(tel2.Text, 2);
+            update_tel_cliente(tel3.Text, 3);
             limpiarForm();
             mostrarClientes();
             add_cliente.Visible = true;
@@ -218,16 +248,33 @@ namespace Rentadora
             cRtn.Text = registro["rtn"].ToString();
             cSexo.Text = registro["sexo"].ToString();
 
-            OracleCommand comando2 = new OracleCommand("select dp.departamento, m.municipio, d.direccion from rentadora.direccion d join rentadora.municipio m on m.municipioid = d.municipioid join rentadora.departamento dp on dp.departamentoid = m.departamentoid where d.direccionid = " + iddireccion, oracle);
+            OracleCommand comando2 = new OracleCommand("select dp.departamento, m.municipio, d.col_aldea, d.calle, d.casa from rentadora.direccion d join rentadora.municipio m on m.municipioid = d.municipioid join rentadora.departamento dp on dp.departamentoid = m.departamentoid where d.direccionid = " + iddireccion, oracle);
             OracleDataReader registro2 = comando2.ExecuteReader();
             registro2.Read();
-            cDireccion.Text = registro2["direccion"].ToString();
-            String temp1 = registro2["departamento"].ToString();
-            String temp2 = registro2["municipio"].ToString();
-            oracle.Close();
+            col_aldea.Text = registro2["col_aldea"].ToString();
+            calle.Text = registro2["calle"].ToString();
+            casa.Text = registro2["casa"].ToString();
+            string dep = registro2["departamento"].ToString(); ;
+            string muni = registro2["municipio"].ToString();
 
-            cbDepartamento.Text = temp1;
-            cbMunicipio.Text = temp2;
+            OracleCommand comandoT1 = new OracleCommand("select * from rentadora.telefonoxcliente where pos = 1 and clienteid = " + idcliente, oracle);
+            OracleDataReader registroT1 = comandoT1.ExecuteReader();
+            registroT1.Read();
+            tel1.Text = registroT1["telefono"].ToString();
+
+            OracleCommand comandoT2 = new OracleCommand("select * from rentadora.telefonoxcliente where pos = 2 and clienteid = " + idcliente, oracle);
+            OracleDataReader registroT2 = comandoT2.ExecuteReader();
+            registroT2.Read();
+            tel2.Text = registroT2["telefono"].ToString();
+
+            OracleCommand comandoT3 = new OracleCommand("select * from rentadora.telefonoxcliente where pos = 3 and clienteid = " + idcliente, oracle);
+            OracleDataReader registroT3 = comandoT3.ExecuteReader();
+            registroT3.Read();
+            tel3.Text = registroT3["telefono"].ToString();
+
+            oracle.Close();
+            cbDepartamento.Text = dep;
+            cbMunicipio.Text = muni;
         }
 
         private void updateCliente() {
@@ -251,10 +298,27 @@ namespace Rentadora
                 direccion.CommandType = System.Data.CommandType.StoredProcedure;
                 direccion.Parameters.Add("idDir", OracleType.Int32).Value = iddireccion;
                 direccion.Parameters.Add("idM", OracleType.Int32).Value = idmunicipio;
-                direccion.Parameters.Add("dir", OracleType.VarChar).Value = cDireccion.Text;
+                direccion.Parameters.Add("colonia", OracleType.VarChar).Value = col_aldea.Text;
+                direccion.Parameters.Add("cal", OracleType.VarChar).Value = calle.Text;
+                direccion.Parameters.Add("cas", OracleType.Int32).Value = Convert.ToInt32(casa.Text);
                 direccion.ExecuteNonQuery();
             }
             catch { MessageBox.Show("Error al actualizar");
+            }
+            oracle.Close();
+        }
+
+        private void update_tel_cliente(string tel, int posT) {
+            try {
+                oracle.Open();
+                OracleCommand comando = new OracleCommand("rentadora.update_tel_cliente", oracle);
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.Parameters.Add("idC", OracleType.Int32).Value = idcliente;
+                comando.Parameters.Add("tel", OracleType.VarChar).Value = tel;
+                comando.Parameters.Add("posT", OracleType.VarChar).Value = posT;
+                comando.ExecuteNonQuery();
+            } catch {
+                MessageBox.Show("Telefono ya existente");
             }
             oracle.Close();
         }
@@ -265,9 +329,21 @@ namespace Rentadora
             mnid.Text = idmunicipio.ToString();
         }
 
-        private void mnid_Click(object sender, EventArgs e)
+        private void insertarTelefono(string telA, int pos)
         {
-
+            try {
+                oracle.Open();
+                OracleCommand comando = new OracleCommand("rentadora.insert_tel_cliente", oracle);
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.Parameters.Add("idC", OracleType.Int32).Value = idcliente;
+                comando.Parameters.Add("posT", OracleType.Int32).Value = pos;
+                comando.Parameters.Add("tel", OracleType.VarChar).Value = telA;
+                comando.ExecuteNonQuery();
+            } 
+            catch {
+                MessageBox.Show("Fallo insertar telefono");
+            }
+            oracle.Close();
         }
     }
 }

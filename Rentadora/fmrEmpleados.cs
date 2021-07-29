@@ -126,14 +126,6 @@ namespace Rentadora
             
         }
 
-        private void dgvEmpleados_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            idempleado = Convert.ToInt32(dgvEmpleados.SelectedRows[0].Cells[0].Value);
-
-            //Label para verificar que se seleccione el empleado con el id correcto
-            idEmp.Text = idempleado.ToString();
-        }
-
 
         private void aceptar_Click(object sender, EventArgs e)
         {
@@ -241,6 +233,14 @@ namespace Rentadora
             aceptar.Visible = false;
             cancelar.Visible = false;
             limpiarForm();
+        }
+
+        private void dgvEmpleados_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            idempleado = Convert.ToInt32(dgvEmpleados.SelectedRows[0].Cells[0].Value);
+
+            //Label para verificar que se seleccione el empleado con el id correcto
+            idEmp.Text = idempleado.ToString();
         }
     }
 }
