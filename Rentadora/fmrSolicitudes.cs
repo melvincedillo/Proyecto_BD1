@@ -15,6 +15,9 @@ namespace Rentadora
     {
         private OracleConnection oracle = new OracleConnection(Variable.conexion);
         private List<int> idmunicipios = new List<int>();
+        private List<int> idSucursales = new List<int>();
+        private int idempleado;
+        private int idSucursal;
         private int idmunicipio;
         private int iddireccion;
         private int idcliente = 0;
@@ -28,6 +31,7 @@ namespace Rentadora
         private void fmrSolicitudes_Load(object sender, EventArgs e)
         {
             cargarDepartamentos();
+            cargarSucursales();
             idcprueba.Text = idcliente.ToString();
         }
 
@@ -125,6 +129,7 @@ namespace Rentadora
                 oracle.Close();
                 cbDepartamento.Text = dep;
                 cbMunicipio.Text = muni;
+                bloquearCliente();
             }
             catch
             {
@@ -157,7 +162,6 @@ namespace Rentadora
         private void cargarCliente_Click(object sender, EventArgs e)
         {
             cargarClienteEditar();
-            bloquearCliente();
             idcprueba.Text = idcliente.ToString();
             cerrarCliente.Visible = true;
             cargarCliente.Visible = false;
@@ -190,6 +194,111 @@ namespace Rentadora
             col_aldea.Text = "";
             casa.Text = "";
             calle.Text = "";
+        }
+
+        private void crearDireccion()
+        {
+            try
+            {
+                oracle.Open();
+                OracleCommand comando = new OracleCommand("rentadora.insert_direccion", oracle);
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.Parameters.Add("idM", OracleType.Int32).Value = idmunicipio;
+                comando.Parameters.Add("colonia", OracleType.VarChar).Value = col_aldea.Text;
+                comando.Parameters.Add("callea", OracleType.VarChar).Value = calle.Text;
+                comando.Parameters.Add("casaa", OracleType.Int32).Value = Convert.ToInt32(casa.Text);
+                comando.Parameters.Add("iddir", OracleType.Int32).Direction = ParameterDirection.Output;
+                comando.ExecuteNonQuery();
+                iddireccion = Convert.ToInt32(comando.Parameters["iddir"].Value);
+            }
+            catch
+            {
+                MessageBox.Show("Imposible crear direccion");
+            }
+            oracle.Close();
+        }
+
+        private void crearCliente()
+        {
+            try
+            {
+                oracle.Open();
+                OracleCommand comando = new OracleCommand("rentadora.insert_cliente", oracle);
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.Parameters.Add("pn", OracleType.VarChar).Value = cP_nombre.Text;
+                comando.Parameters.Add("sn", OracleType.VarChar).Value = cS_nombre.Text;
+                comando.Parameters.Add("pa", OracleType.VarChar).Value = cP_apellido.Text;
+                comando.Parameters.Add("sa", OracleType.VarChar).Value = cS_apellido.Text;
+                comando.Parameters.Add("tid", OracleType.VarChar).Value = cIdentidad.Text;
+                comando.Parameters.Add("rtn", OracleType.VarChar).Value = cRtn.Text;
+                comando.Parameters.Add("sex", OracleType.VarChar).Value = cSexo.Text;
+                comando.Parameters.Add("dir", OracleType.Int32).Value = iddireccion;
+                comando.Parameters.Add("idC", OracleType.Int32).Direction = ParameterDirection.Output;
+                comando.ExecuteNonQuery();
+                idcliente = Convert.ToInt32(comando.Parameters["idC"].Value);
+                oracle.Close();
+
+                insertarTelefono(tel1.Text, 1);
+                insertarTelefono(tel2.Text, 2);
+                insertarTelefono(tel3.Text, 3);
+            }
+            catch { oracle.Close(); }
+        }
+
+        private void insertarTelefono(string telA, int pos)
+        {
+            try
+            {
+                oracle.Open();
+                OracleCommand comando = new OracleCommand("rentadora.insert_tel_cliente", oracle);
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.Parameters.Add("idC", OracleType.Int32).Value = idcliente;
+                comando.Parameters.Add("posT", OracleType.Int32).Value = pos;
+                comando.Parameters.Add("tel", OracleType.VarChar).Value = telA;
+                comando.ExecuteNonQuery();
+            }
+            catch
+            {
+                MessageBox.Show("Fallo insertar telefono");
+            }
+            oracle.Close();
+        }
+
+        private void add_soli_Click(object sender, EventArgs e)
+        {
+            if (idcliente == 0) {
+                crearDireccion();
+                crearCliente();
+                limpiarForm();
+            }
+
+
+
+        }
+
+        private void cargarSucursales()
+        {
+            oracle.Open();
+            OracleCommand sucursales = new OracleCommand("select sucursalid, sucursal from rentadora.sucursal", oracle);
+            OracleDataReader empleado = sucursales.ExecuteReader();
+            while (empleado.Read())
+            {
+                cbSucursal.Items.Add(empleado["sucursal"].ToString());
+                idSucursales.Add(Int32.Parse(empleado["sucursalid"].ToString()));
+                //idSucursal =Int32.Parse(empleado["sucursalid"].ToString());
+            }
+            oracle.Close();
+        }
+
+        private void cbSucursal_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            idSucursal = idSucursales[cbSucursal.SelectedIndex];
+        }
+
+        private void sVehiculo_Click(object sender, EventArgs e)
+        {
+            SelectAuto auto = new SelectAuto();
+            auto.ShowDialog();
         }
     }
 }

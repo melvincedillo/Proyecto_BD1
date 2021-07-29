@@ -8,15 +8,58 @@ create or replace procedure select_vehiculos(vehiculo out SYS_REFCURSOR)
             SELECT 
                 v.vehiculoID AS ID, 
                 v.placa,
-                v.costo_vehiculo AS Costo,
                 m.modelo AS Modelo,
+                ma.marca,
                 c.color AS Color,
+                ve.version,
+                co.combustible,
+                tv.tipo_vehiculo AS "Tipo",
+                o.pais AS "Pais Origen",
+                v.costo_vehiculo AS "Costo Adquisicion",
+                v.costo_renta AS "Costo Renta",
                 e.estado AS Estado
             FROM 
                 vehiculo v
             INNER JOIN Modelo m ON m.modeloID=v.modeloID
             INNER JOIN Color c ON c.colorID=v.colorID
-            INNER JOIN Estado e ON e.estadoID=v.estadoID;
+            INNER JOIN Estado e ON e.estadoID=v.estadoID
+            INNER JOIN marca ma ON ma.marcaid =  v.marcaid
+            INNER JOIN origen o ON o.origenid =  ma.origenid
+            INNER JOIN combustible co ON co.combustibleid = v.combustibleid
+            INNER JOIN version ve ON ve.versionid = v.versionid
+            INNER JOIN tipo_vehiculo tv ON tv.tipo_vehiculoid = v.tipo_vehiculoid;
+        end;
+        
+        
+--Procedimiento para elegir Autos
+
+create or replace procedure elegir_vehiculos(vehiculo out SYS_REFCURSOR)
+    as
+    begin
+        open vehiculo for
+            SELECT 
+                v.vehiculoID AS ID, 
+                v.placa,
+                m.modelo AS Modelo,
+                ma.marca,
+                c.color AS Color,
+                ve.version,
+                co.combustible,
+                tv.tipo_vehiculo AS "Tipo",
+                o.pais AS "Pais Origen",
+                v.costo_vehiculo AS "Costo Adquisicion",
+                v.costo_renta AS "Costo Renta"
+            FROM 
+                vehiculo v
+            INNER JOIN Modelo m ON m.modeloID=v.modeloID
+            INNER JOIN Color c ON c.colorID=v.colorID
+            INNER JOIN marca ma ON ma.marcaid =  v.marcaid
+            INNER JOIN origen o ON o.origenid =  ma.origenid
+            INNER JOIN combustible co ON co.combustibleid = v.combustibleid
+            INNER JOIN version ve ON ve.versionid = v.versionid
+            INNER JOIN tipo_vehiculo tv ON tv.tipo_vehiculoid = v.tipo_vehiculoid
+            
+            WHERE v.estadoid = 1;
         end;
 
 --Procedimiento para eliminar Auto

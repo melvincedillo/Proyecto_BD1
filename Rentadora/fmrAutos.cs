@@ -61,6 +61,11 @@ namespace Rentadora
             dgvAutos.DataSource = table;
             oracle.Close();
             //dgvAutos.Columns[4].Visible = false;
+            dgvAutos.Columns[0].Visible = false;
+            dgvAutos.Columns[5].Visible = false;
+            dgvAutos.Columns[7].Visible = false;
+            dgvAutos.Columns[8].Visible = false;
+            dgvAutos.Columns[9].Visible = false;
         }
 
         private void cargarCombustibles()
@@ -218,6 +223,7 @@ namespace Rentadora
             cb_Version.Text = "";
             cbEstado.Text = "";
             cSeguro.Text = "";
+            vCosto_renta.Text = "";
         }
 
         private void crearAuto()
@@ -227,9 +233,10 @@ namespace Rentadora
                 oracle.Open();
                 OracleCommand comando = new OracleCommand("rentadora.insert_vehiculos", oracle);
                 comando.CommandType = System.Data.CommandType.StoredProcedure;
-                comando.Parameters.Add("placa", OracleType.VarChar).Value = cPlaca.Text;
+                comando.Parameters.Add("plac", OracleType.VarChar).Value = cPlaca.Text;
                 comando.Parameters.Add("fecha", OracleType.DateTime).Value = dpFecha_Adq.Text;
-                comando.Parameters.Add("costo", OracleType.Float).Value = cCosto_Vehiculo.Text;
+                comando.Parameters.Add("costo_a", OracleType.Float).Value = Convert.ToDouble(cCosto_Vehiculo.Text);
+                comando.Parameters.Add("costo_r", OracleType.Float).Value = Convert.ToDouble(vCosto_renta.Text);
                 comando.Parameters.Add("cb", OracleType.Int32).Value = idCombustible;
                 comando.Parameters.Add("modelo", OracleType.Int32).Value = idModelo;
                 comando.Parameters.Add("mar", OracleType.Int32).Value = idMarca;
@@ -237,15 +244,11 @@ namespace Rentadora
                 comando.Parameters.Add("tv", OracleType.Int32).Value = idTipo_Vehiculo;
                 comando.Parameters.Add("vers", OracleType.Int32).Value = idVersion;
                 comando.Parameters.Add("est", OracleType.Int32).Value = idEstado;
-                comando.Parameters.Add("seguro", OracleType.Float).Value = cSeguro.Text;
+                comando.Parameters.Add("segur", OracleType.Float).Value = Convert.ToDouble(cSeguro.Text);
                 comando.ExecuteNonQuery();
-                oracle.Close();
-
-
             }
             catch { MessageBox.Show("Error al Crear Auto"); }
-
-
+            oracle.Close();
         }
 
 
@@ -271,7 +274,8 @@ namespace Rentadora
                 comando.CommandType = System.Data.CommandType.StoredProcedure;
                 comando.Parameters.Add("placa", OracleType.VarChar).Value = cPlaca.Text;
                 comando.Parameters.Add("fecha", OracleType.DateTime).Value = dpFecha_Adq.Text;
-                comando.Parameters.Add("costo", OracleType.Float).Value = cCosto_Vehiculo.Text;
+                comando.Parameters.Add("costo_a", OracleType.Float).Value = Convert.ToDouble(cCosto_Vehiculo.Text);
+                comando.Parameters.Add("costo_r", OracleType.Float).Value = Convert.ToDouble(vCosto_renta.Text);
                 comando.Parameters.Add("cb", OracleType.Int32).Value = idCombustible;
                 comando.Parameters.Add("modelo", OracleType.Int32).Value = idModelo;
                 comando.Parameters.Add("mar", OracleType.Int32).Value = idMarca;
@@ -279,10 +283,9 @@ namespace Rentadora
                 comando.Parameters.Add("tv", OracleType.Int32).Value = idTipo_Vehiculo;
                 comando.Parameters.Add("vers", OracleType.Int32).Value = idVersion;
                 comando.Parameters.Add("est", OracleType.Int32).Value = idEstado;
-                comando.Parameters.Add("seguro", OracleType.Float).Value = cSeguro.Text;
+                comando.Parameters.Add("seguro", OracleType.Float).Value = Convert.ToDouble(cSeguro.Text);
+                comando.Parameters.Add("idV", OracleType.Int32).Value = idvehiculo;
                 comando.ExecuteNonQuery();
-
-
             }
             catch
             {
@@ -329,7 +332,7 @@ namespace Rentadora
         private void cargarAutoEditar()
         {
             oracle.Open();
-            OracleCommand comando = new OracleCommand("Select v.vehiculoID, v.placa, v.fecha_adquisicion, v.costo_vehiculo, comb.combustible, modelo.modelo,marca.marca,color.color,tv.tipo_vehiculo,vers.version,est.estado,v.seguro from rentadora.vehiculo v INNER JOIN rentadora.combustible comb ON comb.combustibleid = v.combustibleid INNER JOIN rentadora.modelo modelo ON modelo.modeloid = v.modeloid INNER JOIN rentadora.marca marca ON marca.marcaid = v.marcaid INNER JOIN rentadora.color color ON color.colorid = v.colorid INNER JOIN rentadora.tipo_vehiculo tv ON tv.tipo_vehiculoid = v.tipo_vehiculoid INNER JOIN rentadora.version vers ON vers.versionid = v.versionid INNER JOIN rentadora.estado est ON est.estadoid = v.estadoid where v.vehiculoid =" + idvehiculo, oracle);
+            OracleCommand comando = new OracleCommand("Select v.vehiculoID, v.costo_renta, v.placa, v.fecha_adquisicion, v.costo_vehiculo, comb.combustible, modelo.modelo,marca.marca,color.color,tv.tipo_vehiculo,vers.version,est.estado,v.seguro from rentadora.vehiculo v INNER JOIN rentadora.combustible comb ON comb.combustibleid = v.combustibleid INNER JOIN rentadora.modelo modelo ON modelo.modeloid = v.modeloid INNER JOIN rentadora.marca marca ON marca.marcaid = v.marcaid INNER JOIN rentadora.color color ON color.colorid = v.colorid INNER JOIN rentadora.tipo_vehiculo tv ON tv.tipo_vehiculoid = v.tipo_vehiculoid INNER JOIN rentadora.version vers ON vers.versionid = v.versionid INNER JOIN rentadora.estado est ON est.estadoid = v.estadoid where v.vehiculoid =" + idvehiculo, oracle);
             OracleDataReader registro = comando.ExecuteReader();
             registro.Read();
             cPlaca.Text = registro["placa"].ToString();
@@ -343,6 +346,7 @@ namespace Rentadora
             cb_Version.Text = registro["version"].ToString();
             cbEstado.Text = registro["estado"].ToString();
             cSeguro.Text = registro["seguro"].ToString();
+            vCosto_renta.Text = registro["costo_renta"].ToString();
 
             oracle.Close();
         }

@@ -59,11 +59,13 @@ namespace Rentadora
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.dgvAutos = new System.Windows.Forms.DataGridView();
             this.idAuto = new System.Windows.Forms.Label();
             this.delete_auto = new System.Windows.Forms.Button();
             this.editar_auto = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
-            this.dgvAutos = new System.Windows.Forms.DataGridView();
+            this.label14 = new System.Windows.Forms.Label();
+            this.vCosto_renta = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAutos)).BeginInit();
@@ -72,6 +74,8 @@ namespace Rentadora
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.LightGray;
+            this.panel1.Controls.Add(this.vCosto_renta);
+            this.panel1.Controls.Add(this.label14);
             this.panel1.Controls.Add(this.cSeguro);
             this.panel1.Controls.Add(this.cb_Version);
             this.panel1.Controls.Add(this.cbTipo_Vehiculo);
@@ -107,7 +111,7 @@ namespace Rentadora
             // 
             // cSeguro
             // 
-            this.cSeguro.Location = new System.Drawing.Point(116, 461);
+            this.cSeguro.Location = new System.Drawing.Point(205, 411);
             this.cSeguro.Margin = new System.Windows.Forms.Padding(2);
             this.cSeguro.Name = "cSeguro";
             this.cSeguro.Size = new System.Drawing.Size(114, 20);
@@ -116,7 +120,7 @@ namespace Rentadora
             // cb_Version
             // 
             this.cb_Version.FormattingEnabled = true;
-            this.cb_Version.Location = new System.Drawing.Point(205, 354);
+            this.cb_Version.Location = new System.Drawing.Point(22, 248);
             this.cb_Version.Margin = new System.Windows.Forms.Padding(2);
             this.cb_Version.Name = "cb_Version";
             this.cb_Version.Size = new System.Drawing.Size(141, 21);
@@ -126,7 +130,7 @@ namespace Rentadora
             // cbTipo_Vehiculo
             // 
             this.cbTipo_Vehiculo.FormattingEnabled = true;
-            this.cbTipo_Vehiculo.Location = new System.Drawing.Point(11, 353);
+            this.cbTipo_Vehiculo.Location = new System.Drawing.Point(191, 304);
             this.cbTipo_Vehiculo.Margin = new System.Windows.Forms.Padding(2);
             this.cbTipo_Vehiculo.Name = "cbTipo_Vehiculo";
             this.cbTipo_Vehiculo.Size = new System.Drawing.Size(141, 21);
@@ -136,7 +140,7 @@ namespace Rentadora
             // cbColor
             // 
             this.cbColor.FormattingEnabled = true;
-            this.cbColor.Location = new System.Drawing.Point(205, 305);
+            this.cbColor.Location = new System.Drawing.Point(191, 248);
             this.cbColor.Margin = new System.Windows.Forms.Padding(2);
             this.cbColor.Name = "cbColor";
             this.cbColor.Size = new System.Drawing.Size(141, 21);
@@ -146,7 +150,7 @@ namespace Rentadora
             // cbMarca
             // 
             this.cbMarca.FormattingEnabled = true;
-            this.cbMarca.Location = new System.Drawing.Point(11, 305);
+            this.cbMarca.Location = new System.Drawing.Point(191, 193);
             this.cbMarca.Margin = new System.Windows.Forms.Padding(2);
             this.cbMarca.Name = "cbMarca";
             this.cbMarca.Size = new System.Drawing.Size(141, 21);
@@ -156,7 +160,7 @@ namespace Rentadora
             // cbModelo
             // 
             this.cbModelo.FormattingEnabled = true;
-            this.cbModelo.Location = new System.Drawing.Point(209, 248);
+            this.cbModelo.Location = new System.Drawing.Point(22, 193);
             this.cbModelo.Margin = new System.Windows.Forms.Padding(2);
             this.cbModelo.Name = "cbModelo";
             this.cbModelo.Size = new System.Drawing.Size(141, 21);
@@ -166,7 +170,7 @@ namespace Rentadora
             // cbCombustible
             // 
             this.cbCombustible.FormattingEnabled = true;
-            this.cbCombustible.Location = new System.Drawing.Point(11, 248);
+            this.cbCombustible.Location = new System.Drawing.Point(22, 304);
             this.cbCombustible.Margin = new System.Windows.Forms.Padding(2);
             this.cbCombustible.Name = "cbCombustible";
             this.cbCombustible.Size = new System.Drawing.Size(141, 21);
@@ -215,10 +219,10 @@ namespace Rentadora
             // cbEstado
             // 
             this.cbEstado.FormattingEnabled = true;
-            this.cbEstado.Location = new System.Drawing.Point(102, 411);
+            this.cbEstado.Location = new System.Drawing.Point(22, 411);
             this.cbEstado.Margin = new System.Windows.Forms.Padding(2);
             this.cbEstado.Name = "cbEstado";
-            this.cbEstado.Size = new System.Drawing.Size(168, 21);
+            this.cbEstado.Size = new System.Drawing.Size(116, 21);
             this.cbEstado.TabIndex = 22;
             this.cbEstado.SelectedIndexChanged += new System.EventHandler(this.cbEstado_SelectedIndexChanged);
             // 
@@ -226,7 +230,7 @@ namespace Rentadora
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(142, 446);
+            this.label12.Location = new System.Drawing.Point(202, 396);
             this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(47, 13);
@@ -237,7 +241,7 @@ namespace Rentadora
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(41, 339);
+            this.label11.Location = new System.Drawing.Point(188, 289);
             this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(85, 13);
@@ -246,17 +250,17 @@ namespace Rentadora
             // 
             // dpFecha_Adq
             // 
-            this.dpFecha_Adq.Location = new System.Drawing.Point(11, 194);
+            this.dpFecha_Adq.Location = new System.Drawing.Point(177, 125);
             this.dpFecha_Adq.Margin = new System.Windows.Forms.Padding(2);
             this.dpFecha_Adq.Name = "dpFecha_Adq";
-            this.dpFecha_Adq.Size = new System.Drawing.Size(173, 20);
+            this.dpFecha_Adq.Size = new System.Drawing.Size(210, 20);
             this.dpFecha_Adq.TabIndex = 18;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(119, 391);
+            this.label10.Location = new System.Drawing.Point(19, 396);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(129, 13);
@@ -267,7 +271,7 @@ namespace Rentadora
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(246, 339);
+            this.label9.Location = new System.Drawing.Point(19, 233);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(49, 13);
@@ -278,7 +282,7 @@ namespace Rentadora
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(249, 290);
+            this.label8.Location = new System.Drawing.Point(188, 233);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(36, 13);
@@ -289,7 +293,7 @@ namespace Rentadora
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(60, 290);
+            this.label7.Location = new System.Drawing.Point(188, 178);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(42, 13);
@@ -300,7 +304,7 @@ namespace Rentadora
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(243, 233);
+            this.label6.Location = new System.Drawing.Point(19, 179);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(48, 13);
@@ -311,7 +315,7 @@ namespace Rentadora
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(41, 233);
+            this.label5.Location = new System.Drawing.Point(19, 289);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(75, 13);
@@ -320,7 +324,7 @@ namespace Rentadora
             // 
             // cCosto_Vehiculo
             // 
-            this.cCosto_Vehiculo.Location = new System.Drawing.Point(219, 194);
+            this.cCosto_Vehiculo.Location = new System.Drawing.Point(22, 353);
             this.cCosto_Vehiculo.Margin = new System.Windows.Forms.Padding(2);
             this.cCosto_Vehiculo.Name = "cCosto_Vehiculo";
             this.cCosto_Vehiculo.Size = new System.Drawing.Size(114, 20);
@@ -330,18 +334,18 @@ namespace Rentadora
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(229, 179);
+            this.label4.Location = new System.Drawing.Point(19, 338);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(92, 13);
+            this.label4.Size = new System.Drawing.Size(108, 13);
             this.label4.TabIndex = 4;
-            this.label4.Text = "Costo Vehiculo";
+            this.label4.Text = "Costo Adquisicion";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(41, 179);
+            this.label3.Location = new System.Drawing.Point(174, 110);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(111, 13);
@@ -350,17 +354,17 @@ namespace Rentadora
             // 
             // cPlaca
             // 
-            this.cPlaca.Location = new System.Drawing.Point(31, 129);
+            this.cPlaca.Location = new System.Drawing.Point(22, 125);
             this.cPlaca.Margin = new System.Windows.Forms.Padding(2);
             this.cPlaca.Name = "cPlaca";
-            this.cPlaca.Size = new System.Drawing.Size(264, 20);
+            this.cPlaca.Size = new System.Drawing.Size(104, 20);
             this.cPlaca.TabIndex = 2;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(113, 110);
+            this.label2.Location = new System.Drawing.Point(19, 110);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(113, 13);
@@ -394,6 +398,47 @@ namespace Rentadora
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(609, 550);
             this.panel2.TabIndex = 3;
+            // 
+            // dgvAutos
+            // 
+            this.dgvAutos.AllowUserToAddRows = false;
+            this.dgvAutos.AllowUserToDeleteRows = false;
+            this.dgvAutos.AllowUserToOrderColumns = true;
+            this.dgvAutos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvAutos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvAutos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvAutos.BackgroundColor = System.Drawing.Color.White;
+            this.dgvAutos.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvAutos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvAutos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvAutos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvAutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial Narrow", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(8);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvAutos.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvAutos.Location = new System.Drawing.Point(16, 110);
+            this.dgvAutos.Name = "dgvAutos";
+            this.dgvAutos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvAutos.RowHeadersVisible = false;
+            this.dgvAutos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvAutos.Size = new System.Drawing.Size(581, 322);
+            this.dgvAutos.TabIndex = 4;
+            this.dgvAutos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAutos_CellClick_1);
             // 
             // idAuto
             // 
@@ -452,46 +497,24 @@ namespace Rentadora
             this.label13.TabIndex = 24;
             this.label13.Text = "INFORMACION AUTOS";
             // 
-            // dgvAutos
+            // label14
             // 
-            this.dgvAutos.AllowUserToAddRows = false;
-            this.dgvAutos.AllowUserToDeleteRows = false;
-            this.dgvAutos.AllowUserToOrderColumns = true;
-            this.dgvAutos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvAutos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvAutos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgvAutos.BackgroundColor = System.Drawing.Color.White;
-            this.dgvAutos.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvAutos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgvAutos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvAutos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvAutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial Narrow", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(8);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvAutos.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvAutos.Location = new System.Drawing.Point(16, 110);
-            this.dgvAutos.Name = "dgvAutos";
-            this.dgvAutos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgvAutos.RowHeadersVisible = false;
-            this.dgvAutos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvAutos.Size = new System.Drawing.Size(581, 322);
-            this.dgvAutos.TabIndex = 4;
-            this.dgvAutos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAutos_CellClick_1);
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(188, 338);
+            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(122, 13);
+            this.label14.TabIndex = 33;
+            this.label14.Text = "Valor coste de renta";
+            // 
+            // vCosto_renta
+            // 
+            this.vCosto_renta.Location = new System.Drawing.Point(191, 353);
+            this.vCosto_renta.Margin = new System.Windows.Forms.Padding(2);
+            this.vCosto_renta.Name = "vCosto_renta";
+            this.vCosto_renta.Size = new System.Drawing.Size(114, 20);
+            this.vCosto_renta.TabIndex = 34;
             // 
             // fmrAutos
             // 
@@ -548,5 +571,7 @@ namespace Rentadora
         private System.Windows.Forms.ComboBox cbModelo;
         private System.Windows.Forms.ComboBox cbCombustible;
         private System.Windows.Forms.DataGridView dgvAutos;
+        private System.Windows.Forms.TextBox vCosto_renta;
+        private System.Windows.Forms.Label label14;
     }
 }

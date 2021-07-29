@@ -214,12 +214,19 @@ create table SOLICITUD(
     fecharInicio date not null,
     fechaFin date not null,
     clienteID int not null,
+    empleadoid int,
+    estado varchar(10),
     CONSTRAINT solicitudPK PRIMARY KEY(solicitudID),
     CONSTRAINT sucursalSolicitudPK foreign key(sucursalID) references SUCURSAL(sucursalID),
     CONSTRAINT vehiculoSolicitudPK foreign key(vehiculoID) references VEHICULO(vehiculoID),
     CONSTRAINT clienteSolicitudPK foreign key(clienteID) references CLIENTE(clienteID),
-    CONSTRAINT rentaSolicitudPK foreign key(tipo_rentaID) references TIPO_RENTA(tipo_rentaID)
+    CONSTRAINT rentaSolicitudPK foreign key(tipo_rentaID) references TIPO_RENTA(tipo_rentaID),
+    CONSTRAINT empleadoSolicitudPK foreign key(empleadoid) references EMPLEADO(empleadoID)
 );
+
+alter table solicitud add empleadoid int;
+alter table solicitud add CONSTRAINT empleadoSolicitudPK foreign key(empleadoid) references EMPLEADO(empleadoID);
+alter table solicitud add estado varchar(10);
 
 create table CONTRATO(
     contratoID int,

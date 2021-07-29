@@ -11,5 +11,6 @@ namespace Rentadora
         static public string conexion;
         static public string usuario;
         static public Form1 Login;
+        static public int idSelectAuto = 0;
     }
 }

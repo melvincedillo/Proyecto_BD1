@@ -30,6 +30,30 @@ namespace Rentadora
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label28 = new System.Windows.Forms.Label();
+            this.sEmpleado = new System.Windows.Forms.ComboBox();
+            this.label27 = new System.Windows.Forms.Label();
+            this.cbSucursal = new System.Windows.Forms.ComboBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.sVehiculo = new System.Windows.Forms.Button();
+            this.vColor = new System.Windows.Forms.TextBox();
+            this.vCombustible = new System.Windows.Forms.TextBox();
+            this.vVersion = new System.Windows.Forms.TextBox();
+            this.vCosto = new System.Windows.Forms.TextBox();
+            this.vMarca = new System.Windows.Forms.TextBox();
+            this.vModelo = new System.Windows.Forms.TextBox();
+            this.vPlaca = new System.Windows.Forms.TextBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.add_soli = new System.Windows.Forms.Button();
+            this.cerrarCliente = new System.Windows.Forms.Button();
+            this.idcprueba = new System.Windows.Forms.Label();
+            this.cargarCliente = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -63,15 +87,33 @@ namespace Rentadora
             this.cRtn = new System.Windows.Forms.TextBox();
             this.cP_apellido = new System.Windows.Forms.TextBox();
             this.cS_apellido = new System.Windows.Forms.TextBox();
-            this.cargarCliente = new System.Windows.Forms.Button();
-            this.idcprueba = new System.Windows.Forms.Label();
-            this.cerrarCliente = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.label28);
+            this.panel2.Controls.Add(this.sEmpleado);
+            this.panel2.Controls.Add(this.label27);
+            this.panel2.Controls.Add(this.cbSucursal);
+            this.panel2.Controls.Add(this.label24);
+            this.panel2.Controls.Add(this.sVehiculo);
+            this.panel2.Controls.Add(this.vColor);
+            this.panel2.Controls.Add(this.vCombustible);
+            this.panel2.Controls.Add(this.vVersion);
+            this.panel2.Controls.Add(this.vCosto);
+            this.panel2.Controls.Add(this.vMarca);
+            this.panel2.Controls.Add(this.vModelo);
+            this.panel2.Controls.Add(this.vPlaca);
+            this.panel2.Controls.Add(this.label26);
+            this.panel2.Controls.Add(this.label25);
+            this.panel2.Controls.Add(this.label23);
+            this.panel2.Controls.Add(this.label22);
+            this.panel2.Controls.Add(this.label21);
+            this.panel2.Controls.Add(this.label18);
+            this.panel2.Controls.Add(this.label17);
+            this.panel2.Controls.Add(this.add_soli);
             this.panel2.Controls.Add(this.cerrarCliente);
             this.panel2.Controls.Add(this.idcprueba);
             this.panel2.Controls.Add(this.cargarCliente);
@@ -114,6 +156,237 @@ namespace Rentadora
             this.panel2.Size = new System.Drawing.Size(1000, 550);
             this.panel2.TabIndex = 1;
             // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.ForeColor = System.Drawing.Color.Black;
+            this.label28.Location = new System.Drawing.Point(602, 229);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(65, 13);
+            this.label28.TabIndex = 99;
+            this.label28.Text = "SUCURSAL";
+            // 
+            // sEmpleado
+            // 
+            this.sEmpleado.FormattingEnabled = true;
+            this.sEmpleado.Location = new System.Drawing.Point(605, 245);
+            this.sEmpleado.Margin = new System.Windows.Forms.Padding(2);
+            this.sEmpleado.Name = "sEmpleado";
+            this.sEmpleado.Size = new System.Drawing.Size(107, 21);
+            this.sEmpleado.TabIndex = 98;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.ForeColor = System.Drawing.Color.Black;
+            this.label27.Location = new System.Drawing.Point(489, 229);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(65, 13);
+            this.label27.TabIndex = 97;
+            this.label27.Text = "SUCURSAL";
+            // 
+            // cbSucursal
+            // 
+            this.cbSucursal.FormattingEnabled = true;
+            this.cbSucursal.Location = new System.Drawing.Point(492, 245);
+            this.cbSucursal.Margin = new System.Windows.Forms.Padding(2);
+            this.cbSucursal.Name = "cbSucursal";
+            this.cbSucursal.Size = new System.Drawing.Size(107, 21);
+            this.cbSucursal.TabIndex = 96;
+            this.cbSucursal.SelectedIndexChanged += new System.EventHandler(this.cbSucursal_SelectedIndexChanged);
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.ForeColor = System.Drawing.Color.Black;
+            this.label24.Location = new System.Drawing.Point(602, 212);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(168, 16);
+            this.label24.TabIndex = 95;
+            this.label24.Text = "DATOS DE SOLICITUD";
+            // 
+            // sVehiculo
+            // 
+            this.sVehiculo.BackColor = System.Drawing.Color.LimeGreen;
+            this.sVehiculo.Location = new System.Drawing.Point(830, 170);
+            this.sVehiculo.Name = "sVehiculo";
+            this.sVehiculo.Size = new System.Drawing.Size(121, 23);
+            this.sVehiculo.TabIndex = 94;
+            this.sVehiculo.Text = "VEHICULOS";
+            this.sVehiculo.UseVisualStyleBackColor = false;
+            this.sVehiculo.Click += new System.EventHandler(this.sVehiculo_Click);
+            // 
+            // vColor
+            // 
+            this.vColor.Enabled = false;
+            this.vColor.Location = new System.Drawing.Point(718, 172);
+            this.vColor.Name = "vColor";
+            this.vColor.Size = new System.Drawing.Size(107, 20);
+            this.vColor.TabIndex = 93;
+            // 
+            // vCombustible
+            // 
+            this.vCombustible.Enabled = false;
+            this.vCombustible.Location = new System.Drawing.Point(605, 172);
+            this.vCombustible.Name = "vCombustible";
+            this.vCombustible.Size = new System.Drawing.Size(107, 20);
+            this.vCombustible.TabIndex = 92;
+            // 
+            // vVersion
+            // 
+            this.vVersion.Enabled = false;
+            this.vVersion.Location = new System.Drawing.Point(492, 172);
+            this.vVersion.Name = "vVersion";
+            this.vVersion.Size = new System.Drawing.Size(107, 20);
+            this.vVersion.TabIndex = 91;
+            // 
+            // vCosto
+            // 
+            this.vCosto.Enabled = false;
+            this.vCosto.Location = new System.Drawing.Point(831, 128);
+            this.vCosto.Name = "vCosto";
+            this.vCosto.Size = new System.Drawing.Size(107, 20);
+            this.vCosto.TabIndex = 90;
+            // 
+            // vMarca
+            // 
+            this.vMarca.Enabled = false;
+            this.vMarca.Location = new System.Drawing.Point(718, 128);
+            this.vMarca.Name = "vMarca";
+            this.vMarca.Size = new System.Drawing.Size(107, 20);
+            this.vMarca.TabIndex = 89;
+            // 
+            // vModelo
+            // 
+            this.vModelo.Enabled = false;
+            this.vModelo.Location = new System.Drawing.Point(605, 128);
+            this.vModelo.Name = "vModelo";
+            this.vModelo.Size = new System.Drawing.Size(107, 20);
+            this.vModelo.TabIndex = 88;
+            // 
+            // vPlaca
+            // 
+            this.vPlaca.Enabled = false;
+            this.vPlaca.Location = new System.Drawing.Point(492, 128);
+            this.vPlaca.Name = "vPlaca";
+            this.vPlaca.Size = new System.Drawing.Size(107, 20);
+            this.vPlaca.TabIndex = 87;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.ForeColor = System.Drawing.Color.Black;
+            this.label26.Location = new System.Drawing.Point(715, 112);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(45, 13);
+            this.label26.TabIndex = 86;
+            this.label26.Text = "MARCA";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.ForeColor = System.Drawing.Color.Black;
+            this.label25.Location = new System.Drawing.Point(828, 112);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(84, 13);
+            this.label25.TabIndex = 85;
+            this.label25.Text = "COSTO RENTA";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.ForeColor = System.Drawing.Color.Black;
+            this.label23.Location = new System.Drawing.Point(715, 156);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(44, 13);
+            this.label23.TabIndex = 83;
+            this.label23.Text = "COLOR";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.ForeColor = System.Drawing.Color.Black;
+            this.label22.Location = new System.Drawing.Point(602, 156);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(83, 13);
+            this.label22.TabIndex = 82;
+            this.label22.Text = "COMBUSTIBLE";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.ForeColor = System.Drawing.Color.Black;
+            this.label21.Location = new System.Drawing.Point(489, 156);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(55, 13);
+            this.label21.TabIndex = 81;
+            this.label21.Text = "VERSION";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.ForeColor = System.Drawing.Color.Black;
+            this.label18.Location = new System.Drawing.Point(602, 112);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(53, 13);
+            this.label18.TabIndex = 80;
+            this.label18.Text = "MODELO";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.ForeColor = System.Drawing.Color.Black;
+            this.label17.Location = new System.Drawing.Point(489, 112);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(41, 13);
+            this.label17.TabIndex = 79;
+            this.label17.Text = "PLACA";
+            // 
+            // add_soli
+            // 
+            this.add_soli.BackColor = System.Drawing.Color.LimeGreen;
+            this.add_soli.Location = new System.Drawing.Point(821, 388);
+            this.add_soli.Name = "add_soli";
+            this.add_soli.Size = new System.Drawing.Size(167, 23);
+            this.add_soli.TabIndex = 78;
+            this.add_soli.Text = "AGREGAR SOLICITUD";
+            this.add_soli.UseVisualStyleBackColor = false;
+            this.add_soli.Click += new System.EventHandler(this.add_soli_Click);
+            // 
+            // cerrarCliente
+            // 
+            this.cerrarCliente.BackColor = System.Drawing.Color.Red;
+            this.cerrarCliente.Location = new System.Drawing.Point(190, 114);
+            this.cerrarCliente.Name = "cerrarCliente";
+            this.cerrarCliente.Size = new System.Drawing.Size(65, 23);
+            this.cerrarCliente.TabIndex = 77;
+            this.cerrarCliente.Text = "CERRAR";
+            this.cerrarCliente.UseVisualStyleBackColor = false;
+            this.cerrarCliente.Visible = false;
+            this.cerrarCliente.Click += new System.EventHandler(this.cerrarCliente_Click);
+            // 
+            // idcprueba
+            // 
+            this.idcprueba.AutoSize = true;
+            this.idcprueba.ForeColor = System.Drawing.Color.Black;
+            this.idcprueba.Location = new System.Drawing.Point(390, 59);
+            this.idcprueba.Name = "idcprueba";
+            this.idcprueba.Size = new System.Drawing.Size(135, 13);
+            this.idcprueba.TabIndex = 76;
+            this.idcprueba.Text = "NUMERO DE IDENTIDAD";
+            // 
+            // cargarCliente
+            // 
+            this.cargarCliente.BackColor = System.Drawing.Color.Lime;
+            this.cargarCliente.Location = new System.Drawing.Point(190, 114);
+            this.cargarCliente.Name = "cargarCliente";
+            this.cargarCliente.Size = new System.Drawing.Size(65, 23);
+            this.cargarCliente.TabIndex = 75;
+            this.cargarCliente.Text = "CARGAR";
+            this.cargarCliente.UseVisualStyleBackColor = false;
+            this.cargarCliente.Click += new System.EventHandler(this.cargarCliente_Click);
+            // 
             // label16
             // 
             this.label16.AutoSize = true;
@@ -121,9 +394,9 @@ namespace Rentadora
             this.label16.ForeColor = System.Drawing.Color.Black;
             this.label16.Location = new System.Drawing.Point(602, 80);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(190, 16);
+            this.label16.Size = new System.Drawing.Size(172, 16);
             this.label16.TabIndex = 74;
-            this.label16.Text = "DATOS DE LA SOLICITUD";
+            this.label16.Text = "DATOS DEL VEHICULO";
             // 
             // label11
             // 
@@ -409,39 +682,6 @@ namespace Rentadora
             this.cS_apellido.Size = new System.Drawing.Size(100, 20);
             this.cS_apellido.TabIndex = 47;
             // 
-            // cargarCliente
-            // 
-            this.cargarCliente.BackColor = System.Drawing.Color.Lime;
-            this.cargarCliente.Location = new System.Drawing.Point(190, 114);
-            this.cargarCliente.Name = "cargarCliente";
-            this.cargarCliente.Size = new System.Drawing.Size(65, 23);
-            this.cargarCliente.TabIndex = 75;
-            this.cargarCliente.Text = "CARGAR";
-            this.cargarCliente.UseVisualStyleBackColor = false;
-            this.cargarCliente.Click += new System.EventHandler(this.cargarCliente_Click);
-            // 
-            // idcprueba
-            // 
-            this.idcprueba.AutoSize = true;
-            this.idcprueba.ForeColor = System.Drawing.Color.Black;
-            this.idcprueba.Location = new System.Drawing.Point(390, 59);
-            this.idcprueba.Name = "idcprueba";
-            this.idcprueba.Size = new System.Drawing.Size(135, 13);
-            this.idcprueba.TabIndex = 76;
-            this.idcprueba.Text = "NUMERO DE IDENTIDAD";
-            // 
-            // cerrarCliente
-            // 
-            this.cerrarCliente.BackColor = System.Drawing.Color.Red;
-            this.cerrarCliente.Location = new System.Drawing.Point(190, 114);
-            this.cerrarCliente.Name = "cerrarCliente";
-            this.cerrarCliente.Size = new System.Drawing.Size(65, 23);
-            this.cerrarCliente.TabIndex = 77;
-            this.cerrarCliente.Text = "CERRAR";
-            this.cerrarCliente.UseVisualStyleBackColor = false;
-            this.cerrarCliente.Visible = false;
-            this.cerrarCliente.Click += new System.EventHandler(this.cerrarCliente_Click);
-            // 
             // fmrSolicitudes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -496,5 +736,26 @@ namespace Rentadora
         private System.Windows.Forms.Button cargarCliente;
         private System.Windows.Forms.Label idcprueba;
         private System.Windows.Forms.Button cerrarCliente;
+        private System.Windows.Forms.Button add_soli;
+        private System.Windows.Forms.TextBox vColor;
+        private System.Windows.Forms.TextBox vCombustible;
+        private System.Windows.Forms.TextBox vVersion;
+        private System.Windows.Forms.TextBox vCosto;
+        private System.Windows.Forms.TextBox vMarca;
+        private System.Windows.Forms.TextBox vModelo;
+        private System.Windows.Forms.TextBox vPlaca;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Button sVehiculo;
+        private System.Windows.Forms.ComboBox cbSucursal;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.ComboBox sEmpleado;
     }
 }
