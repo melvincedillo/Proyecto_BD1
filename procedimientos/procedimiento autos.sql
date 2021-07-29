@@ -97,9 +97,9 @@ create or replace procedure update_vehiculo(placa VARCHAR,fecha DATE, costo_a FL
 
 --Procedimiento para insertar auto
 
-create or replace procedure insert_vehiculos(placa VARCHAR,fecha DATE, costo FLOAT, cb INT, modelo INT,mar INT, color INT, tv INT, vers INT, est INT, seguro FLOAT)
+create or replace procedure insert_vehiculos(plac VARCHAR,fecha DATE, costo_a FLOAT, costo_r float, cb INT, modelo INT,mar INT, color INT, tv INT, vers INT, est INT, segur FLOAT)
     as
     begin
-        insert into vehiculo (placa,fecha_adquisicion,costo_vehiculo,combustibleid,modeloid,marcaid,colorid,tipo_vehiculoid,versionid,estadoid,seguro) 
-        values (placa,fecha,costo,cb,modelo,mar,color,tv,vers,est,seguro);
+        insert into vehiculo (placa,fecha_adquisicion,costo_vehiculo, costo_renta,combustibleid,modeloid,marcaid,colorid,tipo_vehiculoid,versionid,estadoid,seguro) 
+        values (plac,fecha,costo_a, costo_r,cb,modelo,mar,color,tv,vers,est,segur);
     end;
