@@ -42,12 +42,18 @@ namespace Rentadora
             adaptador.Fill(table);
             dgvAutosSelect.DataSource = table;
             oracle.Close();
-            //dgvAutos.Columns[4].Visible = false;
+            dgvAutosSelect.Columns[0].Visible = false;
+            dgvAutosSelect.Columns[9].Visible = false;
         }
 
         private void SelectAuto_Load(object sender, EventArgs e)
         {
             mostrarAutos();
+        }
+
+        private void dgvAutosSelect_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Variable.idSelectAuto = Convert.ToInt32(dgvAutosSelect.SelectedRows[0].Cells[0].Value);
         }
     }
 }

@@ -50,4 +50,3 @@ C:\Users\M.Elias Cedillo\Desktop\Respaldo Proyecto\Rentadora\obj\Debug\Rentadora
 C:\Users\M.Elias Cedillo\Desktop\Respaldo Proyecto\Rentadora\obj\Debug\Rentadora.exe
 C:\Users\M.Elias Cedillo\Desktop\Respaldo Proyecto\Rentadora\obj\Debug\Rentadora.pdb
 C:\Users\M.Elias Cedillo\Desktop\Respaldo Proyecto\Rentadora\obj\Debug\Rentadora.SelectAuto.resources
-C:\Users\DELL\Documents\GitHub\Proyecto_BD1\Rentadora\obj\Debug\Rentadora.SelectAuto.resources

@@ -236,7 +236,7 @@ namespace Rentadora
                 comando.Parameters.Add("plac", OracleType.VarChar).Value = cPlaca.Text;
                 comando.Parameters.Add("fecha", OracleType.DateTime).Value = dpFecha_Adq.Text;
                 comando.Parameters.Add("costo_a", OracleType.Float).Value = Convert.ToDouble(cCosto_Vehiculo.Text);
-                comando.Parameters.Add("costo_r", OracleType.Float).Value = Convert.ToDouble(vCosto_renta.Text);
+                comando.Parameters.Add("costo_r", OracleType.Float).Value = float.Parse(vCosto_renta.Text);
                 comando.Parameters.Add("cb", OracleType.Int32).Value = idCombustible;
                 comando.Parameters.Add("modelo", OracleType.Int32).Value = idModelo;
                 comando.Parameters.Add("mar", OracleType.Int32).Value = idMarca;
@@ -289,7 +289,7 @@ namespace Rentadora
             }
             catch
             {
-                MessageBox.Show("Error al actualizar Auto");
+                MessageBox.Show("Error al actualizar Empleado");
             }
             oracle.Close();
         }

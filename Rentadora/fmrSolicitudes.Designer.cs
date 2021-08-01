@@ -29,7 +29,17 @@ namespace Rentadora
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.sSubtotal = new System.Windows.Forms.TextBox();
+            this.label32 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.sFin = new System.Windows.Forms.DateTimePicker();
+            this.sInicio = new System.Windows.Forms.DateTimePicker();
+            this.label29 = new System.Windows.Forms.Label();
+            this.sfecha = new System.Windows.Forms.DateTimePicker();
             this.label28 = new System.Windows.Forms.Label();
             this.sEmpleado = new System.Windows.Forms.ComboBox();
             this.label27 = new System.Windows.Forms.Label();
@@ -52,7 +62,6 @@ namespace Rentadora
             this.label17 = new System.Windows.Forms.Label();
             this.add_soli = new System.Windows.Forms.Button();
             this.cerrarCliente = new System.Windows.Forms.Button();
-            this.idcprueba = new System.Windows.Forms.Label();
             this.cargarCliente = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -87,12 +96,29 @@ namespace Rentadora
             this.cRtn = new System.Windows.Forms.TextBox();
             this.cP_apellido = new System.Windows.Forms.TextBox();
             this.cS_apellido = new System.Windows.Forms.TextBox();
+            this.dgvSolicitudes = new System.Windows.Forms.DataGridView();
+            this.label33 = new System.Windows.Forms.Label();
+            this.eliminar = new System.Windows.Forms.Button();
+            this.editar = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSolicitudes)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.editar);
+            this.panel2.Controls.Add(this.eliminar);
+            this.panel2.Controls.Add(this.label33);
+            this.panel2.Controls.Add(this.dgvSolicitudes);
+            this.panel2.Controls.Add(this.sSubtotal);
+            this.panel2.Controls.Add(this.label32);
+            this.panel2.Controls.Add(this.label31);
+            this.panel2.Controls.Add(this.label30);
+            this.panel2.Controls.Add(this.sFin);
+            this.panel2.Controls.Add(this.sInicio);
+            this.panel2.Controls.Add(this.label29);
+            this.panel2.Controls.Add(this.sfecha);
             this.panel2.Controls.Add(this.label28);
             this.panel2.Controls.Add(this.sEmpleado);
             this.panel2.Controls.Add(this.label27);
@@ -115,7 +141,6 @@ namespace Rentadora
             this.panel2.Controls.Add(this.label17);
             this.panel2.Controls.Add(this.add_soli);
             this.panel2.Controls.Add(this.cerrarCliente);
-            this.panel2.Controls.Add(this.idcprueba);
             this.panel2.Controls.Add(this.cargarCliente);
             this.panel2.Controls.Add(this.label16);
             this.panel2.Controls.Add(this.label11);
@@ -156,30 +181,107 @@ namespace Rentadora
             this.panel2.Size = new System.Drawing.Size(1000, 550);
             this.panel2.TabIndex = 1;
             // 
+            // sSubtotal
+            // 
+            this.sSubtotal.Enabled = false;
+            this.sSubtotal.Location = new System.Drawing.Point(652, 357);
+            this.sSubtotal.Name = "sSubtotal";
+            this.sSubtotal.Size = new System.Drawing.Size(107, 20);
+            this.sSubtotal.TabIndex = 107;
+            this.sSubtotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.ForeColor = System.Drawing.Color.Black;
+            this.label32.Location = new System.Drawing.Point(602, 360);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(45, 13);
+            this.label32.TabIndex = 106;
+            this.label32.Text = "TOTAL:";
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.ForeColor = System.Drawing.Color.Black;
+            this.label31.Location = new System.Drawing.Point(738, 293);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(62, 13);
+            this.label31.TabIndex = 105;
+            this.label31.Text = "FECHA FIN";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.ForeColor = System.Drawing.Color.Black;
+            this.label30.Location = new System.Drawing.Point(489, 293);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(77, 13);
+            this.label30.TabIndex = 104;
+            this.label30.Text = "FECHA INICIO";
+            // 
+            // sFin
+            // 
+            this.sFin.Location = new System.Drawing.Point(738, 309);
+            this.sFin.Name = "sFin";
+            this.sFin.Size = new System.Drawing.Size(200, 20);
+            this.sFin.TabIndex = 103;
+            this.sFin.ValueChanged += new System.EventHandler(this.sFin_ValueChanged);
+            // 
+            // sInicio
+            // 
+            this.sInicio.Location = new System.Drawing.Point(492, 309);
+            this.sInicio.Name = "sInicio";
+            this.sInicio.Size = new System.Drawing.Size(200, 20);
+            this.sInicio.TabIndex = 102;
+            // 
+            // label29
+            // 
+            this.label29.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.ForeColor = System.Drawing.Color.Black;
+            this.label29.Location = new System.Drawing.Point(671, 41);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(66, 16);
+            this.label29.TabIndex = 101;
+            this.label29.Text = "FECHA: ";
+            // 
+            // sfecha
+            // 
+            this.sfecha.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.sfecha.Enabled = false;
+            this.sfecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sfecha.Location = new System.Drawing.Point(740, 36);
+            this.sfecha.Name = "sfecha";
+            this.sfecha.Size = new System.Drawing.Size(260, 21);
+            this.sfecha.TabIndex = 100;
+            // 
             // label28
             // 
             this.label28.AutoSize = true;
             this.label28.ForeColor = System.Drawing.Color.Black;
-            this.label28.Location = new System.Drawing.Point(602, 229);
+            this.label28.Location = new System.Drawing.Point(737, 230);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(65, 13);
+            this.label28.Size = new System.Drawing.Size(66, 13);
             this.label28.TabIndex = 99;
-            this.label28.Text = "SUCURSAL";
+            this.label28.Text = "EMPLEADO";
             // 
             // sEmpleado
             // 
             this.sEmpleado.FormattingEnabled = true;
-            this.sEmpleado.Location = new System.Drawing.Point(605, 245);
+            this.sEmpleado.Location = new System.Drawing.Point(740, 245);
             this.sEmpleado.Margin = new System.Windows.Forms.Padding(2);
             this.sEmpleado.Name = "sEmpleado";
-            this.sEmpleado.Size = new System.Drawing.Size(107, 21);
+            this.sEmpleado.Size = new System.Drawing.Size(172, 21);
             this.sEmpleado.TabIndex = 98;
+            this.sEmpleado.SelectedIndexChanged += new System.EventHandler(this.sEmpleado_SelectedIndexChanged);
             // 
             // label27
             // 
             this.label27.AutoSize = true;
             this.label27.ForeColor = System.Drawing.Color.Black;
-            this.label27.Location = new System.Drawing.Point(489, 229);
+            this.label27.Location = new System.Drawing.Point(514, 229);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(65, 13);
             this.label27.TabIndex = 97;
@@ -188,10 +290,10 @@ namespace Rentadora
             // cbSucursal
             // 
             this.cbSucursal.FormattingEnabled = true;
-            this.cbSucursal.Location = new System.Drawing.Point(492, 245);
+            this.cbSucursal.Location = new System.Drawing.Point(517, 245);
             this.cbSucursal.Margin = new System.Windows.Forms.Padding(2);
             this.cbSucursal.Name = "cbSucursal";
-            this.cbSucursal.Size = new System.Drawing.Size(107, 21);
+            this.cbSucursal.Size = new System.Drawing.Size(168, 21);
             this.cbSucursal.TabIndex = 96;
             this.cbSucursal.SelectedIndexChanged += new System.EventHandler(this.cbSucursal_SelectedIndexChanged);
             // 
@@ -346,7 +448,7 @@ namespace Rentadora
             // add_soli
             // 
             this.add_soli.BackColor = System.Drawing.Color.LimeGreen;
-            this.add_soli.Location = new System.Drawing.Point(821, 388);
+            this.add_soli.Location = new System.Drawing.Point(812, 354);
             this.add_soli.Name = "add_soli";
             this.add_soli.Size = new System.Drawing.Size(167, 23);
             this.add_soli.TabIndex = 78;
@@ -365,16 +467,6 @@ namespace Rentadora
             this.cerrarCliente.UseVisualStyleBackColor = false;
             this.cerrarCliente.Visible = false;
             this.cerrarCliente.Click += new System.EventHandler(this.cerrarCliente_Click);
-            // 
-            // idcprueba
-            // 
-            this.idcprueba.AutoSize = true;
-            this.idcprueba.ForeColor = System.Drawing.Color.Black;
-            this.idcprueba.Location = new System.Drawing.Point(390, 59);
-            this.idcprueba.Name = "idcprueba";
-            this.idcprueba.Size = new System.Drawing.Size(135, 13);
-            this.idcprueba.TabIndex = 76;
-            this.idcprueba.Text = "NUMERO DE IDENTIDAD";
             // 
             // cargarCliente
             // 
@@ -555,6 +647,7 @@ namespace Rentadora
             this.cbMunicipio.Name = "cbMunicipio";
             this.cbMunicipio.Size = new System.Drawing.Size(143, 21);
             this.cbMunicipio.TabIndex = 40;
+            this.cbMunicipio.SelectedIndexChanged += new System.EventHandler(this.cbMunicipio_SelectedIndexChanged);
             // 
             // label8
             // 
@@ -682,6 +775,88 @@ namespace Rentadora
             this.cS_apellido.Size = new System.Drawing.Size(100, 20);
             this.cS_apellido.TabIndex = 47;
             // 
+            // dgvSolicitudes
+            // 
+            this.dgvSolicitudes.AllowUserToAddRows = false;
+            this.dgvSolicitudes.AllowUserToDeleteRows = false;
+            this.dgvSolicitudes.AllowUserToOrderColumns = true;
+            this.dgvSolicitudes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvSolicitudes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvSolicitudes.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvSolicitudes.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgvSolicitudes.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvSolicitudes.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvSolicitudes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSolicitudes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvSolicitudes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Arial Narrow", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(8);
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvSolicitudes.DefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvSolicitudes.Location = new System.Drawing.Point(18, 481);
+            this.dgvSolicitudes.Name = "dgvSolicitudes";
+            this.dgvSolicitudes.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvSolicitudes.RowHeadersVisible = false;
+            this.dgvSolicitudes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvSolicitudes.Size = new System.Drawing.Size(674, 57);
+            this.dgvSolicitudes.TabIndex = 108;
+            this.dgvSolicitudes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSolicitudes_CellClick);
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.BackColor = System.Drawing.Color.Transparent;
+            this.label33.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label33.ForeColor = System.Drawing.Color.Black;
+            this.label33.Location = new System.Drawing.Point(14, 454);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(246, 24);
+            this.label33.TabIndex = 109;
+            this.label33.Text = "LISTA DE SOLICITUDES";
+            // 
+            // eliminar
+            // 
+            this.eliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.eliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.eliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.eliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.eliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.eliminar.Location = new System.Drawing.Point(738, 481);
+            this.eliminar.Name = "eliminar";
+            this.eliminar.Size = new System.Drawing.Size(98, 33);
+            this.eliminar.TabIndex = 110;
+            this.eliminar.Text = "ELIMINAR";
+            this.eliminar.UseVisualStyleBackColor = false;
+            this.eliminar.Click += new System.EventHandler(this.eliminar_Click);
+            // 
+            // editar
+            // 
+            this.editar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.editar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.editar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Cyan;
+            this.editar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.editar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editar.Location = new System.Drawing.Point(853, 481);
+            this.editar.Name = "editar";
+            this.editar.Size = new System.Drawing.Size(98, 33);
+            this.editar.TabIndex = 111;
+            this.editar.Text = "EDITAR";
+            this.editar.UseVisualStyleBackColor = false;
+            // 
             // fmrSolicitudes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -694,6 +869,7 @@ namespace Rentadora
             this.Load += new System.EventHandler(this.fmrSolicitudes_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSolicitudes)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -734,7 +910,6 @@ namespace Rentadora
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button cargarCliente;
-        private System.Windows.Forms.Label idcprueba;
         private System.Windows.Forms.Button cerrarCliente;
         private System.Windows.Forms.Button add_soli;
         private System.Windows.Forms.TextBox vColor;
@@ -757,5 +932,17 @@ namespace Rentadora
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.ComboBox sEmpleado;
+        private System.Windows.Forms.DateTimePicker sfecha;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.TextBox sSubtotal;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.DateTimePicker sFin;
+        private System.Windows.Forms.DateTimePicker sInicio;
+        private System.Windows.Forms.Button editar;
+        private System.Windows.Forms.Button eliminar;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.DataGridView dgvSolicitudes;
     }
 }

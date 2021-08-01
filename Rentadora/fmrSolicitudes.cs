@@ -16,11 +16,15 @@ namespace Rentadora
         private OracleConnection oracle = new OracleConnection(Variable.conexion);
         private List<int> idmunicipios = new List<int>();
         private List<int> idSucursales = new List<int>();
+        private List<int> idEmpleados = new List<int>();
         private int idempleado;
         private int idSucursal;
         private int idmunicipio;
         private int iddireccion;
         private int idcliente = 0;
+        private float subtotal = 0;
+        private float costo_renta = 0;
+        private int idsolicitud = 0;
         bool cargarC = true;
 
         public fmrSolicitudes()
@@ -32,7 +36,9 @@ namespace Rentadora
         {
             cargarDepartamentos();
             cargarSucursales();
-            idcprueba.Text = idcliente.ToString();
+            cargarEmpleados();
+            mostrarSolicitudes();
+            sSubtotal.Text = subtotal.ToString();
         }
 
         private void cargarDepartamentos()
@@ -83,12 +89,12 @@ namespace Rentadora
             cargarMunicipios(dep + 1);
         }
 
-        private void cargarClienteEditar()
+        private void cargarClienteEditar(string id)
         {
             try
             {
                 oracle.Open();
-                OracleCommand comando = new OracleCommand("Select * from rentadora.cliente where identidad =" + cIdentidad.Text, oracle);
+                OracleCommand comando = new OracleCommand("Select * from rentadora.cliente where identidad =" + id, oracle);
                 OracleDataReader registro = comando.ExecuteReader();
                 registro.Read();
                 cIdentidad.Text = registro["identidad"].ToString();
@@ -130,6 +136,8 @@ namespace Rentadora
                 cbDepartamento.Text = dep;
                 cbMunicipio.Text = muni;
                 bloquearCliente();
+                cerrarCliente.Visible = true;
+                cargarCliente.Visible = false;
             }
             catch
             {
@@ -161,10 +169,7 @@ namespace Rentadora
 
         private void cargarCliente_Click(object sender, EventArgs e)
         {
-            cargarClienteEditar();
-            idcprueba.Text = idcliente.ToString();
-            cerrarCliente.Visible = true;
-            cargarCliente.Visible = false;
+            cargarClienteEditar(cIdentidad.Text);
         }
 
         private void cerrarCliente_Click(object sender, EventArgs e)
@@ -172,28 +177,30 @@ namespace Rentadora
             bloquearCliente();
             limpiarForm();
             idcliente = 0;
-            idcprueba.Text = idcliente.ToString();
             cerrarCliente.Visible = false;
             cargarCliente.Visible = true;
         }
 
         private void limpiarForm()
         {
-            cP_nombre.Text = "";
-            cS_nombre.Text = "";
-            cP_apellido.Text = "";
-            cS_apellido.Text = "";
-            cIdentidad.Text = "";
-            cRtn.Text = "";
-            cSexo.Text = "";
-            tel1.Text = "";
-            tel2.Text = "";
-            tel3.Text = "";
-            cbDepartamento.Text = "";
-            cbMunicipio.Text = "";
-            col_aldea.Text = "";
-            casa.Text = "";
-            calle.Text = "";
+            cP_nombre.Text = ""; cS_nombre.Text = ""; cP_apellido.Text = ""; cS_apellido.Text = ""; cIdentidad.Text = "";
+            cRtn.Text = ""; cSexo.Text = ""; tel1.Text = ""; tel2.Text = ""; tel3.Text = "";  cbDepartamento.Text = ""; 
+            cbMunicipio.Text = ""; col_aldea.Text = ""; casa.Text = ""; calle.Text = "";
+        }
+
+        private void limpiarForm2()
+        {
+            limpiarForm();
+            if (cargarC == false) { bloquearCliente(); }
+            if (cerrarCliente.Visible == true) {
+                cerrarCliente.Visible = false;
+                cargarCliente.Visible = true;
+            }
+            if (cerrarCliente.Visible == false && cargarCliente.Visible == false) { cargarCliente.Visible = true; }
+            vPlaca.Text = ""; vVersion.Text = ""; vColor.Text = ""; vCombustible.Text = ""; vCosto.Text = ""; vMarca.Text = ""; vModelo.Text = "";
+            sInicio.Value = DateTime.Now; sFin.Value = DateTime.Now;
+            sSubtotal.Text = "0"; cbSucursal.Text = ""; sEmpleado.Text = "";
+            idcliente = 0; costo_renta = 0; subtotal = 0; Variable.idSelectAuto = 0;
         }
 
         private void crearDireccion()
@@ -269,23 +276,33 @@ namespace Rentadora
             if (idcliente == 0) {
                 crearDireccion();
                 crearCliente();
-                limpiarForm();
             }
-
-
-
+            crearSolicitud();
+            mostrarSolicitudes();
+            limpiarForm2();
         }
 
         private void cargarSucursales()
         {
             oracle.Open();
             OracleCommand sucursales = new OracleCommand("select sucursalid, sucursal from rentadora.sucursal", oracle);
+            OracleDataReader sucursal = sucursales.ExecuteReader();
+            while (sucursal.Read())
+            {
+                cbSucursal.Items.Add(sucursal["sucursal"].ToString());
+                idSucursales.Add(Int32.Parse(sucursal["sucursalid"].ToString()));
+            }
+            oracle.Close();
+        }
+
+        private void cargarEmpleados() {
+            oracle.Open();
+            OracleCommand sucursales = new OracleCommand("select empleadoid, nombre from rentadora.empleado", oracle);
             OracleDataReader empleado = sucursales.ExecuteReader();
             while (empleado.Read())
             {
-                cbSucursal.Items.Add(empleado["sucursal"].ToString());
-                idSucursales.Add(Int32.Parse(empleado["sucursalid"].ToString()));
-                //idSucursal =Int32.Parse(empleado["sucursalid"].ToString());
+                sEmpleado.Items.Add(empleado["nombre"].ToString());
+                idEmpleados.Add(Int32.Parse(empleado["empleadoid"].ToString()));
             }
             oracle.Close();
         }
@@ -298,7 +315,123 @@ namespace Rentadora
         private void sVehiculo_Click(object sender, EventArgs e)
         {
             SelectAuto auto = new SelectAuto();
-            auto.ShowDialog();
+            if (auto.ShowDialog() == DialogResult.OK) { cargarAuto(); }
+        }
+
+        private void cargarAuto()
+        {
+            try
+            {
+                oracle.Open();
+                OracleCommand comando = new OracleCommand("Select v.costo_renta, v.placa, comb.combustible, modelo.modelo, marca.marca, color.color,vers.version from rentadora.vehiculo v INNER JOIN rentadora.combustible comb ON comb.combustibleid = v.combustibleid INNER JOIN rentadora.modelo modelo ON modelo.modeloid = v.modeloid INNER JOIN rentadora.marca marca ON marca.marcaid = v.marcaid INNER JOIN rentadora.color color ON color.colorid = v.colorid INNER JOIN rentadora.version vers ON vers.versionid = v.versionid where v.vehiculoid =" + Variable.idSelectAuto, oracle);
+                OracleDataReader registro = comando.ExecuteReader();
+                registro.Read();
+                vPlaca.Text = registro["placa"].ToString();
+                vCombustible.Text = registro["combustible"].ToString();
+                vModelo.Text = registro["modelo"].ToString();
+                vMarca.Text = registro["marca"].ToString();
+                vColor.Text = registro["color"].ToString();
+                vVersion.Text = registro["version"].ToString();
+                vCosto.Text = registro["costo_renta"].ToString();
+                costo_renta = float.Parse(registro["costo_renta"].ToString());
+            }
+            catch
+            {
+                MessageBox.Show("No se puede seleccionar el auto");
+            }
+            oracle.Close();
+        }
+
+        private void sEmpleado_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            idempleado = idEmpleados[sEmpleado.SelectedIndex];
+        }
+
+        private void crearSolicitud()
+        {
+            try
+            {
+                oracle.Open();
+                OracleCommand comando = new OracleCommand("rentadora.insertar_solicitud", oracle);
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.Parameters.Add("fechas", OracleType.DateTime).Value = sfecha.Text;
+                comando.Parameters.Add("fechai", OracleType.DateTime).Value = sInicio.Text;
+                comando.Parameters.Add("fechaf", OracleType.DateTime).Value = sFin.Text;
+                comando.Parameters.Add("cliente", OracleType.Int32).Value = idcliente;
+                comando.Parameters.Add("empleado", OracleType.Int32).Value = idempleado;
+                comando.Parameters.Add("sucursal", OracleType.Int32).Value = idSucursal;
+                comando.Parameters.Add("vehiculo", OracleType.Int32).Value = Variable.idSelectAuto;
+                comando.Parameters.Add("subt", OracleType.Float).Value = subtotal;
+                comando.ExecuteNonQuery();
+            }
+            catch
+            {
+                MessageBox.Show("Imposible crear solicitud");
+            }
+            oracle.Close();
+        }
+
+        private void totalDias() {
+            DateTime fecha_i = sInicio.Value.Date;
+            DateTime fecha_f = sFin.Value.Date;
+            TimeSpan dif = fecha_f - fecha_i;
+            int dias = dif.Days;
+            subtotal = costo_renta * dias;
+        }
+
+        private void sFin_ValueChanged(object sender, EventArgs e)
+        {
+            totalDias();
+            sSubtotal.Text = subtotal.ToString();
+        }
+
+        private void cbMunicipio_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            idmunicipio = idmunicipios[cbMunicipio.SelectedIndex];
+        }
+
+        private void mostrarSolicitudes()
+        {
+            oracle.Open();
+
+            OracleCommand comando = new OracleCommand("rentadora.select_solicitud", oracle);
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+            comando.Parameters.Add("registros", OracleType.Cursor).Direction = ParameterDirection.Output;
+
+            OracleDataAdapter adaptador = new OracleDataAdapter();
+            adaptador.SelectCommand = comando;
+            DataTable table = new DataTable();
+            adaptador.Fill(table);
+            dgvSolicitudes.DataSource = table;
+            oracle.Close();
+            dgvSolicitudes.Columns[3].Visible = false; //idcliente
+            dgvSolicitudes.Columns[7].Visible = false; //idvehiculo
+            dgvSolicitudes.Columns[8].Visible = false; //inicio
+            dgvSolicitudes.Columns[9].Visible = false; //fin
+        }
+
+        private void dgvSolicitudes_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            idsolicitud = Convert.ToInt32(dgvSolicitudes.SelectedRows[0].Cells[0].Value);
+        }
+
+        private void eliminar_Click(object sender, EventArgs e)
+        {
+            if (idsolicitud != 0)
+            {
+                try {
+                    oracle.Open();
+                    OracleCommand comando = new OracleCommand("rentadora.delete_solicitud", oracle);
+                    comando.CommandType = System.Data.CommandType.StoredProcedure;
+                    comando.Parameters.Add("idS", OracleType.Int32).Value = idsolicitud;
+                    comando.ExecuteNonQuery();
+                } catch 
+                {
+                    MessageBox.Show("Imposible borrar");
+                }
+                oracle.Close();
+                mostrarSolicitudes();
+            }
         }
     }
 }

@@ -27,27 +27,12 @@ CREATE TABLE DIRECCION(
 	CONSTRAINT municipioFK FOREIGN KEY (municipioID) REFERENCES MUNICIPIO (municipioID)
 );
 
-CREATE TABLE TIPO_RENTA(
-	tipo_rentaID INT,
-    costo float,
-	tipo_renta VARCHAR(20) NOT NULL,
-	CONSTRAINT tipo_rentaPK PRIMARY KEY (tipo_rentaID)
-);
-
 create table DANIO(
     danioID int,
     danio varchar(20) not null,
     costo float not null,
     CONSTRAINT danioPK PRIMARY KEY(danioID)
 ); 
-
-CREATE TABLE RECIBIR(
-	recibirID INT,
-    direccionID INT,
-	fecha DATE NOT NULL,
-	CONSTRAINT devolucionPK PRIMARY KEY (recibirID),
-    CONSTRAINT direccionEntregaPK FOREIGN KEY (direccionID) REFERENCES DIRECCION(direccionID)
-);
 
 CREATE TABLE ORIGEN(
 	origenID INT,
@@ -204,6 +189,12 @@ CREATE TABLE CLIENTExREFERENCIA(
 	CONSTRAINT referenciaClienteFK FOREIGN KEY (referenciaID) REFERENCES REFERENCIA (referenciaID)
 );
 
+create table estado_solicitud(
+    estadoid int,
+    estado varchar(20),
+    constraint e_s_PK primary key (estadoid)
+);
+
 create table SOLICITUD(
     solicitudID int,
     fecha_solicitud date not null,
@@ -214,19 +205,30 @@ create table SOLICITUD(
     fechaFin date not null,
     clienteID int not null,
     empleadoid int,
-    estado varchar(10),
+    estadoid int,
     CONSTRAINT solicitudPK PRIMARY KEY(solicitudID),
     CONSTRAINT sucursalSolicitudPK foreign key(sucursalID) references SUCURSAL(sucursalID),
     CONSTRAINT vehiculoSolicitudPK foreign key(vehiculoID) references VEHICULO(vehiculoID),
     CONSTRAINT clienteSolicitudPK foreign key(clienteID) references CLIENTE(clienteID),
-    CONSTRAINT empleadoSolicitudPK foreign key(empleadoid) references EMPLEADO(empleadoID)
+    CONSTRAINT empleadoSolicitudPK foreign key(empleadoid) references EMPLEADO(empleadoID),
+    CONSTRAINT estadoSolicitudFK foreign key(estadoid) references estado_solicitud(estadoid)
 );
-
+---esta parte por si ya tienen montada la base de datos
 alter table solicitud add empleadoid int;
 alter table solicitud add CONSTRAINT empleadoSolicitudPK foreign key(empleadoid) references EMPLEADO(empleadoID);
-alter table solicitud add estado varchar(10);
 alter table solicitud drop CONSTRAINT rentaSolicitudPK;
 alter table solicitud drop column tipo_rentaID;
+
+create table estado_solicitud(
+estadoid int,
+estado varchar(20),
+constraint e_s_PK primary key (estadoid)
+);
+
+alter table solicitud drop column estado;
+alter table solicitud add estadoid int;
+alter table solicitud add CONSTRAINT estadoSolicitudFK foreign key(estadoid) references estado_solicitud(estadoid);
+--finaliza parte alterna
 
 create table CONTRATO(
     contratoID int,
@@ -278,7 +280,11 @@ CREATE TABLE DEVOLUCIONxDANIOS(
 -------------------------------------------------------------------------------------------------------------------------------------
 --                                                 D M L SISTEMA RENTAS DE AUTOS
 -------------------------------------------------------------------------------------------------------------------------------------
-
+--Insertar datos estado_Solicitud
+insert into estado_solicitud values (0, 'En espera');
+insert into estado_solicitud values (1, 'En contrato');
+insert into estado_solicitud values (2, 'Finalizada sin pagar');
+insert into estado_solicitud values (3, 'Finalizada');
 
 --Insertando Datos Municipio
 INSERT INTO MUNICIPIO VALUES(1,'La Ceiba', 1);
