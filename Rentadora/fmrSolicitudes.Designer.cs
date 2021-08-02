@@ -32,8 +32,11 @@ namespace Rentadora
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.editar = new System.Windows.Forms.Button();
+            this.eliminar = new System.Windows.Forms.Button();
+            this.label33 = new System.Windows.Forms.Label();
+            this.dgvSolicitudes = new System.Windows.Forms.DataGridView();
             this.sSubtotal = new System.Windows.Forms.TextBox();
-            this.label32 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
             this.sFin = new System.Windows.Forms.DateTimePicker();
@@ -96,10 +99,7 @@ namespace Rentadora
             this.cRtn = new System.Windows.Forms.TextBox();
             this.cP_apellido = new System.Windows.Forms.TextBox();
             this.cS_apellido = new System.Windows.Forms.TextBox();
-            this.dgvSolicitudes = new System.Windows.Forms.DataGridView();
-            this.label33 = new System.Windows.Forms.Label();
-            this.eliminar = new System.Windows.Forms.Button();
-            this.editar = new System.Windows.Forms.Button();
+            this.label34 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSolicitudes)).BeginInit();
             this.SuspendLayout();
@@ -107,12 +107,12 @@ namespace Rentadora
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.label34);
             this.panel2.Controls.Add(this.editar);
             this.panel2.Controls.Add(this.eliminar);
             this.panel2.Controls.Add(this.label33);
             this.panel2.Controls.Add(this.dgvSolicitudes);
             this.panel2.Controls.Add(this.sSubtotal);
-            this.panel2.Controls.Add(this.label32);
             this.panel2.Controls.Add(this.label31);
             this.panel2.Controls.Add(this.label30);
             this.panel2.Controls.Add(this.sFin);
@@ -181,6 +181,89 @@ namespace Rentadora
             this.panel2.Size = new System.Drawing.Size(1000, 550);
             this.panel2.TabIndex = 1;
             // 
+            // editar
+            // 
+            this.editar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.editar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.editar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Cyan;
+            this.editar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.editar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editar.Location = new System.Drawing.Point(853, 481);
+            this.editar.Name = "editar";
+            this.editar.Size = new System.Drawing.Size(98, 33);
+            this.editar.TabIndex = 111;
+            this.editar.Text = "EDITAR";
+            this.editar.UseVisualStyleBackColor = false;
+            this.editar.Click += new System.EventHandler(this.editar_Click);
+            // 
+            // eliminar
+            // 
+            this.eliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.eliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.eliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.eliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.eliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.eliminar.Location = new System.Drawing.Point(738, 481);
+            this.eliminar.Name = "eliminar";
+            this.eliminar.Size = new System.Drawing.Size(98, 33);
+            this.eliminar.TabIndex = 110;
+            this.eliminar.Text = "ELIMINAR";
+            this.eliminar.UseVisualStyleBackColor = false;
+            this.eliminar.Click += new System.EventHandler(this.eliminar_Click);
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.BackColor = System.Drawing.Color.Transparent;
+            this.label33.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label33.ForeColor = System.Drawing.Color.Black;
+            this.label33.Location = new System.Drawing.Point(14, 454);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(246, 24);
+            this.label33.TabIndex = 109;
+            this.label33.Text = "LISTA DE SOLICITUDES";
+            // 
+            // dgvSolicitudes
+            // 
+            this.dgvSolicitudes.AllowUserToAddRows = false;
+            this.dgvSolicitudes.AllowUserToDeleteRows = false;
+            this.dgvSolicitudes.AllowUserToOrderColumns = true;
+            this.dgvSolicitudes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvSolicitudes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvSolicitudes.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvSolicitudes.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgvSolicitudes.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvSolicitudes.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvSolicitudes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSolicitudes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvSolicitudes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Arial Narrow", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(8);
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvSolicitudes.DefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvSolicitudes.Location = new System.Drawing.Point(18, 481);
+            this.dgvSolicitudes.Name = "dgvSolicitudes";
+            this.dgvSolicitudes.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvSolicitudes.RowHeadersVisible = false;
+            this.dgvSolicitudes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvSolicitudes.Size = new System.Drawing.Size(674, 57);
+            this.dgvSolicitudes.TabIndex = 108;
+            this.dgvSolicitudes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSolicitudes_CellClick);
+            // 
             // sSubtotal
             // 
             this.sSubtotal.Enabled = false;
@@ -189,16 +272,6 @@ namespace Rentadora
             this.sSubtotal.Size = new System.Drawing.Size(107, 20);
             this.sSubtotal.TabIndex = 107;
             this.sSubtotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.ForeColor = System.Drawing.Color.Black;
-            this.label32.Location = new System.Drawing.Point(602, 360);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(45, 13);
-            this.label32.TabIndex = 106;
-            this.label32.Text = "TOTAL:";
             // 
             // label31
             // 
@@ -310,12 +383,14 @@ namespace Rentadora
             // 
             // sVehiculo
             // 
-            this.sVehiculo.BackColor = System.Drawing.Color.LimeGreen;
+            this.sVehiculo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.sVehiculo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Lime;
+            this.sVehiculo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.sVehiculo.Location = new System.Drawing.Point(830, 170);
             this.sVehiculo.Name = "sVehiculo";
-            this.sVehiculo.Size = new System.Drawing.Size(121, 23);
+            this.sVehiculo.Size = new System.Drawing.Size(137, 23);
             this.sVehiculo.TabIndex = 94;
-            this.sVehiculo.Text = "VEHICULOS";
+            this.sVehiculo.Text = "SELECCIONAR AUTO";
             this.sVehiculo.UseVisualStyleBackColor = false;
             this.sVehiculo.Click += new System.EventHandler(this.sVehiculo_Click);
             // 
@@ -447,7 +522,9 @@ namespace Rentadora
             // 
             // add_soli
             // 
-            this.add_soli.BackColor = System.Drawing.Color.LimeGreen;
+            this.add_soli.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.add_soli.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Lime;
+            this.add_soli.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.add_soli.Location = new System.Drawing.Point(812, 354);
             this.add_soli.Name = "add_soli";
             this.add_soli.Size = new System.Drawing.Size(167, 23);
@@ -458,7 +535,9 @@ namespace Rentadora
             // 
             // cerrarCliente
             // 
-            this.cerrarCliente.BackColor = System.Drawing.Color.Red;
+            this.cerrarCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.cerrarCliente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.cerrarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cerrarCliente.Location = new System.Drawing.Point(190, 114);
             this.cerrarCliente.Name = "cerrarCliente";
             this.cerrarCliente.Size = new System.Drawing.Size(65, 23);
@@ -470,7 +549,9 @@ namespace Rentadora
             // 
             // cargarCliente
             // 
-            this.cargarCliente.BackColor = System.Drawing.Color.Lime;
+            this.cargarCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.cargarCliente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Lime;
+            this.cargarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cargarCliente.Location = new System.Drawing.Point(190, 114);
             this.cargarCliente.Name = "cargarCliente";
             this.cargarCliente.Size = new System.Drawing.Size(65, 23);
@@ -775,87 +856,15 @@ namespace Rentadora
             this.cS_apellido.Size = new System.Drawing.Size(100, 20);
             this.cS_apellido.TabIndex = 47;
             // 
-            // dgvSolicitudes
+            // label34
             // 
-            this.dgvSolicitudes.AllowUserToAddRows = false;
-            this.dgvSolicitudes.AllowUserToDeleteRows = false;
-            this.dgvSolicitudes.AllowUserToOrderColumns = true;
-            this.dgvSolicitudes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvSolicitudes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvSolicitudes.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgvSolicitudes.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dgvSolicitudes.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvSolicitudes.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgvSolicitudes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvSolicitudes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvSolicitudes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Arial Narrow", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(8);
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvSolicitudes.DefaultCellStyle = dataGridViewCellStyle6;
-            this.dgvSolicitudes.Location = new System.Drawing.Point(18, 481);
-            this.dgvSolicitudes.Name = "dgvSolicitudes";
-            this.dgvSolicitudes.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgvSolicitudes.RowHeadersVisible = false;
-            this.dgvSolicitudes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSolicitudes.Size = new System.Drawing.Size(674, 57);
-            this.dgvSolicitudes.TabIndex = 108;
-            this.dgvSolicitudes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSolicitudes_CellClick);
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.BackColor = System.Drawing.Color.Transparent;
-            this.label33.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label33.ForeColor = System.Drawing.Color.Black;
-            this.label33.Location = new System.Drawing.Point(14, 454);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(246, 24);
-            this.label33.TabIndex = 109;
-            this.label33.Text = "LISTA DE SOLICITUDES";
-            // 
-            // eliminar
-            // 
-            this.eliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.eliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.eliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.eliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.eliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.eliminar.Location = new System.Drawing.Point(738, 481);
-            this.eliminar.Name = "eliminar";
-            this.eliminar.Size = new System.Drawing.Size(98, 33);
-            this.eliminar.TabIndex = 110;
-            this.eliminar.Text = "ELIMINAR";
-            this.eliminar.UseVisualStyleBackColor = false;
-            this.eliminar.Click += new System.EventHandler(this.eliminar_Click);
-            // 
-            // editar
-            // 
-            this.editar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.editar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.editar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Cyan;
-            this.editar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.editar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.editar.Location = new System.Drawing.Point(853, 481);
-            this.editar.Name = "editar";
-            this.editar.Size = new System.Drawing.Size(98, 33);
-            this.editar.TabIndex = 111;
-            this.editar.Text = "EDITAR";
-            this.editar.UseVisualStyleBackColor = false;
+            this.label34.AutoSize = true;
+            this.label34.ForeColor = System.Drawing.Color.Black;
+            this.label34.Location = new System.Drawing.Point(551, 363);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(95, 13);
+            this.label34.TabIndex = 116;
+            this.label34.Text = "TOTAL A PAGAR:";
             // 
             // fmrSolicitudes
             // 
@@ -935,7 +944,6 @@ namespace Rentadora
         private System.Windows.Forms.DateTimePicker sfecha;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.TextBox sSubtotal;
-        private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.DateTimePicker sFin;
@@ -944,5 +952,6 @@ namespace Rentadora
         private System.Windows.Forms.Button eliminar;
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.DataGridView dgvSolicitudes;
+        private System.Windows.Forms.Label label34;
     }
 }

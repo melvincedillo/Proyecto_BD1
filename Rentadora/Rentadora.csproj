@@ -62,6 +62,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EditarSolicitud.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditarSolicitud.Designer.cs">
+      <DependentUpon>EditarSolicitud.cs</DependentUpon>
+    </Compile>
     <Compile Include="fmrAutos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,6 +125,9 @@
       <DependentUpon>SelectAuto.cs</DependentUpon>
     </Compile>
     <Compile Include="Variable.cs" />
+    <EmbeddedResource Include="EditarSolicitud.resx">
+      <DependentUpon>EditarSolicitud.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fmrAutos.resx">
       <DependentUpon>fmrAutos.cs</DependentUpon>
     </EmbeddedResource>

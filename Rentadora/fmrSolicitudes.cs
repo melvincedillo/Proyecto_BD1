@@ -433,5 +433,13 @@ namespace Rentadora
                 mostrarSolicitudes();
             }
         }
+
+        private void editar_Click(object sender, EventArgs e)
+        {
+            Variable.idsolicitud = idsolicitud;
+            EditarSolicitud nuevo = new EditarSolicitud();
+            nuevo.ShowDialog();
+            mostrarSolicitudes();
+        }
     }
 }
