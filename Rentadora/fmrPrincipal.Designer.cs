@@ -110,7 +110,7 @@ namespace Rentadora
             // 
             // Plateral
             // 
-            this.Plateral.BackColor = System.Drawing.Color.Brown;
+            this.Plateral.BackColor = System.Drawing.Color.Black;
             this.Plateral.Controls.Add(this.btnMenu);
             this.Plateral.Controls.Add(this.auto);
             this.Plateral.Controls.Add(this.empleados);
@@ -277,7 +277,7 @@ namespace Rentadora
             this.textNameUser.AutoSize = true;
             this.textNameUser.BackColor = System.Drawing.Color.Transparent;
             this.textNameUser.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textNameUser.ForeColor = System.Drawing.Color.Black;
+            this.textNameUser.ForeColor = System.Drawing.Color.Brown;
             this.textNameUser.Location = new System.Drawing.Point(63, 153);
             this.textNameUser.Name = "textNameUser";
             this.textNameUser.Size = new System.Drawing.Size(63, 18);
