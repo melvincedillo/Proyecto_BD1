@@ -211,6 +211,7 @@ namespace Rentadora
                 oracle.Close();
             }
             catch {
+                oracle.Close();
                 MessageBox.Show("Imposible eliminar");
             }
         }

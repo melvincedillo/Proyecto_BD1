@@ -314,6 +314,7 @@ namespace Rentadora
             }
             catch
             {
+                oracle.Close();
                 MessageBox.Show("No se puede eliminar");
             }
         }
