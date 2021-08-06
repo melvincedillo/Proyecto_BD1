@@ -95,14 +95,16 @@ namespace Rentadora
 
         private void add_cliente_Click(object sender, EventArgs e)
         {
-            try
+            if(Variable.controltotal == true)
             {
                 crearDireccion();
-                crearCliente();
                 mostrarClientes();
                 limpiarForm();
             }
-            catch { MessageBox.Show("Imposible crear cliente"); }
+            else
+            {
+                MessageBox.Show("PRIVILEGIOS INSUFUCIENTES");
+            }
         }
 
         private void limpiarForm()
@@ -137,10 +139,13 @@ namespace Rentadora
                 comando.Parameters.Add("iddir", OracleType.Int32).Direction = ParameterDirection.Output;
                 comando.ExecuteNonQuery();
                 iddireccion = Convert.ToInt32(comando.Parameters["iddir"].Value);
+                oracle.Close();
+
+                crearCliente();
             } catch {
-                MessageBox.Show("Imposible crear direccion");
+                oracle.Close();
+                MessageBox.Show("Imposible crear cliente");
             }
-            oracle.Close();
         }
 
         private void crearCliente() {
@@ -164,7 +169,10 @@ namespace Rentadora
                 insertarTelefono(tel1.Text, 1);
                 insertarTelefono(tel2.Text, 2);
                 insertarTelefono(tel3.Text, 3);
-            } catch { oracle.Close(); }
+            } catch { 
+                oracle.Close();
+                MessageBox.Show("Imposible crear cliente");
+            }
         }
 
         private void dgvClientes_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -178,10 +186,17 @@ namespace Rentadora
 
         private void delete_cliente_Click(object sender, EventArgs e)
         {
-            deleteCliente();
-            idcliente = 0;
-            iddireccion = 0;
-            mostrarClientes();
+            if(Variable.controltotal == true)
+            {
+                deleteCliente();
+                idcliente = 0;
+                iddireccion = 0;
+                mostrarClientes();
+            }
+            else
+            {
+                MessageBox.Show("PRIVILEGIOS INSUFICIENTES");
+            }
         }
 
         private void deleteCliente() {
@@ -202,12 +217,19 @@ namespace Rentadora
 
         private void editar_cliente_Click(object sender, EventArgs e)
         {
-            add_cliente.Visible = false;
-            delete_cliente.Visible = false;
-            editar_cliente.Visible = false;
-            aceptar.Visible = true;
-            cancelar.Visible = true;
-            cargarClienteEditar();
+            if (Variable.controltotal == true)
+            {
+                add_cliente.Visible = false;
+                delete_cliente.Visible = false;
+                editar_cliente.Visible = false;
+                aceptar.Visible = true;
+                cancelar.Visible = true;
+                cargarClienteEditar();
+            }
+            else
+            {
+                MessageBox.Show("PRIVILEGIOS INSUFICIENTES");
+            }
         }
 
         private void cancelar_Click(object sender, EventArgs e)

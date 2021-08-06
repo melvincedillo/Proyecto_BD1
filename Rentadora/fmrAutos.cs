@@ -198,15 +198,22 @@ namespace Rentadora
 
         private void add_auto_Click(object sender, EventArgs e)
         {
-            try
+            if (Variable.controltotal == true)
             {
-                crearAuto();
-                mostrarAutos();
-                limpiarForm();
+                try
+                {
+                    crearAuto();
+                    mostrarAutos();
+                    limpiarForm();
+                }
+                catch
+                {
+                    MessageBox.Show("NO SE PUEDE CREAR AUTO");
+                }
             }
-            catch
+            else
             {
-                MessageBox.Show("NO SE PUEDE CREARRRRRR UGH.");
+                MessageBox.Show("PRIVILEGIOS INSUFICIENTES");
             }
         }
 
@@ -313,19 +320,33 @@ namespace Rentadora
 
         private void delete_auto_Click(object sender, EventArgs e)
         {
-            deleteVehiculo();
-            idvehiculo = 0;
-            mostrarAutos();
+            if (Variable.controltotal == true)
+            {
+                deleteVehiculo();
+                idvehiculo = 0;
+                mostrarAutos();
+            }
+            else
+            {
+                MessageBox.Show("PRIVILEGIOS INSUFICIENTES");
+            }
         }
 
         private void editar_auto_Click(object sender, EventArgs e)
         {
-            add_auto.Visible = false;
-            delete_auto.Visible = false;
-            editar_auto.Visible = false;
-            aceptar.Visible = true;
-            cancelar.Visible = true;
-            cargarAutoEditar();
+            if (Variable.controltotal == true)
+            {
+                add_auto.Visible = false;
+                delete_auto.Visible = false;
+                editar_auto.Visible = false;
+                aceptar.Visible = true;
+                cancelar.Visible = true;
+                cargarAutoEditar();
+            }
+            else
+            {
+                MessageBox.Show("PRIVILEGIOS INSUFICIENTES");
+            }
         }
 
         //HACER TODOS LOS INNER JOIN

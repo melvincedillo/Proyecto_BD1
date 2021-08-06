@@ -35,7 +35,9 @@ namespace Rentadora
                 fmrPrincipal entrar = new fmrPrincipal();
                 entrar.Show();
                 this.Hide();
-            }catch
+
+            }
+            catch
             {
                 MessageBox.Show("Credenciales Invalidas");
             }

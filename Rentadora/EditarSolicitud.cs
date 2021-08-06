@@ -67,7 +67,7 @@ namespace Rentadora
                 cSexo.Text = registro["sexo"].ToString();
                 cRTN.Text = registro["rtn"].ToString();
                 cID.Text = registro["identidad"].ToString();
-                string nombre = registro["p_apellido"].ToString() + " " + registro["s_nombre"].ToString() + " " + registro["p_apellido"].ToString() + " " + registro["s_apellido"].ToString();
+                string nombre = registro["p_nombre"].ToString() + " " + registro["s_nombre"].ToString() + " " + registro["p_apellido"].ToString() + " " + registro["s_apellido"].ToString();
                 cNombre.Text = nombre;
 
                 OracleCommand comando2 = new OracleCommand("select * from rentadora.telefonoxcliente where pos = 1 and clienteid = " + idcliente, oracle);

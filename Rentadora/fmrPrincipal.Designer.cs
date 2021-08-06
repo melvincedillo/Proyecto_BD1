@@ -47,7 +47,7 @@ namespace Rentadora
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Pfmrs = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
+            this.usertype = new System.Windows.Forms.Label();
             this.Pcabeza.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.Plateral.SuspendLayout();
@@ -308,22 +308,22 @@ namespace Rentadora
             // 
             // Pfmrs
             // 
-            this.Pfmrs.Controls.Add(this.label2);
+            this.Pfmrs.Controls.Add(this.usertype);
             this.Pfmrs.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Pfmrs.Location = new System.Drawing.Point(200, 50);
             this.Pfmrs.Name = "Pfmrs";
             this.Pfmrs.Size = new System.Drawing.Size(1000, 550);
             this.Pfmrs.TabIndex = 4;
             // 
-            // label2
+            // usertype
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(175, 81);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(130, 24);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Bienvenidos (:";
+            this.usertype.AutoSize = true;
+            this.usertype.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usertype.Location = new System.Drawing.Point(175, 81);
+            this.usertype.Name = "usertype";
+            this.usertype.Size = new System.Drawing.Size(130, 24);
+            this.usertype.TabIndex = 0;
+            this.usertype.Text = "Bienvenidos (:";
             // 
             // fmrPrincipal
             // 
@@ -371,6 +371,6 @@ namespace Rentadora
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel Pfmrs;
         private System.Windows.Forms.Button btnMenu;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label usertype;
     }
 }

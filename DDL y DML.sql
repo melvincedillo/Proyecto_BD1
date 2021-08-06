@@ -237,13 +237,14 @@ create table CONTRATO(
     iva int not null,
     total float not null,
     solicitudID int not null,
-    dir_inicioID int,
-    dir_finID int,
     CONSTRAINT contratoPK PRIMARY KEY(contratoID),
-    CONSTRAINT solicitudContratoFK foreign key(solicitudID) references SOLICITUD(solicitudID),
-    CONSTRAINT direccionInicioFK FOREIGN KEY (dir_inicioID) REFERENCES DIRECCION (direccionID),
     CONSTRAINT direccionFinFK FOREIGN KEY (dir_finID) REFERENCES DIRECCION (direccionID)
 );
+
+alter table contrato drop CONSTRAINT solicitudContratoFK;
+alter table contrato drop CONSTRAINT direccionInicioFK;
+alter table contrato drop column dir_inicioID;
+alter table contrato drop column dir_finID;
 
 create table TIPO_PAGO(
     tipo_PagoID int,

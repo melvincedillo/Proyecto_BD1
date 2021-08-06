@@ -70,15 +70,22 @@ namespace Rentadora
 
         private void add_empleado_Click(object sender, EventArgs e)
         {
-            try
+            if (Variable.controltotal == true)
             {
-                crearEmpleado();
-                mostrarEmpleados();
-                limpiarForm();
+                try
+                {
+                    crearEmpleado();
+                    mostrarEmpleados();
+                    limpiarForm();
+                }
+                catch
+                {
+                    MessageBox.Show("NO SE PUEDE CREARRRRRR UGH.");
+                }
             }
-            catch
+            else
             {
-                MessageBox.Show("NO SE PUEDE CREARRRRRR UGH.");
+                MessageBox.Show("PRIVILEGIOS INSUFICIENTES");
             }
         }
 
@@ -189,12 +196,19 @@ namespace Rentadora
 
         private void editar_empleado_Click(object sender, EventArgs e)
         {
-            add_empleado.Visible = false;
-            delete_empleado.Visible = false;
-            editar_empleado.Visible = false;
-            aceptar.Visible = true;
-            cancelar.Visible = true;
-            cargarEmpleadoEditar();
+            if (Variable.controltotal == true)
+            {
+                add_empleado.Visible = false;
+                delete_empleado.Visible = false;
+                editar_empleado.Visible = false;
+                aceptar.Visible = true;
+                cancelar.Visible = true;
+                cargarEmpleadoEditar();
+            }
+            else
+            {
+                MessageBox.Show("PRIVILEGIOS INSUFICIENTES");
+            }
         }
 
         private void cargarEmpleadoEditar()
@@ -220,9 +234,16 @@ namespace Rentadora
 
         private void delete_empleado_Click_1(object sender, EventArgs e)
         {
-            deleteEmpleado();
-            idempleado = 0;
-            mostrarEmpleados();
+            if (Variable.controltotal == true)
+            {
+                deleteEmpleado();
+                idempleado = 0;
+                mostrarEmpleados();
+            }
+            else
+            {
+                MessageBox.Show("PRIVILEGIOS INSUFICIENTES");
+            }
         }
 
         private void cancelar_Click_1(object sender, EventArgs e)
