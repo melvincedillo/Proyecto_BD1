@@ -29,11 +29,14 @@ namespace Rentadora
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.Detalles = new System.Windows.Forms.Button();
+            this.label22 = new System.Windows.Forms.Label();
+            this.dgvContratos = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.sFin = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
@@ -91,14 +94,12 @@ namespace Rentadora
             this.label3 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.dgvContratos = new System.Windows.Forms.DataGridView();
-            this.label22 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.cancelarDeatlles = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvContratos)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvContratos)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -123,7 +124,7 @@ namespace Rentadora
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.Controls.Add(this.button1);
+            this.panel3.Controls.Add(this.Detalles);
             this.panel3.Controls.Add(this.label22);
             this.panel3.Controls.Add(this.dgvContratos);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -132,9 +133,77 @@ namespace Rentadora
             this.panel3.Size = new System.Drawing.Size(518, 670);
             this.panel3.TabIndex = 1;
             // 
+            // Detalles
+            // 
+            this.Detalles.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.Detalles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.Detalles.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Lime;
+            this.Detalles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Detalles.Location = new System.Drawing.Point(232, 565);
+            this.Detalles.Name = "Detalles";
+            this.Detalles.Size = new System.Drawing.Size(107, 32);
+            this.Detalles.TabIndex = 188;
+            this.Detalles.Text = "DETALLES";
+            this.Detalles.UseVisualStyleBackColor = false;
+            this.Detalles.Click += new System.EventHandler(this.Detalles_Click);
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.BackColor = System.Drawing.Color.Transparent;
+            this.label22.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.ForeColor = System.Drawing.Color.Black;
+            this.label22.Location = new System.Drawing.Point(45, 9);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(450, 24);
+            this.label22.TabIndex = 24;
+            this.label22.Text = "CONTRATOS VIGENTES Y/O SIN CANCELAR";
+            // 
+            // dgvContratos
+            // 
+            this.dgvContratos.AllowUserToAddRows = false;
+            this.dgvContratos.AllowUserToDeleteRows = false;
+            this.dgvContratos.AllowUserToOrderColumns = true;
+            this.dgvContratos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvContratos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvContratos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvContratos.BackgroundColor = System.Drawing.Color.White;
+            this.dgvContratos.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvContratos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvContratos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle19.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle19.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvContratos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
+            this.dgvContratos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle20.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Arial Narrow", 7F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle20.Padding = new System.Windows.Forms.Padding(8);
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvContratos.DefaultCellStyle = dataGridViewCellStyle20;
+            this.dgvContratos.Location = new System.Drawing.Point(6, 36);
+            this.dgvContratos.Name = "dgvContratos";
+            this.dgvContratos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvContratos.RowHeadersVisible = false;
+            this.dgvContratos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvContratos.Size = new System.Drawing.Size(500, 469);
+            this.dgvContratos.TabIndex = 1;
+            this.dgvContratos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvContratos_CellClick);
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel2.Controls.Add(this.cancelarDeatlles);
             this.panel2.Controls.Add(this.sFin);
             this.panel2.Controls.Add(this.label24);
             this.panel2.Controls.Add(this.sInicio);
@@ -792,70 +861,19 @@ namespace Rentadora
             this.label4.TabIndex = 104;
             this.label4.Text = "CONTRATO N°: ";
             // 
-            // dgvContratos
+            // cancelarDeatlles
             // 
-            this.dgvContratos.AllowUserToAddRows = false;
-            this.dgvContratos.AllowUserToDeleteRows = false;
-            this.dgvContratos.AllowUserToOrderColumns = true;
-            this.dgvContratos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvContratos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvContratos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgvContratos.BackgroundColor = System.Drawing.Color.White;
-            this.dgvContratos.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvContratos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgvContratos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvContratos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvContratos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial Narrow", 7F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(8);
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvContratos.DefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvContratos.Location = new System.Drawing.Point(6, 36);
-            this.dgvContratos.Name = "dgvContratos";
-            this.dgvContratos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgvContratos.RowHeadersVisible = false;
-            this.dgvContratos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvContratos.Size = new System.Drawing.Size(500, 469);
-            this.dgvContratos.TabIndex = 1;
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.BackColor = System.Drawing.Color.Transparent;
-            this.label22.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.ForeColor = System.Drawing.Color.Black;
-            this.label22.Location = new System.Drawing.Point(45, 9);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(450, 24);
-            this.label22.TabIndex = 24;
-            this.label22.Text = "CONTRATOS VIGENTES Y/O SIN CANCELAR";
-            // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Lime;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(27, 565);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(135, 32);
-            this.button1.TabIndex = 188;
-            this.button1.Text = "CREAR CONTRATO";
-            this.button1.UseVisualStyleBackColor = false;
+            this.cancelarDeatlles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.cancelarDeatlles.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.cancelarDeatlles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cancelarDeatlles.Location = new System.Drawing.Point(157, 565);
+            this.cancelarDeatlles.Name = "cancelarDeatlles";
+            this.cancelarDeatlles.Size = new System.Drawing.Size(107, 32);
+            this.cancelarDeatlles.TabIndex = 189;
+            this.cancelarDeatlles.Text = "CANCELAR";
+            this.cancelarDeatlles.UseVisualStyleBackColor = false;
+            this.cancelarDeatlles.Visible = false;
+            this.cancelarDeatlles.Click += new System.EventHandler(this.cancelarDeatlles_Click);
             // 
             // fmrContratos
             // 
@@ -871,11 +889,11 @@ namespace Rentadora
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvContratos)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvContratos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -943,7 +961,8 @@ namespace Rentadora
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Button cancelarContrato;
         private System.Windows.Forms.DataGridView dgvContratos;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button Detalles;
         private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Button cancelarDeatlles;
     }
 }

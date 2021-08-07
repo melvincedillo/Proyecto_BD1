@@ -31,7 +31,7 @@ namespace Rentadora
 
         private void fmrContratos_Load(object sender, EventArgs e)
         {
-
+            cargarContratos();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -43,6 +43,7 @@ namespace Rentadora
                 idSoliciudGenerar.Enabled = false;
                 buscarSolicitud.Visible = false;
                 cancelarContrato.Visible = true;
+                Detalles.Visible = false;
             }
             else
             {
@@ -242,6 +243,8 @@ namespace Rentadora
                 idSoliciudGenerar.Enabled = true;
                 buscarSolicitud.Visible = true;
                 cancelarContrato.Visible = false;
+                Detalles.Visible = true;
+                cargarContratos();
             }
             else
             {
@@ -267,6 +270,48 @@ namespace Rentadora
             idSoliciudGenerar.Enabled = true;
             buscarSolicitud.Visible = true;
             cancelarContrato.Visible = false;
+            Detalles.Visible = true;
+        }
+
+        private void dgvContratos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            idSolicitud = Convert.ToInt32(dgvContratos.SelectedRows[0].Cells[0].Value);
+        }
+
+        private void Detalles_Click(object sender, EventArgs e)
+        {
+            cargarSolicitud();
+            idSoliciudGenerar.Enabled = false;
+            buscarSolicitud.Visible = false;
+            addContrato.Visible = false;
+            cancelarDeatlles.Visible = true;
+            Detalles.Visible = false;
+        }
+
+        private void cargarContratos()
+        {
+            oracle.Open();
+
+            OracleCommand comando = new OracleCommand("rentadora.select_contrato", oracle);
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+            comando.Parameters.Add("registros", OracleType.Cursor).Direction = ParameterDirection.Output;
+
+            OracleDataAdapter adaptador = new OracleDataAdapter();
+            adaptador.SelectCommand = comando;
+            DataTable table = new DataTable();
+            adaptador.Fill(table);
+            dgvContratos.DataSource = table;
+            oracle.Close();
+        }
+
+        private void cancelarDeatlles_Click(object sender, EventArgs e)
+        {
+            limpiarform();
+            idSoliciudGenerar.Enabled = true;
+            buscarSolicitud.Visible = true;
+            addContrato.Visible = true;
+            cancelarDeatlles.Visible = false;
+            Detalles.Visible = true;
         }
     }
 }
