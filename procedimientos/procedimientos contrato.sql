@@ -6,3 +6,6 @@ create or replace procedure insert_contrato(idCo int, fech date, subt float, iva
         insert into contrato (contratoid, fecha, subtotal, iva, total, solicitudid) values 
         (idCo, fech, subt, ivac, totalc, idS);
     end;
+
+
+--SELECCIONA LOS CONTRATOS

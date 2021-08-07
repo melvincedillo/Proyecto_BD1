@@ -283,9 +283,10 @@ CREATE TABLE DEVOLUCIONxDANIOS(
 -------------------------------------------------------------------------------------------------------------------------------------
 --Insertar datos estado_Solicitud
 insert into estado_solicitud values (0, 'En espera');
-insert into estado_solicitud values (1, 'En contrato');
-insert into estado_solicitud values (2, 'Finalizada sin pagar');
-insert into estado_solicitud values (3, 'Finalizada');
+insert into estado_solicitud values (1, 'Ejecutando');
+insert into estado_solicitud values (2, 'Sin cancelar');
+insert into estado_solicitud values (3, 'Cerrado');
+
 
 --Insertando Datos Municipio
 INSERT INTO MUNICIPIO VALUES(1,'La Ceiba', 1);

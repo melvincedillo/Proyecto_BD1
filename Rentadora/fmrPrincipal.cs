@@ -35,7 +35,7 @@ namespace Rentadora
             historial.ForeColor = Color.White;
             empleados.ForeColor = Color.White;
             auto.ForeColor = Color.White;
-
+            finalizar.ForeColor = Color.White;
             sender.Capture = true;
 
             if (sender.Capture) {
@@ -104,6 +104,7 @@ namespace Rentadora
             historial.ForeColor = Color.White;
             empleados.ForeColor = Color.White;
             auto.ForeColor = Color.White;
+            finalizar.ForeColor = Color.White;
             flecha.Visible = false;
             if (formActivado != null) {
                 formActivado.Close();
@@ -129,6 +130,12 @@ namespace Rentadora
             {
                 Variable.controltotal = true;
             }
+        }
+
+        private void finalizar_Click(object sender, EventArgs e)
+        {
+            seleccionarBoton((Button)sender);
+            abrirFormEnPanel(new fmrFinalizar());
         }
     }
 }
