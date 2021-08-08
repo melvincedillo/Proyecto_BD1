@@ -124,7 +124,7 @@ namespace Rentadora
             {
                 oracle.Open();
                 OracleCommand comando = new OracleCommand(
-                    "Select v.costo_renta, v.placa, comb.combustible, modelo.modelo, marca.marca, color.color, vers.version, tp.tipo_vehiculo " +
+                    "Select v.costo_renta, v.placa, comb.combustible, modelo.modelo, marca.marca, color.color, vers.version, tp.tipo_vehiculo, v.seguro " +
                     "from rentadora.vehiculo v INNER JOIN rentadora.combustible comb ON comb.combustibleid = v.combustibleid " +
                     "INNER JOIN rentadora.modelo modelo ON modelo.modeloid = v.modeloid " +
                     "INNER JOIN rentadora.marca marca ON marca.marcaid = v.marcaid " +
@@ -143,6 +143,7 @@ namespace Rentadora
                 vVersion.Text = registro["version"].ToString();
                 vCosto.Text = registro["costo_renta"].ToString();
                 vTipo.Text = registro["tipo_vehiculo"].ToString();
+                vSeguro.Text = registro["seguro"].ToString();
                 oracle.Close();
             }
             catch

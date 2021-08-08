@@ -137,5 +137,7 @@ namespace Rentadora
             seleccionarBoton((Button)sender);
             abrirFormEnPanel(new fmrFinalizar());
         }
+
+        
     }
 }

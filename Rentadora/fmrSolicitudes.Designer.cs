@@ -216,7 +216,7 @@ namespace Rentadora
             this.cbSeguro.Items.AddRange(new object[] {
             "SI",
             "NO"});
-            this.cbSeguro.Location = new System.Drawing.Point(1054, 323);
+            this.cbSeguro.Location = new System.Drawing.Point(1120, 451);
             this.cbSeguro.Name = "cbSeguro";
             this.cbSeguro.Size = new System.Drawing.Size(100, 28);
             this.cbSeguro.TabIndex = 118;
@@ -226,7 +226,7 @@ namespace Rentadora
             // 
             this.label32.AutoSize = true;
             this.label32.ForeColor = System.Drawing.Color.Black;
-            this.label32.Location = new System.Drawing.Point(798, 328);
+            this.label32.Location = new System.Drawing.Point(864, 456);
             this.label32.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(243, 20);
@@ -236,11 +236,12 @@ namespace Rentadora
             // label34
             // 
             this.label34.AutoSize = true;
+            this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label34.ForeColor = System.Drawing.Color.Black;
-            this.label34.Location = new System.Drawing.Point(826, 606);
+            this.label34.Location = new System.Drawing.Point(808, 597);
             this.label34.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(139, 20);
+            this.label34.Size = new System.Drawing.Size(153, 20);
             this.label34.TabIndex = 116;
             this.label34.Text = "TOTAL A PAGAR:";
             // 
@@ -409,7 +410,7 @@ namespace Rentadora
             // 
             this.label28.AutoSize = true;
             this.label28.ForeColor = System.Drawing.Color.Black;
-            this.label28.Location = new System.Drawing.Point(1106, 402);
+            this.label28.Location = new System.Drawing.Point(1104, 379);
             this.label28.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(98, 20);
@@ -419,7 +420,7 @@ namespace Rentadora
             // sEmpleado
             // 
             this.sEmpleado.FormattingEnabled = true;
-            this.sEmpleado.Location = new System.Drawing.Point(1110, 425);
+            this.sEmpleado.Location = new System.Drawing.Point(1108, 402);
             this.sEmpleado.Name = "sEmpleado";
             this.sEmpleado.Size = new System.Drawing.Size(256, 28);
             this.sEmpleado.TabIndex = 98;
@@ -429,7 +430,7 @@ namespace Rentadora
             // 
             this.label27.AutoSize = true;
             this.label27.ForeColor = System.Drawing.Color.Black;
-            this.label27.Location = new System.Drawing.Point(771, 400);
+            this.label27.Location = new System.Drawing.Point(769, 377);
             this.label27.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(98, 20);
@@ -439,7 +440,7 @@ namespace Rentadora
             // cbSucursal
             // 
             this.cbSucursal.FormattingEnabled = true;
-            this.cbSucursal.Location = new System.Drawing.Point(776, 425);
+            this.cbSucursal.Location = new System.Drawing.Point(774, 402);
             this.cbSucursal.Name = "cbSucursal";
             this.cbSucursal.Size = new System.Drawing.Size(250, 28);
             this.cbSucursal.TabIndex = 96;
@@ -450,7 +451,7 @@ namespace Rentadora
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label24.ForeColor = System.Drawing.Color.Black;
-            this.label24.Location = new System.Drawing.Point(903, 374);
+            this.label24.Location = new System.Drawing.Point(902, 343);
             this.label24.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(245, 25);

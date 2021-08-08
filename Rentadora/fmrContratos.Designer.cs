@@ -38,6 +38,9 @@ namespace Rentadora
             this.label22 = new System.Windows.Forms.Label();
             this.dgvContratos = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label27 = new System.Windows.Forms.Label();
+            this.vSeguro = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
             this.cancelarDeatlles = new System.Windows.Forms.Button();
             this.sFin = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
@@ -95,9 +98,6 @@ namespace Rentadora
             this.label3 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.vSeguro = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvContratos)).BeginInit();
@@ -275,6 +275,41 @@ namespace Rentadora
             this.panel2.Size = new System.Drawing.Size(723, 1031);
             this.panel2.TabIndex = 0;
             // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.ForeColor = System.Drawing.Color.White;
+            this.label27.Location = new System.Drawing.Point(233, 309);
+            this.label27.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(86, 20);
+            this.label27.TabIndex = 192;
+            this.label27.Text = "CLIENTE";
+            // 
+            // vSeguro
+            // 
+            this.vSeguro.AutoSize = true;
+            this.vSeguro.ForeColor = System.Drawing.Color.White;
+            this.vSeguro.Location = new System.Drawing.Point(105, 636);
+            this.vSeguro.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.vSeguro.Name = "vSeguro";
+            this.vSeguro.Size = new System.Drawing.Size(44, 20);
+            this.vSeguro.TabIndex = 191;
+            this.vSeguro.Text = "-------";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.ForeColor = System.Drawing.Color.White;
+            this.label25.Location = new System.Drawing.Point(29, 636);
+            this.label25.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(74, 20);
+            this.label25.TabIndex = 190;
+            this.label25.Text = "Seguro:";
+            // 
             // cancelarDeatlles
             // 
             this.cancelarDeatlles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
@@ -295,7 +330,7 @@ namespace Rentadora
             // 
             this.sFin.AutoSize = true;
             this.sFin.ForeColor = System.Drawing.Color.White;
-            this.sFin.Location = new System.Drawing.Point(556, 743);
+            this.sFin.Location = new System.Drawing.Point(278, 743);
             this.sFin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.sFin.Name = "sFin";
             this.sFin.Size = new System.Drawing.Size(34, 20);
@@ -307,7 +342,7 @@ namespace Rentadora
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label24.ForeColor = System.Drawing.Color.White;
-            this.label24.Location = new System.Drawing.Point(364, 743);
+            this.label24.Location = new System.Drawing.Point(86, 743);
             this.label24.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(184, 20);
@@ -318,7 +353,7 @@ namespace Rentadora
             // 
             this.sInicio.AutoSize = true;
             this.sInicio.ForeColor = System.Drawing.Color.White;
-            this.sInicio.Location = new System.Drawing.Point(202, 743);
+            this.sInicio.Location = new System.Drawing.Point(236, 713);
             this.sInicio.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.sInicio.Name = "sInicio";
             this.sInicio.Size = new System.Drawing.Size(34, 20);
@@ -330,7 +365,7 @@ namespace Rentadora
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label23.ForeColor = System.Drawing.Color.White;
-            this.label23.Location = new System.Drawing.Point(53, 743);
+            this.label23.Location = new System.Drawing.Point(85, 713);
             this.label23.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(143, 20);
@@ -410,7 +445,7 @@ namespace Rentadora
             // 
             this.empleado.AutoSize = true;
             this.empleado.ForeColor = System.Drawing.Color.White;
-            this.empleado.Location = new System.Drawing.Point(522, 249);
+            this.empleado.Location = new System.Drawing.Point(469, 249);
             this.empleado.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.empleado.Name = "empleado";
             this.empleado.Size = new System.Drawing.Size(34, 20);
@@ -421,7 +456,7 @@ namespace Rentadora
             // 
             this.sucursal.AutoSize = true;
             this.sucursal.ForeColor = System.Drawing.Color.White;
-            this.sucursal.Location = new System.Drawing.Point(214, 249);
+            this.sucursal.Location = new System.Drawing.Point(161, 249);
             this.sucursal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.sucursal.Name = "sucursal";
             this.sucursal.Size = new System.Drawing.Size(34, 20);
@@ -432,7 +467,7 @@ namespace Rentadora
             // 
             this.vMarca.AutoSize = true;
             this.vMarca.ForeColor = System.Drawing.Color.White;
-            this.vMarca.Location = new System.Drawing.Point(162, 565);
+            this.vMarca.Location = new System.Drawing.Point(109, 565);
             this.vMarca.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.vMarca.Name = "vMarca";
             this.vMarca.Size = new System.Drawing.Size(34, 20);
@@ -443,7 +478,7 @@ namespace Rentadora
             // 
             this.vColor.AutoSize = true;
             this.vColor.ForeColor = System.Drawing.Color.White;
-            this.vColor.Location = new System.Drawing.Point(482, 565);
+            this.vColor.Location = new System.Drawing.Point(429, 565);
             this.vColor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.vColor.Name = "vColor";
             this.vColor.Size = new System.Drawing.Size(34, 20);
@@ -454,7 +489,7 @@ namespace Rentadora
             // 
             this.vCosto.AutoSize = true;
             this.vCosto.ForeColor = System.Drawing.Color.White;
-            this.vCosto.Location = new System.Drawing.Point(539, 600);
+            this.vCosto.Location = new System.Drawing.Point(486, 600);
             this.vCosto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.vCosto.Name = "vCosto";
             this.vCosto.Size = new System.Drawing.Size(44, 20);
@@ -465,7 +500,7 @@ namespace Rentadora
             // 
             this.vCombustible.AutoSize = true;
             this.vCombustible.ForeColor = System.Drawing.Color.White;
-            this.vCombustible.Location = new System.Drawing.Point(540, 525);
+            this.vCombustible.Location = new System.Drawing.Point(487, 525);
             this.vCombustible.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.vCombustible.Name = "vCombustible";
             this.vCombustible.Size = new System.Drawing.Size(39, 20);
@@ -476,7 +511,7 @@ namespace Rentadora
             // 
             this.vModelo.AutoSize = true;
             this.vModelo.ForeColor = System.Drawing.Color.White;
-            this.vModelo.Location = new System.Drawing.Point(168, 530);
+            this.vModelo.Location = new System.Drawing.Point(115, 530);
             this.vModelo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.vModelo.Name = "vModelo";
             this.vModelo.Size = new System.Drawing.Size(34, 20);
@@ -487,7 +522,7 @@ namespace Rentadora
             // 
             this.vVersion.AutoSize = true;
             this.vVersion.ForeColor = System.Drawing.Color.White;
-            this.vVersion.Location = new System.Drawing.Point(178, 600);
+            this.vVersion.Location = new System.Drawing.Point(125, 600);
             this.vVersion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.vVersion.Name = "vVersion";
             this.vVersion.Size = new System.Drawing.Size(34, 20);
@@ -498,7 +533,7 @@ namespace Rentadora
             // 
             this.vTipo.AutoSize = true;
             this.vTipo.ForeColor = System.Drawing.Color.White;
-            this.vTipo.Location = new System.Drawing.Point(476, 490);
+            this.vTipo.Location = new System.Drawing.Point(423, 490);
             this.vTipo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.vTipo.Name = "vTipo";
             this.vTipo.Size = new System.Drawing.Size(34, 20);
@@ -509,7 +544,7 @@ namespace Rentadora
             // 
             this.vPlaca.AutoSize = true;
             this.vPlaca.ForeColor = System.Drawing.Color.White;
-            this.vPlaca.Location = new System.Drawing.Point(162, 490);
+            this.vPlaca.Location = new System.Drawing.Point(109, 490);
             this.vPlaca.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.vPlaca.Name = "vPlaca";
             this.vPlaca.Size = new System.Drawing.Size(34, 20);
@@ -520,7 +555,7 @@ namespace Rentadora
             // 
             this.cTelefonos.AutoSize = true;
             this.cTelefonos.ForeColor = System.Drawing.Color.White;
-            this.cTelefonos.Location = new System.Drawing.Point(496, 387);
+            this.cTelefonos.Location = new System.Drawing.Point(443, 387);
             this.cTelefonos.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.cTelefonos.Name = "cTelefonos";
             this.cTelefonos.Size = new System.Drawing.Size(34, 20);
@@ -531,7 +566,7 @@ namespace Rentadora
             // 
             this.cRTN.AutoSize = true;
             this.cRTN.ForeColor = System.Drawing.Color.White;
-            this.cRTN.Location = new System.Drawing.Point(471, 361);
+            this.cRTN.Location = new System.Drawing.Point(418, 361);
             this.cRTN.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.cRTN.Name = "cRTN";
             this.cRTN.Size = new System.Drawing.Size(34, 20);
@@ -542,7 +577,7 @@ namespace Rentadora
             // 
             this.cDireccion.AutoSize = true;
             this.cDireccion.ForeColor = System.Drawing.Color.White;
-            this.cDireccion.Location = new System.Drawing.Point(194, 387);
+            this.cDireccion.Location = new System.Drawing.Point(141, 387);
             this.cDireccion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.cDireccion.Name = "cDireccion";
             this.cDireccion.Size = new System.Drawing.Size(34, 20);
@@ -553,7 +588,7 @@ namespace Rentadora
             // 
             this.cID.AutoSize = true;
             this.cID.ForeColor = System.Drawing.Color.White;
-            this.cID.Location = new System.Drawing.Point(218, 361);
+            this.cID.Location = new System.Drawing.Point(165, 361);
             this.cID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.cID.Name = "cID";
             this.cID.Size = new System.Drawing.Size(34, 20);
@@ -564,7 +599,7 @@ namespace Rentadora
             // 
             this.cSexo.AutoSize = true;
             this.cSexo.ForeColor = System.Drawing.Color.White;
-            this.cSexo.Location = new System.Drawing.Point(471, 335);
+            this.cSexo.Location = new System.Drawing.Point(418, 335);
             this.cSexo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.cSexo.Name = "cSexo";
             this.cSexo.Size = new System.Drawing.Size(34, 20);
@@ -575,7 +610,7 @@ namespace Rentadora
             // 
             this.cNombre.AutoSize = true;
             this.cNombre.ForeColor = System.Drawing.Color.White;
-            this.cNombre.Location = new System.Drawing.Point(170, 335);
+            this.cNombre.Location = new System.Drawing.Point(117, 335);
             this.cNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.cNombre.Name = "cNombre";
             this.cNombre.Size = new System.Drawing.Size(34, 20);
@@ -586,7 +621,7 @@ namespace Rentadora
             // 
             this.sFecha.AutoSize = true;
             this.sFecha.ForeColor = System.Drawing.Color.White;
-            this.sFecha.Location = new System.Drawing.Point(611, 223);
+            this.sFecha.Location = new System.Drawing.Point(558, 223);
             this.sFecha.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.sFecha.Name = "sFecha";
             this.sFecha.Size = new System.Drawing.Size(34, 20);
@@ -597,7 +632,7 @@ namespace Rentadora
             // 
             this.sNumero.AutoSize = true;
             this.sNumero.ForeColor = System.Drawing.Color.White;
-            this.sNumero.Location = new System.Drawing.Point(244, 223);
+            this.sNumero.Location = new System.Drawing.Point(191, 223);
             this.sNumero.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.sNumero.Name = "sNumero";
             this.sNumero.Size = new System.Drawing.Size(34, 20);
@@ -714,7 +749,7 @@ namespace Rentadora
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label21.ForeColor = System.Drawing.Color.White;
-            this.label21.Location = new System.Drawing.Point(396, 249);
+            this.label21.Location = new System.Drawing.Point(343, 249);
             this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(117, 20);
@@ -726,7 +761,7 @@ namespace Rentadora
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.ForeColor = System.Drawing.Color.White;
-            this.label20.Location = new System.Drawing.Point(83, 249);
+            this.label20.Location = new System.Drawing.Point(30, 249);
             this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(120, 20);
@@ -738,7 +773,7 @@ namespace Rentadora
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.Color.White;
-            this.label17.Location = new System.Drawing.Point(413, 600);
+            this.label17.Location = new System.Drawing.Point(360, 600);
             this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(117, 20);
@@ -750,7 +785,7 @@ namespace Rentadora
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.White;
-            this.label15.Location = new System.Drawing.Point(83, 600);
+            this.label15.Location = new System.Drawing.Point(30, 600);
             this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(85, 20);
@@ -762,7 +797,7 @@ namespace Rentadora
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(413, 560);
+            this.label13.Location = new System.Drawing.Point(360, 560);
             this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(60, 20);
@@ -774,7 +809,7 @@ namespace Rentadora
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(413, 525);
+            this.label9.Location = new System.Drawing.Point(360, 525);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(119, 20);
@@ -786,7 +821,7 @@ namespace Rentadora
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(413, 490);
+            this.label7.Location = new System.Drawing.Point(360, 490);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(51, 20);
@@ -798,7 +833,7 @@ namespace Rentadora
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(83, 560);
+            this.label5.Location = new System.Drawing.Point(30, 560);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(67, 20);
@@ -810,7 +845,7 @@ namespace Rentadora
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(82, 525);
+            this.label1.Location = new System.Drawing.Point(29, 525);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(75, 20);
@@ -822,7 +857,7 @@ namespace Rentadora
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.ForeColor = System.Drawing.Color.White;
-            this.label19.Location = new System.Drawing.Point(83, 490);
+            this.label19.Location = new System.Drawing.Point(30, 490);
             this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(68, 20);
@@ -834,7 +869,7 @@ namespace Rentadora
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.ForeColor = System.Drawing.Color.White;
-            this.label18.Location = new System.Drawing.Point(273, 445);
+            this.label18.Location = new System.Drawing.Point(220, 445);
             this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(103, 20);
@@ -846,7 +881,7 @@ namespace Rentadora
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.White;
-            this.label16.Location = new System.Drawing.Point(403, 387);
+            this.label16.Location = new System.Drawing.Point(350, 387);
             this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(103, 20);
@@ -858,7 +893,7 @@ namespace Rentadora
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.White;
-            this.label14.Location = new System.Drawing.Point(82, 387);
+            this.label14.Location = new System.Drawing.Point(29, 387);
             this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(102, 20);
@@ -870,7 +905,7 @@ namespace Rentadora
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(398, 335);
+            this.label12.Location = new System.Drawing.Point(345, 335);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(62, 20);
@@ -882,7 +917,7 @@ namespace Rentadora
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(401, 361);
+            this.label10.Location = new System.Drawing.Point(348, 361);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(58, 20);
@@ -894,7 +929,7 @@ namespace Rentadora
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(82, 361);
+            this.label8.Location = new System.Drawing.Point(29, 361);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(124, 20);
@@ -906,7 +941,7 @@ namespace Rentadora
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(80, 335);
+            this.label6.Location = new System.Drawing.Point(27, 335);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(80, 20);
@@ -918,7 +953,7 @@ namespace Rentadora
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(396, 223);
+            this.label3.Location = new System.Drawing.Point(343, 223);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(219, 20);
@@ -942,47 +977,12 @@ namespace Rentadora
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(83, 223);
+            this.label4.Location = new System.Drawing.Point(30, 223);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(149, 20);
             this.label4.TabIndex = 104;
             this.label4.Text = "CONTRATO N°: ";
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.ForeColor = System.Drawing.Color.White;
-            this.label25.Location = new System.Drawing.Point(82, 636);
-            this.label25.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(74, 20);
-            this.label25.TabIndex = 190;
-            this.label25.Text = "Seguro:";
-            // 
-            // vSeguro
-            // 
-            this.vSeguro.AutoSize = true;
-            this.vSeguro.ForeColor = System.Drawing.Color.White;
-            this.vSeguro.Location = new System.Drawing.Point(158, 636);
-            this.vSeguro.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.vSeguro.Name = "vSeguro";
-            this.vSeguro.Size = new System.Drawing.Size(44, 20);
-            this.vSeguro.TabIndex = 191;
-            this.vSeguro.Text = "-------";
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.ForeColor = System.Drawing.Color.White;
-            this.label27.Location = new System.Drawing.Point(286, 309);
-            this.label27.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(86, 20);
-            this.label27.TabIndex = 192;
-            this.label27.Text = "CLIENTE";
             // 
             // fmrContratos
             // 

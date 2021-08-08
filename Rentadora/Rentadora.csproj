@@ -223,5 +223,14 @@
   <ItemGroup>
     <None Include="Resources\logo %281%29.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\descargar %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marcas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\premier-renta-de-autos-cancun-economico-web %281%29.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

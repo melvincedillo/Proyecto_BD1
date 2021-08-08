@@ -29,6 +29,7 @@ namespace Rentadora
         private int idTipo_Vehiculo;
         private int idVersion;
         private int idEstado;
+        private int idEstadoOpc=0;
         public fmrAutos()
         {
             InitializeComponent();
@@ -45,6 +46,7 @@ namespace Rentadora
             cargarVersiones();
             cargarEstados();
             aceptar.Visible = false;
+            cbEstado.Visible = false;
             cancelar.Visible = false;
         }
 
@@ -59,6 +61,10 @@ namespace Rentadora
             DataTable table = new DataTable();
             adaptador.Fill(table);
             dgvAutos.DataSource = table;
+            if (idEstado == 2)
+            {
+                
+            }
             oracle.Close();
             //dgvAutos.Columns[4].Visible = false;
             dgvAutos.Columns[0].Visible = false;
@@ -175,7 +181,7 @@ namespace Rentadora
         {
             idVersion = idVersiones[cb_Version.SelectedIndex];
         }
-
+        
         private void cargarEstados()
         {
             oracle.Open();
@@ -185,15 +191,20 @@ namespace Rentadora
             {
                 cbEstado.Items.Add(vehiculo["estado"].ToString());
                 idEstados.Add(Int32.Parse(vehiculo["estadoid"].ToString()));
+                Console.WriteLine("Lista: " + idEstados);
             }
             oracle.Close();
         }
 
+        
+
         private void cbEstado_SelectedIndexChanged(object sender, EventArgs e)
         {
             idEstado = idEstados[cbEstado.SelectedIndex];
-        }
+            Console.WriteLine("Seleccionado: " + idEstado);
 
+        }
+        
 
 
         private void add_auto_Click(object sender, EventArgs e)
@@ -250,7 +261,7 @@ namespace Rentadora
                 comando.Parameters.Add("color", OracleType.Int32).Value = idColor;
                 comando.Parameters.Add("tv", OracleType.Int32).Value = idTipo_Vehiculo;
                 comando.Parameters.Add("vers", OracleType.Int32).Value = idVersion;
-                comando.Parameters.Add("est", OracleType.Int32).Value = idEstado;
+                comando.Parameters.Add("est", OracleType.Int32).Value = idEstadoOpc;
                 comando.Parameters.Add("segur", OracleType.Float).Value = Convert.ToDouble(cSeguro.Text);
                 comando.ExecuteNonQuery();
             }
@@ -268,6 +279,9 @@ namespace Rentadora
             delete_auto.Visible = true;
             editar_auto.Visible = true;
             aceptar.Visible = false;
+            cbEstado.Visible = false;
+            cEstado.Visible = true;
+            cEstado.Enabled = false;
             cancelar.Visible = false;
         }
 
@@ -293,6 +307,7 @@ namespace Rentadora
                 comando.Parameters.Add("seguro", OracleType.Float).Value = Convert.ToDouble(cSeguro.Text);
                 comando.Parameters.Add("idV", OracleType.Int32).Value = idvehiculo;
                 comando.ExecuteNonQuery();
+                Console.WriteLine("Estado en update: " + idEstado);
             }
             catch
             {
@@ -341,6 +356,8 @@ namespace Rentadora
                 delete_auto.Visible = false;
                 editar_auto.Visible = false;
                 aceptar.Visible = true;
+                cEstado.Visible = false;
+                cbEstado.Visible = true;
                 cancelar.Visible = true;
                 cargarAutoEditar();
             }
@@ -379,6 +396,7 @@ namespace Rentadora
             delete_auto.Visible = true;
             editar_auto.Visible = true;
             aceptar.Visible = false;
+            cbEstado.Visible = true;
             cancelar.Visible = false;
             limpiarForm();
         }
@@ -390,5 +408,6 @@ namespace Rentadora
             //Label para verificar que se seleccione el empleado con el id correcto
             idAuto.Text = idvehiculo.ToString();
         }
+
     }
 }

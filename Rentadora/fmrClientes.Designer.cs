@@ -608,7 +608,7 @@ namespace Rentadora
             // editar_cliente
             // 
             this.editar_cliente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.editar_cliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.editar_cliente.BackColor = System.Drawing.Color.White;
             this.editar_cliente.BackgroundImage = global::Rentadora.Properties.Resources.png_transparent_human_figure_human_behavior_neck_microphone_hand_male_user_edit_microphone_hand_smiley_thumbnail;
             this.editar_cliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.editar_cliente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
@@ -626,8 +626,8 @@ namespace Rentadora
             // delete_cliente
             // 
             this.delete_cliente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.delete_cliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.delete_cliente.BackgroundImage = global::Rentadora.Properties.Resources.unnamed;
+            this.delete_cliente.BackColor = System.Drawing.Color.White;
+            this.delete_cliente.BackgroundImage = global::Rentadora.Properties.Resources.descargar__1_;
             this.delete_cliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.delete_cliente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
             this.delete_cliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;

@@ -83,6 +83,16 @@ namespace Rentadora.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap descargar__1_ {
+            get {
+                object obj = ResourceManager.GetObject("descargar (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Flecha {
             get {
                 object obj = ResourceManager.GetObject("Flecha", resourceCulture);
@@ -103,10 +113,40 @@ namespace Rentadora.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap logo__1_1 {
+            get {
+                object obj = ResourceManager.GetObject("logo (1)1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap marcas {
+            get {
+                object obj = ResourceManager.GetObject("marcas", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap png_transparent_human_figure_human_behavior_neck_microphone_hand_male_user_edit_microphone_hand_smiley_thumbnail {
             get {
                 object obj = ResourceManager.GetObject("png_transparent_human_figure_human_behavior_neck_microphone_hand_male_user_edit_m" +
                         "icrophone_hand_smiley_thumbnail", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap premier_renta_de_autos_cancun_economico_web__1_ {
+            get {
+                object obj = ResourceManager.GetObject("premier-renta-de-autos-cancun-economico-web (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
