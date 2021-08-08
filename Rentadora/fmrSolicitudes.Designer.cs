@@ -32,6 +32,10 @@ namespace Rentadora
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.vSeguro = new System.Windows.Forms.TextBox();
+            this.label35 = new System.Windows.Forms.Label();
+            this.cbSeguro = new System.Windows.Forms.ComboBox();
+            this.label32 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
             this.editar = new System.Windows.Forms.Button();
             this.eliminar = new System.Windows.Forms.Button();
@@ -107,6 +111,10 @@ namespace Rentadora
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.vSeguro);
+            this.panel2.Controls.Add(this.label35);
+            this.panel2.Controls.Add(this.cbSeguro);
+            this.panel2.Controls.Add(this.label32);
             this.panel2.Controls.Add(this.label34);
             this.panel2.Controls.Add(this.editar);
             this.panel2.Controls.Add(this.eliminar);
@@ -177,17 +185,62 @@ namespace Rentadora
             this.panel2.Controls.Add(this.cS_apellido);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1000, 550);
+            this.panel2.Size = new System.Drawing.Size(1500, 846);
             this.panel2.TabIndex = 1;
+            // 
+            // vSeguro
+            // 
+            this.vSeguro.Enabled = false;
+            this.vSeguro.Location = new System.Drawing.Point(1376, 197);
+            this.vSeguro.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.vSeguro.Name = "vSeguro";
+            this.vSeguro.Size = new System.Drawing.Size(92, 26);
+            this.vSeguro.TabIndex = 120;
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.ForeColor = System.Drawing.Color.Black;
+            this.label35.Location = new System.Drawing.Point(1382, 175);
+            this.label35.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(80, 20);
+            this.label35.TabIndex = 119;
+            this.label35.Text = "SEGURO";
+            // 
+            // cbSeguro
+            // 
+            this.cbSeguro.FormattingEnabled = true;
+            this.cbSeguro.Items.AddRange(new object[] {
+            "SI",
+            "NO"});
+            this.cbSeguro.Location = new System.Drawing.Point(1054, 323);
+            this.cbSeguro.Name = "cbSeguro";
+            this.cbSeguro.Size = new System.Drawing.Size(100, 28);
+            this.cbSeguro.TabIndex = 118;
+            this.cbSeguro.SelectedIndexChanged += new System.EventHandler(this.cbSeguro_SelectedIndexChanged);
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.ForeColor = System.Drawing.Color.Black;
+            this.label32.Location = new System.Drawing.Point(798, 328);
+            this.label32.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(243, 20);
+            this.label32.TabIndex = 117;
+            this.label32.Text = "¿DESEA PAGAR EL SEGURO?";
             // 
             // label34
             // 
             this.label34.AutoSize = true;
             this.label34.ForeColor = System.Drawing.Color.Black;
-            this.label34.Location = new System.Drawing.Point(551, 363);
+            this.label34.Location = new System.Drawing.Point(826, 606);
+            this.label34.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(95, 13);
+            this.label34.Size = new System.Drawing.Size(139, 20);
             this.label34.TabIndex = 116;
             this.label34.Text = "TOTAL A PAGAR:";
             // 
@@ -198,9 +251,10 @@ namespace Rentadora
             this.editar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Cyan;
             this.editar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.editar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.editar.Location = new System.Drawing.Point(840, 438);
+            this.editar.Location = new System.Drawing.Point(1260, 674);
+            this.editar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.editar.Name = "editar";
-            this.editar.Size = new System.Drawing.Size(98, 33);
+            this.editar.Size = new System.Drawing.Size(147, 51);
             this.editar.TabIndex = 111;
             this.editar.Text = "EDITAR";
             this.editar.UseVisualStyleBackColor = false;
@@ -213,9 +267,10 @@ namespace Rentadora
             this.eliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.eliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.eliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.eliminar.Location = new System.Drawing.Point(727, 438);
+            this.eliminar.Location = new System.Drawing.Point(1090, 674);
+            this.eliminar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.eliminar.Name = "eliminar";
-            this.eliminar.Size = new System.Drawing.Size(98, 33);
+            this.eliminar.Size = new System.Drawing.Size(147, 51);
             this.eliminar.TabIndex = 110;
             this.eliminar.Text = "ELIMINAR";
             this.eliminar.UseVisualStyleBackColor = false;
@@ -227,9 +282,10 @@ namespace Rentadora
             this.label33.BackColor = System.Drawing.Color.Transparent;
             this.label33.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label33.ForeColor = System.Drawing.Color.Black;
-            this.label33.Location = new System.Drawing.Point(14, 411);
+            this.label33.Location = new System.Drawing.Point(21, 632);
+            this.label33.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(246, 24);
+            this.label33.Size = new System.Drawing.Size(379, 37);
             this.label33.TabIndex = 109;
             this.label33.Text = "LISTA DE SOLICITUDES";
             // 
@@ -265,21 +321,24 @@ namespace Rentadora
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvSolicitudes.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvSolicitudes.Location = new System.Drawing.Point(18, 438);
+            this.dgvSolicitudes.Location = new System.Drawing.Point(27, 674);
+            this.dgvSolicitudes.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dgvSolicitudes.Name = "dgvSolicitudes";
             this.dgvSolicitudes.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvSolicitudes.RowHeadersVisible = false;
+            this.dgvSolicitudes.RowHeadersWidth = 62;
             this.dgvSolicitudes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSolicitudes.Size = new System.Drawing.Size(674, 100);
+            this.dgvSolicitudes.Size = new System.Drawing.Size(1011, 154);
             this.dgvSolicitudes.TabIndex = 108;
             this.dgvSolicitudes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSolicitudes_CellClick);
             // 
             // sSubtotal
             // 
             this.sSubtotal.Enabled = false;
-            this.sSubtotal.Location = new System.Drawing.Point(652, 357);
+            this.sSubtotal.Location = new System.Drawing.Point(978, 597);
+            this.sSubtotal.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.sSubtotal.Name = "sSubtotal";
-            this.sSubtotal.Size = new System.Drawing.Size(107, 20);
+            this.sSubtotal.Size = new System.Drawing.Size(158, 26);
             this.sSubtotal.TabIndex = 107;
             this.sSubtotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -287,9 +346,10 @@ namespace Rentadora
             // 
             this.label31.AutoSize = true;
             this.label31.ForeColor = System.Drawing.Color.Black;
-            this.label31.Location = new System.Drawing.Point(738, 293);
+            this.label31.Location = new System.Drawing.Point(1107, 499);
+            this.label31.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(62, 13);
+            this.label31.Size = new System.Drawing.Size(94, 20);
             this.label31.TabIndex = 105;
             this.label31.Text = "FECHA FIN";
             // 
@@ -297,25 +357,28 @@ namespace Rentadora
             // 
             this.label30.AutoSize = true;
             this.label30.ForeColor = System.Drawing.Color.Black;
-            this.label30.Location = new System.Drawing.Point(489, 293);
+            this.label30.Location = new System.Drawing.Point(734, 499);
+            this.label30.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(77, 13);
+            this.label30.Size = new System.Drawing.Size(117, 20);
             this.label30.TabIndex = 104;
             this.label30.Text = "FECHA INICIO";
             // 
             // sFin
             // 
-            this.sFin.Location = new System.Drawing.Point(738, 309);
+            this.sFin.Location = new System.Drawing.Point(1107, 523);
+            this.sFin.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.sFin.Name = "sFin";
-            this.sFin.Size = new System.Drawing.Size(200, 20);
+            this.sFin.Size = new System.Drawing.Size(298, 26);
             this.sFin.TabIndex = 103;
             this.sFin.ValueChanged += new System.EventHandler(this.sFin_ValueChanged);
             // 
             // sInicio
             // 
-            this.sInicio.Location = new System.Drawing.Point(492, 309);
+            this.sInicio.Location = new System.Drawing.Point(738, 523);
+            this.sInicio.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.sInicio.Name = "sInicio";
-            this.sInicio.Size = new System.Drawing.Size(200, 20);
+            this.sInicio.Size = new System.Drawing.Size(298, 26);
             this.sInicio.TabIndex = 102;
             // 
             // label29
@@ -324,9 +387,10 @@ namespace Rentadora
             this.label29.AutoSize = true;
             this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label29.ForeColor = System.Drawing.Color.Black;
-            this.label29.Location = new System.Drawing.Point(671, 41);
+            this.label29.Location = new System.Drawing.Point(1006, 63);
+            this.label29.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(66, 16);
+            this.label29.Size = new System.Drawing.Size(98, 25);
             this.label29.TabIndex = 101;
             this.label29.Text = "FECHA: ";
             // 
@@ -335,28 +399,29 @@ namespace Rentadora
             this.sfecha.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.sfecha.Enabled = false;
             this.sfecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sfecha.Location = new System.Drawing.Point(740, 36);
+            this.sfecha.Location = new System.Drawing.Point(1110, 55);
+            this.sfecha.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.sfecha.Name = "sfecha";
-            this.sfecha.Size = new System.Drawing.Size(260, 21);
+            this.sfecha.Size = new System.Drawing.Size(388, 28);
             this.sfecha.TabIndex = 100;
             // 
             // label28
             // 
             this.label28.AutoSize = true;
             this.label28.ForeColor = System.Drawing.Color.Black;
-            this.label28.Location = new System.Drawing.Point(737, 230);
+            this.label28.Location = new System.Drawing.Point(1106, 402);
+            this.label28.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(66, 13);
+            this.label28.Size = new System.Drawing.Size(98, 20);
             this.label28.TabIndex = 99;
             this.label28.Text = "EMPLEADO";
             // 
             // sEmpleado
             // 
             this.sEmpleado.FormattingEnabled = true;
-            this.sEmpleado.Location = new System.Drawing.Point(740, 245);
-            this.sEmpleado.Margin = new System.Windows.Forms.Padding(2);
+            this.sEmpleado.Location = new System.Drawing.Point(1110, 425);
             this.sEmpleado.Name = "sEmpleado";
-            this.sEmpleado.Size = new System.Drawing.Size(172, 21);
+            this.sEmpleado.Size = new System.Drawing.Size(256, 28);
             this.sEmpleado.TabIndex = 98;
             this.sEmpleado.SelectedIndexChanged += new System.EventHandler(this.sEmpleado_SelectedIndexChanged);
             // 
@@ -364,19 +429,19 @@ namespace Rentadora
             // 
             this.label27.AutoSize = true;
             this.label27.ForeColor = System.Drawing.Color.Black;
-            this.label27.Location = new System.Drawing.Point(514, 229);
+            this.label27.Location = new System.Drawing.Point(771, 400);
+            this.label27.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(65, 13);
+            this.label27.Size = new System.Drawing.Size(98, 20);
             this.label27.TabIndex = 97;
             this.label27.Text = "SUCURSAL";
             // 
             // cbSucursal
             // 
             this.cbSucursal.FormattingEnabled = true;
-            this.cbSucursal.Location = new System.Drawing.Point(517, 245);
-            this.cbSucursal.Margin = new System.Windows.Forms.Padding(2);
+            this.cbSucursal.Location = new System.Drawing.Point(776, 425);
             this.cbSucursal.Name = "cbSucursal";
-            this.cbSucursal.Size = new System.Drawing.Size(168, 21);
+            this.cbSucursal.Size = new System.Drawing.Size(250, 28);
             this.cbSucursal.TabIndex = 96;
             this.cbSucursal.SelectedIndexChanged += new System.EventHandler(this.cbSucursal_SelectedIndexChanged);
             // 
@@ -385,9 +450,10 @@ namespace Rentadora
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label24.ForeColor = System.Drawing.Color.Black;
-            this.label24.Location = new System.Drawing.Point(602, 212);
+            this.label24.Location = new System.Drawing.Point(903, 374);
+            this.label24.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(168, 16);
+            this.label24.Size = new System.Drawing.Size(245, 25);
             this.label24.TabIndex = 95;
             this.label24.Text = "DATOS DE SOLICITUD";
             // 
@@ -396,9 +462,10 @@ namespace Rentadora
             this.sVehiculo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.sVehiculo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Lime;
             this.sVehiculo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.sVehiculo.Location = new System.Drawing.Point(830, 170);
+            this.sVehiculo.Location = new System.Drawing.Point(1262, 261);
+            this.sVehiculo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.sVehiculo.Name = "sVehiculo";
-            this.sVehiculo.Size = new System.Drawing.Size(137, 23);
+            this.sVehiculo.Size = new System.Drawing.Size(206, 35);
             this.sVehiculo.TabIndex = 94;
             this.sVehiculo.Text = "SELECCIONAR AUTO";
             this.sVehiculo.UseVisualStyleBackColor = false;
@@ -407,66 +474,74 @@ namespace Rentadora
             // vColor
             // 
             this.vColor.Enabled = false;
-            this.vColor.Location = new System.Drawing.Point(718, 172);
+            this.vColor.Location = new System.Drawing.Point(1077, 265);
+            this.vColor.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.vColor.Name = "vColor";
-            this.vColor.Size = new System.Drawing.Size(107, 20);
+            this.vColor.Size = new System.Drawing.Size(158, 26);
             this.vColor.TabIndex = 93;
             // 
             // vCombustible
             // 
             this.vCombustible.Enabled = false;
-            this.vCombustible.Location = new System.Drawing.Point(605, 172);
+            this.vCombustible.Location = new System.Drawing.Point(908, 265);
+            this.vCombustible.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.vCombustible.Name = "vCombustible";
-            this.vCombustible.Size = new System.Drawing.Size(107, 20);
+            this.vCombustible.Size = new System.Drawing.Size(158, 26);
             this.vCombustible.TabIndex = 92;
             // 
             // vVersion
             // 
             this.vVersion.Enabled = false;
-            this.vVersion.Location = new System.Drawing.Point(492, 172);
+            this.vVersion.Location = new System.Drawing.Point(738, 265);
+            this.vVersion.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.vVersion.Name = "vVersion";
-            this.vVersion.Size = new System.Drawing.Size(107, 20);
+            this.vVersion.Size = new System.Drawing.Size(158, 26);
             this.vVersion.TabIndex = 91;
             // 
             // vCosto
             // 
             this.vCosto.Enabled = false;
-            this.vCosto.Location = new System.Drawing.Point(831, 128);
+            this.vCosto.Location = new System.Drawing.Point(1246, 197);
+            this.vCosto.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.vCosto.Name = "vCosto";
-            this.vCosto.Size = new System.Drawing.Size(107, 20);
+            this.vCosto.Size = new System.Drawing.Size(120, 26);
             this.vCosto.TabIndex = 90;
             // 
             // vMarca
             // 
             this.vMarca.Enabled = false;
-            this.vMarca.Location = new System.Drawing.Point(718, 128);
+            this.vMarca.Location = new System.Drawing.Point(1077, 197);
+            this.vMarca.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.vMarca.Name = "vMarca";
-            this.vMarca.Size = new System.Drawing.Size(107, 20);
+            this.vMarca.Size = new System.Drawing.Size(158, 26);
             this.vMarca.TabIndex = 89;
             // 
             // vModelo
             // 
             this.vModelo.Enabled = false;
-            this.vModelo.Location = new System.Drawing.Point(605, 128);
+            this.vModelo.Location = new System.Drawing.Point(908, 197);
+            this.vModelo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.vModelo.Name = "vModelo";
-            this.vModelo.Size = new System.Drawing.Size(107, 20);
+            this.vModelo.Size = new System.Drawing.Size(158, 26);
             this.vModelo.TabIndex = 88;
             // 
             // vPlaca
             // 
             this.vPlaca.Enabled = false;
-            this.vPlaca.Location = new System.Drawing.Point(492, 128);
+            this.vPlaca.Location = new System.Drawing.Point(738, 197);
+            this.vPlaca.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.vPlaca.Name = "vPlaca";
-            this.vPlaca.Size = new System.Drawing.Size(107, 20);
+            this.vPlaca.Size = new System.Drawing.Size(158, 26);
             this.vPlaca.TabIndex = 87;
             // 
             // label26
             // 
             this.label26.AutoSize = true;
             this.label26.ForeColor = System.Drawing.Color.Black;
-            this.label26.Location = new System.Drawing.Point(715, 112);
+            this.label26.Location = new System.Drawing.Point(1072, 172);
+            this.label26.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(45, 13);
+            this.label26.Size = new System.Drawing.Size(67, 20);
             this.label26.TabIndex = 86;
             this.label26.Text = "MARCA";
             // 
@@ -474,9 +549,10 @@ namespace Rentadora
             // 
             this.label25.AutoSize = true;
             this.label25.ForeColor = System.Drawing.Color.Black;
-            this.label25.Location = new System.Drawing.Point(828, 112);
+            this.label25.Location = new System.Drawing.Point(1242, 172);
+            this.label25.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(84, 13);
+            this.label25.Size = new System.Drawing.Size(122, 20);
             this.label25.TabIndex = 85;
             this.label25.Text = "COSTO RENTA";
             // 
@@ -484,9 +560,10 @@ namespace Rentadora
             // 
             this.label23.AutoSize = true;
             this.label23.ForeColor = System.Drawing.Color.Black;
-            this.label23.Location = new System.Drawing.Point(715, 156);
+            this.label23.Location = new System.Drawing.Point(1072, 240);
+            this.label23.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(44, 13);
+            this.label23.Size = new System.Drawing.Size(65, 20);
             this.label23.TabIndex = 83;
             this.label23.Text = "COLOR";
             // 
@@ -494,9 +571,10 @@ namespace Rentadora
             // 
             this.label22.AutoSize = true;
             this.label22.ForeColor = System.Drawing.Color.Black;
-            this.label22.Location = new System.Drawing.Point(602, 156);
+            this.label22.Location = new System.Drawing.Point(903, 240);
+            this.label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(83, 13);
+            this.label22.Size = new System.Drawing.Size(124, 20);
             this.label22.TabIndex = 82;
             this.label22.Text = "COMBUSTIBLE";
             // 
@@ -504,9 +582,10 @@ namespace Rentadora
             // 
             this.label21.AutoSize = true;
             this.label21.ForeColor = System.Drawing.Color.Black;
-            this.label21.Location = new System.Drawing.Point(489, 156);
+            this.label21.Location = new System.Drawing.Point(734, 240);
+            this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(55, 13);
+            this.label21.Size = new System.Drawing.Size(82, 20);
             this.label21.TabIndex = 81;
             this.label21.Text = "VERSION";
             // 
@@ -514,9 +593,10 @@ namespace Rentadora
             // 
             this.label18.AutoSize = true;
             this.label18.ForeColor = System.Drawing.Color.Black;
-            this.label18.Location = new System.Drawing.Point(602, 112);
+            this.label18.Location = new System.Drawing.Point(903, 172);
+            this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(53, 13);
+            this.label18.Size = new System.Drawing.Size(78, 20);
             this.label18.TabIndex = 80;
             this.label18.Text = "MODELO";
             // 
@@ -524,9 +604,10 @@ namespace Rentadora
             // 
             this.label17.AutoSize = true;
             this.label17.ForeColor = System.Drawing.Color.Black;
-            this.label17.Location = new System.Drawing.Point(489, 112);
+            this.label17.Location = new System.Drawing.Point(734, 172);
+            this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(41, 13);
+            this.label17.Size = new System.Drawing.Size(61, 20);
             this.label17.TabIndex = 79;
             this.label17.Text = "PLACA";
             // 
@@ -535,9 +616,10 @@ namespace Rentadora
             this.add_soli.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.add_soli.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Lime;
             this.add_soli.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.add_soli.Location = new System.Drawing.Point(812, 354);
+            this.add_soli.Location = new System.Drawing.Point(1218, 593);
+            this.add_soli.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.add_soli.Name = "add_soli";
-            this.add_soli.Size = new System.Drawing.Size(167, 23);
+            this.add_soli.Size = new System.Drawing.Size(250, 35);
             this.add_soli.TabIndex = 78;
             this.add_soli.Text = "AGREGAR SOLICITUD";
             this.add_soli.UseVisualStyleBackColor = false;
@@ -548,9 +630,10 @@ namespace Rentadora
             this.cerrarCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.cerrarCliente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.cerrarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cerrarCliente.Location = new System.Drawing.Point(190, 114);
+            this.cerrarCliente.Location = new System.Drawing.Point(285, 175);
+            this.cerrarCliente.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cerrarCliente.Name = "cerrarCliente";
-            this.cerrarCliente.Size = new System.Drawing.Size(65, 23);
+            this.cerrarCliente.Size = new System.Drawing.Size(98, 35);
             this.cerrarCliente.TabIndex = 77;
             this.cerrarCliente.Text = "CERRAR";
             this.cerrarCliente.UseVisualStyleBackColor = false;
@@ -562,9 +645,10 @@ namespace Rentadora
             this.cargarCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.cargarCliente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Lime;
             this.cargarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cargarCliente.Location = new System.Drawing.Point(190, 114);
+            this.cargarCliente.Location = new System.Drawing.Point(285, 175);
+            this.cargarCliente.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cargarCliente.Name = "cargarCliente";
-            this.cargarCliente.Size = new System.Drawing.Size(65, 23);
+            this.cargarCliente.Size = new System.Drawing.Size(98, 35);
             this.cargarCliente.TabIndex = 75;
             this.cargarCliente.Text = "CARGAR";
             this.cargarCliente.UseVisualStyleBackColor = false;
@@ -575,9 +659,10 @@ namespace Rentadora
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.Black;
-            this.label16.Location = new System.Drawing.Point(602, 80);
+            this.label16.Location = new System.Drawing.Point(903, 123);
+            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(172, 16);
+            this.label16.Size = new System.Drawing.Size(251, 25);
             this.label16.TabIndex = 74;
             this.label16.Text = "DATOS DEL VEHICULO";
             // 
@@ -586,9 +671,10 @@ namespace Rentadora
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.Black;
-            this.label11.Location = new System.Drawing.Point(130, 80);
+            this.label11.Location = new System.Drawing.Point(195, 123);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(160, 16);
+            this.label11.Size = new System.Drawing.Size(232, 25);
             this.label11.TabIndex = 73;
             this.label11.Text = "DATOS DEL CLIENTE";
             // 
@@ -598,9 +684,10 @@ namespace Rentadora
             this.label12.BackColor = System.Drawing.Color.Transparent;
             this.label12.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.Black;
-            this.label12.Location = new System.Drawing.Point(263, 9);
+            this.label12.Location = new System.Drawing.Point(394, 14);
+            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(499, 24);
+            this.label12.Size = new System.Drawing.Size(764, 37);
             this.label12.TabIndex = 72;
             this.label12.Text = "FORMULARIO PARA SOLICITUD RENTA DE AUTO";
             // 
@@ -608,9 +695,10 @@ namespace Rentadora
             // 
             this.label20.AutoSize = true;
             this.label20.ForeColor = System.Drawing.Color.Black;
-            this.label20.Location = new System.Drawing.Point(270, 344);
+            this.label20.Location = new System.Drawing.Point(405, 529);
+            this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(50, 13);
+            this.label20.Size = new System.Drawing.Size(73, 20);
             this.label20.TabIndex = 71;
             this.label20.Text = "N° CASA";
             // 
@@ -618,40 +706,45 @@ namespace Rentadora
             // 
             this.label19.AutoSize = true;
             this.label19.ForeColor = System.Drawing.Color.Black;
-            this.label19.Location = new System.Drawing.Point(153, 344);
+            this.label19.Location = new System.Drawing.Point(230, 529);
+            this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(40, 13);
+            this.label19.Size = new System.Drawing.Size(60, 20);
             this.label19.TabIndex = 70;
             this.label19.Text = "CALLE";
             // 
             // casa
             // 
-            this.casa.Location = new System.Drawing.Point(273, 360);
+            this.casa.Location = new System.Drawing.Point(410, 554);
+            this.casa.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.casa.Name = "casa";
-            this.casa.Size = new System.Drawing.Size(53, 20);
+            this.casa.Size = new System.Drawing.Size(78, 26);
             this.casa.TabIndex = 69;
             // 
             // calle
             // 
-            this.calle.Location = new System.Drawing.Point(155, 360);
+            this.calle.Location = new System.Drawing.Point(232, 554);
+            this.calle.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.calle.Name = "calle";
-            this.calle.Size = new System.Drawing.Size(100, 20);
+            this.calle.Size = new System.Drawing.Size(148, 26);
             this.calle.TabIndex = 68;
             // 
             // col_aldea
             // 
-            this.col_aldea.Location = new System.Drawing.Point(42, 360);
+            this.col_aldea.Location = new System.Drawing.Point(63, 554);
+            this.col_aldea.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.col_aldea.Name = "col_aldea";
-            this.col_aldea.Size = new System.Drawing.Size(100, 20);
+            this.col_aldea.Size = new System.Drawing.Size(148, 26);
             this.col_aldea.TabIndex = 67;
             // 
             // label15
             // 
             this.label15.AutoSize = true;
             this.label15.ForeColor = System.Drawing.Color.Black;
-            this.label15.Location = new System.Drawing.Point(277, 245);
+            this.label15.Location = new System.Drawing.Point(416, 377);
+            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(73, 13);
+            this.label15.Size = new System.Drawing.Size(107, 20);
             this.label15.TabIndex = 63;
             this.label15.Text = "TELEFONO 3";
             // 
@@ -659,9 +752,10 @@ namespace Rentadora
             // 
             this.label14.AutoSize = true;
             this.label14.ForeColor = System.Drawing.Color.Black;
-            this.label14.Location = new System.Drawing.Point(277, 206);
+            this.label14.Location = new System.Drawing.Point(416, 317);
+            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(73, 13);
+            this.label14.Size = new System.Drawing.Size(107, 20);
             this.label14.TabIndex = 62;
             this.label14.Text = "TELEFONO 2";
             // 
@@ -669,56 +763,63 @@ namespace Rentadora
             // 
             this.label13.AutoSize = true;
             this.label13.ForeColor = System.Drawing.Color.Black;
-            this.label13.Location = new System.Drawing.Point(277, 167);
+            this.label13.Location = new System.Drawing.Point(416, 257);
+            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(73, 13);
+            this.label13.Size = new System.Drawing.Size(107, 20);
             this.label13.TabIndex = 61;
             this.label13.Text = "TELEFONO 1";
             // 
             // tel3
             // 
-            this.tel3.Location = new System.Drawing.Point(280, 261);
+            this.tel3.Location = new System.Drawing.Point(420, 402);
+            this.tel3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tel3.Name = "tel3";
-            this.tel3.Size = new System.Drawing.Size(107, 20);
+            this.tel3.Size = new System.Drawing.Size(158, 26);
             this.tel3.TabIndex = 60;
             // 
             // tel2
             // 
-            this.tel2.Location = new System.Drawing.Point(280, 222);
+            this.tel2.Location = new System.Drawing.Point(420, 342);
+            this.tel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tel2.Name = "tel2";
-            this.tel2.Size = new System.Drawing.Size(107, 20);
+            this.tel2.Size = new System.Drawing.Size(158, 26);
             this.tel2.TabIndex = 59;
             // 
             // tel1
             // 
-            this.tel1.Location = new System.Drawing.Point(280, 183);
+            this.tel1.Location = new System.Drawing.Point(420, 282);
+            this.tel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tel1.Name = "tel1";
-            this.tel1.Size = new System.Drawing.Size(107, 20);
+            this.tel1.Size = new System.Drawing.Size(158, 26);
             this.tel1.TabIndex = 58;
             // 
             // cIdentidad
             // 
-            this.cIdentidad.Location = new System.Drawing.Point(41, 116);
+            this.cIdentidad.Location = new System.Drawing.Point(62, 178);
+            this.cIdentidad.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cIdentidad.Name = "cIdentidad";
-            this.cIdentidad.Size = new System.Drawing.Size(143, 20);
+            this.cIdentidad.Size = new System.Drawing.Size(212, 26);
             this.cIdentidad.TabIndex = 48;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(312, 112);
+            this.label10.Location = new System.Drawing.Point(468, 172);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(36, 13);
+            this.label10.Size = new System.Drawing.Size(54, 20);
             this.label10.TabIndex = 57;
             this.label10.Text = "SEXO";
             // 
             // cbDepartamento
             // 
             this.cbDepartamento.FormattingEnabled = true;
-            this.cbDepartamento.Location = new System.Drawing.Point(41, 309);
+            this.cbDepartamento.Location = new System.Drawing.Point(62, 475);
+            this.cbDepartamento.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbDepartamento.Name = "cbDepartamento";
-            this.cbDepartamento.Size = new System.Drawing.Size(143, 21);
+            this.cbDepartamento.Size = new System.Drawing.Size(212, 28);
             this.cbDepartamento.TabIndex = 39;
             this.cbDepartamento.SelectedIndexChanged += new System.EventHandler(this.cbDepartamento_SelectedIndexChanged);
             // 
@@ -726,17 +827,19 @@ namespace Rentadora
             // 
             this.label9.AutoSize = true;
             this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(42, 239);
+            this.label9.Location = new System.Drawing.Point(63, 368);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(99, 13);
+            this.label9.Size = new System.Drawing.Size(143, 20);
             this.label9.TabIndex = 56;
             this.label9.Text = "NUMERO DE RTN";
             // 
             // cbMunicipio
             // 
-            this.cbMunicipio.Location = new System.Drawing.Point(242, 309);
+            this.cbMunicipio.Location = new System.Drawing.Point(363, 475);
+            this.cbMunicipio.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbMunicipio.Name = "cbMunicipio";
-            this.cbMunicipio.Size = new System.Drawing.Size(143, 21);
+            this.cbMunicipio.Size = new System.Drawing.Size(212, 28);
             this.cbMunicipio.TabIndex = 40;
             this.cbMunicipio.SelectedIndexChanged += new System.EventHandler(this.cbMunicipio_SelectedIndexChanged);
             // 
@@ -744,9 +847,10 @@ namespace Rentadora
             // 
             this.label8.AutoSize = true;
             this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(144, 197);
+            this.label8.Location = new System.Drawing.Point(216, 303);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(116, 13);
+            this.label8.Size = new System.Drawing.Size(174, 20);
             this.label8.TabIndex = 55;
             this.label8.Text = "SEGUNDO APELLIDO";
             // 
@@ -754,9 +858,10 @@ namespace Rentadora
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(38, 293);
+            this.label1.Location = new System.Drawing.Point(57, 451);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(97, 13);
+            this.label1.Size = new System.Drawing.Size(141, 20);
             this.label1.TabIndex = 41;
             this.label1.Text = "DEPARTAMENTO";
             // 
@@ -764,9 +869,10 @@ namespace Rentadora
             // 
             this.label7.AutoSize = true;
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(38, 197);
+            this.label7.Location = new System.Drawing.Point(57, 303);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(104, 13);
+            this.label7.Size = new System.Drawing.Size(155, 20);
             this.label7.TabIndex = 54;
             this.label7.Text = "PRIMER APELLIDO";
             // 
@@ -774,9 +880,10 @@ namespace Rentadora
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(239, 293);
+            this.label2.Location = new System.Drawing.Point(358, 451);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(63, 13);
+            this.label2.Size = new System.Drawing.Size(93, 20);
             this.label2.TabIndex = 42;
             this.label2.Text = "MUNICIPIO";
             // 
@@ -784,9 +891,10 @@ namespace Rentadora
             // 
             this.label6.AutoSize = true;
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(144, 156);
+            this.label6.Location = new System.Drawing.Point(216, 240);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(111, 13);
+            this.label6.Size = new System.Drawing.Size(165, 20);
             this.label6.TabIndex = 53;
             this.label6.Text = "SEGUNDO NOMBRE";
             // 
@@ -794,9 +902,10 @@ namespace Rentadora
             // 
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(39, 156);
+            this.label5.Location = new System.Drawing.Point(58, 240);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(99, 13);
+            this.label5.Size = new System.Drawing.Size(146, 20);
             this.label5.TabIndex = 52;
             this.label5.Text = "PRIMER NOMBRE";
             // 
@@ -804,9 +913,10 @@ namespace Rentadora
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(38, 344);
+            this.label3.Location = new System.Drawing.Point(57, 529);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(94, 13);
+            this.label3.Size = new System.Drawing.Size(138, 20);
             this.label3.TabIndex = 43;
             this.label3.Text = "COLONIA/ALDEA";
             // 
@@ -814,17 +924,19 @@ namespace Rentadora
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(41, 100);
+            this.label4.Location = new System.Drawing.Point(62, 154);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(135, 13);
+            this.label4.Size = new System.Drawing.Size(199, 20);
             this.label4.TabIndex = 51;
             this.label4.Text = "NUMERO DE IDENTIDAD";
             // 
             // cP_nombre
             // 
-            this.cP_nombre.Location = new System.Drawing.Point(41, 172);
+            this.cP_nombre.Location = new System.Drawing.Point(62, 265);
+            this.cP_nombre.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cP_nombre.Name = "cP_nombre";
-            this.cP_nombre.Size = new System.Drawing.Size(100, 20);
+            this.cP_nombre.Size = new System.Drawing.Size(148, 26);
             this.cP_nombre.TabIndex = 44;
             // 
             // cSexo
@@ -833,46 +945,52 @@ namespace Rentadora
             this.cSexo.Items.AddRange(new object[] {
             "MASCULINO",
             "FEMENINO"});
-            this.cSexo.Location = new System.Drawing.Point(280, 129);
+            this.cSexo.Location = new System.Drawing.Point(420, 198);
+            this.cSexo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cSexo.Name = "cSexo";
-            this.cSexo.Size = new System.Drawing.Size(100, 21);
+            this.cSexo.Size = new System.Drawing.Size(148, 28);
             this.cSexo.TabIndex = 50;
             // 
             // cS_nombre
             // 
-            this.cS_nombre.Location = new System.Drawing.Point(147, 172);
+            this.cS_nombre.Location = new System.Drawing.Point(220, 265);
+            this.cS_nombre.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cS_nombre.Name = "cS_nombre";
-            this.cS_nombre.Size = new System.Drawing.Size(100, 20);
+            this.cS_nombre.Size = new System.Drawing.Size(148, 26);
             this.cS_nombre.TabIndex = 45;
             // 
             // cRtn
             // 
-            this.cRtn.Location = new System.Drawing.Point(42, 255);
+            this.cRtn.Location = new System.Drawing.Point(63, 392);
+            this.cRtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cRtn.Name = "cRtn";
-            this.cRtn.Size = new System.Drawing.Size(173, 20);
+            this.cRtn.Size = new System.Drawing.Size(258, 26);
             this.cRtn.TabIndex = 49;
             // 
             // cP_apellido
             // 
-            this.cP_apellido.Location = new System.Drawing.Point(41, 211);
+            this.cP_apellido.Location = new System.Drawing.Point(62, 325);
+            this.cP_apellido.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cP_apellido.Name = "cP_apellido";
-            this.cP_apellido.Size = new System.Drawing.Size(100, 20);
+            this.cP_apellido.Size = new System.Drawing.Size(148, 26);
             this.cP_apellido.TabIndex = 46;
             // 
             // cS_apellido
             // 
-            this.cS_apellido.Location = new System.Drawing.Point(147, 211);
+            this.cS_apellido.Location = new System.Drawing.Point(220, 325);
+            this.cS_apellido.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cS_apellido.Name = "cS_apellido";
-            this.cS_apellido.Size = new System.Drawing.Size(100, 20);
+            this.cS_apellido.Size = new System.Drawing.Size(148, 26);
             this.cS_apellido.TabIndex = 47;
             // 
             // fmrSolicitudes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1000, 550);
+            this.ClientSize = new System.Drawing.Size(1500, 846);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "fmrSolicitudes";
             this.Text = "fmrSolicitudes";
             this.Load += new System.EventHandler(this.fmrSolicitudes_Load);
@@ -953,5 +1071,9 @@ namespace Rentadora
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.DataGridView dgvSolicitudes;
         private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.ComboBox cbSeguro;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.TextBox vSeguro;
+        private System.Windows.Forms.Label label35;
     }
 }

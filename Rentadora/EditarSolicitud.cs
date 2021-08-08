@@ -15,7 +15,9 @@ namespace Rentadora
     {
         private OracleConnection oracle = new OracleConnection(Variable.conexion);
         private float costo_renta = 0;
+        private float seguro = 0;
         private float subtotal = 0;
+        private int opcionSeguro;
         private int idcliente;
         DateTime fecha_i;
         DateTime fecha_f;
@@ -42,6 +44,7 @@ namespace Rentadora
                 sSubtotal.Text = subtotal.ToString();
                 sID.Text = registro["solicitudid"].ToString();
                 sFecha.Text = registro["fecha_solicitud"].ToString();
+                cbSeguro.Text = registro["seguro"].ToString();
                 oracle.Close();
 
                 cargarAuto();
@@ -87,7 +90,7 @@ namespace Rentadora
             try
             {
                 oracle.Open();
-                OracleCommand comando = new OracleCommand("Select v.costo_renta, v.placa, comb.combustible, modelo.modelo, marca.marca, color.color,vers.version from rentadora.vehiculo v INNER JOIN rentadora.combustible comb ON comb.combustibleid = v.combustibleid INNER JOIN rentadora.modelo modelo ON modelo.modeloid = v.modeloid INNER JOIN rentadora.marca marca ON marca.marcaid = v.marcaid INNER JOIN rentadora.color color ON color.colorid = v.colorid INNER JOIN rentadora.version vers ON vers.versionid = v.versionid where v.vehiculoid =" + Variable.idSelectAuto, oracle);
+                OracleCommand comando = new OracleCommand("Select v.costo_renta, v.placa, comb.combustible, modelo.modelo, marca.marca, color.color,vers.version, v.seguro from rentadora.vehiculo v INNER JOIN rentadora.combustible comb ON comb.combustibleid = v.combustibleid INNER JOIN rentadora.modelo modelo ON modelo.modeloid = v.modeloid INNER JOIN rentadora.marca marca ON marca.marcaid = v.marcaid INNER JOIN rentadora.color color ON color.colorid = v.colorid INNER JOIN rentadora.version vers ON vers.versionid = v.versionid where v.vehiculoid =" + Variable.idSelectAuto, oracle);
                 OracleDataReader registro = comando.ExecuteReader();
                 registro.Read();
                 vPlaca.Text = registro["placa"].ToString();
@@ -98,6 +101,8 @@ namespace Rentadora
                 vVersion.Text = registro["version"].ToString();
                 vCosto.Text = registro["costo_renta"].ToString();
                 costo_renta = float.Parse(registro["costo_renta"].ToString());
+                vSeguro.Text = registro["seguro"].ToString();
+                seguro = float.Parse(registro["seguro"].ToString());
             }
             catch
             {
@@ -116,11 +121,18 @@ namespace Rentadora
             }
         }
 
+        private void cbSeguro_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            opcionSeguro = cbSeguro.SelectedIndex;
+        }
+
         private void totalDias()
         {
             TimeSpan dif = fecha_f - fecha_i;
             int dias = dif.Days;
-            subtotal = costo_renta * dias;
+            if (opcionSeguro == 0) { subtotal = seguro + (costo_renta * dias); }
+            else { subtotal = costo_renta * dias; }
+
         }
 
         private void sFin_ValueChanged(object sender, EventArgs e)
@@ -153,6 +165,7 @@ namespace Rentadora
                 comando.Parameters.Add("vehiculo", OracleType.Int32).Value = Variable.idSelectAuto;
                 comando.Parameters.Add("fechai", OracleType.DateTime).Value = sInicio.Value;
                 comando.Parameters.Add("fechaf", OracleType.DateTime).Value = sFin.Value;
+                comando.Parameters.Add("seguro", OracleType.VarChar).Value = cbSeguro;
                 comando.Parameters.Add("subt", OracleType.Float).Value = subtotal;
                 comando.ExecuteNonQuery();
             }
@@ -168,5 +181,7 @@ namespace Rentadora
             actualizar();
             DialogResult = DialogResult.OK;
         }
+
+       
     }
 }

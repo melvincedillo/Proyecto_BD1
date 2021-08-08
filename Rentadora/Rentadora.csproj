@@ -220,5 +220,8 @@
   <ItemGroup>
     <None Include="Resources\png-transparent-human-figure-human-behavior-neck-microphone-hand-male-user-edit-microphone-hand-smiley-thumbnail.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo %281%29.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

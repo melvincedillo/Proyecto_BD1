@@ -45,5 +45,20 @@ namespace Rentadora
             passwordTxt.Text = null;
         }
 
+
+        private void passwordTxt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void usuarioTxt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

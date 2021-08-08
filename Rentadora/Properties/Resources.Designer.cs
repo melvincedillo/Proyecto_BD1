@@ -93,6 +93,16 @@ namespace Rentadora.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap logo__1_ {
+            get {
+                object obj = ResourceManager.GetObject("logo (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap png_transparent_human_figure_human_behavior_neck_microphone_hand_male_user_edit_microphone_hand_smiley_thumbnail {
             get {
                 object obj = ResourceManager.GetObject("png_transparent_human_figure_human_behavior_neck_microphone_hand_male_user_edit_m" +

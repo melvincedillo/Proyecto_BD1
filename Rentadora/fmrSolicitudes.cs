@@ -18,12 +18,14 @@ namespace Rentadora
         private List<int> idSucursales = new List<int>();
         private List<int> idEmpleados = new List<int>();
         private int idempleado;
+        private int opcionSeguro;
         private int idSucursal;
         private int idmunicipio;
         private int iddireccion;
         private int idcliente = 0;
         private float subtotal = 0;
         private float costo_renta = 0;
+        private float seguro = 0;
         private int idsolicitud = 0;
         bool cargarC = true;
 
@@ -199,7 +201,7 @@ namespace Rentadora
             if (cerrarCliente.Visible == false && cargarCliente.Visible == false) { cargarCliente.Visible = true; }
             vPlaca.Text = ""; vVersion.Text = ""; vColor.Text = ""; vCombustible.Text = ""; vCosto.Text = ""; vMarca.Text = ""; vModelo.Text = "";
             sInicio.Value = DateTime.Now; sFin.Value = DateTime.Now;
-            sSubtotal.Text = "0"; cbSucursal.Text = ""; sEmpleado.Text = "";
+            sSubtotal.Text = "0"; cbSucursal.Text = ""; cbSeguro.Text = ""; vSeguro.Text = ""; sEmpleado.Text = "";
             idcliente = 0; costo_renta = 0; subtotal = 0; Variable.idSelectAuto = 0;
         }
 
@@ -323,7 +325,7 @@ namespace Rentadora
             try
             {
                 oracle.Open();
-                OracleCommand comando = new OracleCommand("Select v.costo_renta, v.placa, comb.combustible, modelo.modelo, marca.marca, color.color,vers.version from rentadora.vehiculo v INNER JOIN rentadora.combustible comb ON comb.combustibleid = v.combustibleid INNER JOIN rentadora.modelo modelo ON modelo.modeloid = v.modeloid INNER JOIN rentadora.marca marca ON marca.marcaid = v.marcaid INNER JOIN rentadora.color color ON color.colorid = v.colorid INNER JOIN rentadora.version vers ON vers.versionid = v.versionid where v.vehiculoid =" + Variable.idSelectAuto, oracle);
+                OracleCommand comando = new OracleCommand("Select v.costo_renta, v.placa, comb.combustible, modelo.modelo, marca.marca, color.color,vers.version, v.seguro from rentadora.vehiculo v INNER JOIN rentadora.combustible comb ON comb.combustibleid = v.combustibleid INNER JOIN rentadora.modelo modelo ON modelo.modeloid = v.modeloid INNER JOIN rentadora.marca marca ON marca.marcaid = v.marcaid INNER JOIN rentadora.color color ON color.colorid = v.colorid INNER JOIN rentadora.version vers ON vers.versionid = v.versionid where v.vehiculoid =" + Variable.idSelectAuto, oracle);
                 OracleDataReader registro = comando.ExecuteReader();
                 registro.Read();
                 vPlaca.Text = registro["placa"].ToString();
@@ -334,6 +336,8 @@ namespace Rentadora
                 vVersion.Text = registro["version"].ToString();
                 vCosto.Text = registro["costo_renta"].ToString();
                 costo_renta = float.Parse(registro["costo_renta"].ToString());
+                vSeguro.Text = registro["seguro"].ToString();
+                seguro = float.Parse(registro["seguro"].ToString());
             }
             catch
             {
@@ -362,7 +366,11 @@ namespace Rentadora
                 comando.Parameters.Add("sucursal", OracleType.Int32).Value = idSucursal;
                 comando.Parameters.Add("vehiculo", OracleType.Int32).Value = Variable.idSelectAuto;
                 comando.Parameters.Add("subt", OracleType.Float).Value = subtotal;
+                comando.Parameters.Add("seguro", OracleType.VarChar).Value = cbSeguro.Text;
                 comando.ExecuteNonQuery();
+
+                OracleCommand estado = new OracleCommand("UPDATE VEHICULO SET ESTADOID=1 WHERE vehiculoid= " + Variable.idSelectAuto, oracle);
+                estado.ExecuteNonQuery();
             }
             catch
             {
@@ -371,12 +379,26 @@ namespace Rentadora
             oracle.Close();
         }
 
+        /*private void sEmpleado_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            idempleado = idEmpleados[sEmpleado.SelectedIndex];
+        }
+        */
+
+        private void cbSeguro_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            opcionSeguro = cbSeguro.SelectedIndex;
+        }
         private void totalDias() {
             DateTime fecha_i = sInicio.Value.Date;
             DateTime fecha_f = sFin.Value.Date;
             TimeSpan dif = fecha_f - fecha_i;
             int dias = dif.Days;
-            subtotal = costo_renta * dias;
+            //Console.WriteLine("Opcion Combobox: "+opcionSeguro);
+            if (opcionSeguro == 0){ subtotal = seguro + (costo_renta * dias); }
+            else { subtotal = costo_renta * dias; }
+            //Console.WriteLine("Subtotal: "+subtotal);
+            
         }
 
         private void sFin_ValueChanged(object sender, EventArgs e)
@@ -424,6 +446,9 @@ namespace Rentadora
                     OracleCommand comando = new OracleCommand("rentadora.delete_solicitud", oracle);
                     comando.CommandType = System.Data.CommandType.StoredProcedure;
                     comando.Parameters.Add("idS", OracleType.Int32).Value = idsolicitud;
+
+                    OracleCommand estado = new OracleCommand("UPDATE VEHICULO SET ESTADOID=0 WHERE vehiculoid=(SELECT vehiculoid FROM solicitud WHERE solicitudid= " + idsolicitud + ")", oracle);
+                    estado.ExecuteNonQuery();
                     comando.ExecuteNonQuery();
                 } catch 
                 {
@@ -441,5 +466,7 @@ namespace Rentadora
             nuevo.ShowDialog();
             mostrarSolicitudes();
         }
+
+        
     }
 }
