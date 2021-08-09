@@ -59,7 +59,7 @@ create or replace procedure elegir_vehiculos(vehiculo out SYS_REFCURSOR)
             INNER JOIN version ve ON ve.versionid = v.versionid
             INNER JOIN tipo_vehiculo tv ON tv.tipo_vehiculoid = v.tipo_vehiculoid
             
-            WHERE v.estadoid = 1;
+            WHERE v.estadoid = 0;
         end;
 
 --Procedimiento para eliminar Auto

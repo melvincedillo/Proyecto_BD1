@@ -206,6 +206,7 @@ create table SOLICITUD(
     clienteID int not null,
     empleadoid int,
     estadoid int,
+    seguro varchar(5),
     CONSTRAINT solicitudPK PRIMARY KEY(solicitudID),
     CONSTRAINT sucursalSolicitudPK foreign key(sucursalID) references SUCURSAL(sucursalID),
     CONSTRAINT vehiculoSolicitudPK foreign key(vehiculoID) references VEHICULO(vehiculoID),
@@ -213,22 +214,6 @@ create table SOLICITUD(
     CONSTRAINT empleadoSolicitudPK foreign key(empleadoid) references EMPLEADO(empleadoID),
     CONSTRAINT estadoSolicitudFK foreign key(estadoid) references estado_solicitud(estadoid)
 );
----esta parte por si ya tienen montada la base de datos
-alter table solicitud add empleadoid int;
-alter table solicitud add CONSTRAINT empleadoSolicitudPK foreign key(empleadoid) references EMPLEADO(empleadoID);
-alter table solicitud drop CONSTRAINT rentaSolicitudPK;
-alter table solicitud drop column tipo_rentaID;
-
-create table estado_solicitud(
-estadoid int,
-estado varchar(20),
-constraint e_s_PK primary key (estadoid)
-);
-
-alter table solicitud drop column estado;
-alter table solicitud add estadoid int;
-alter table solicitud add CONSTRAINT estadoSolicitudFK foreign key(estadoid) references estado_solicitud(estadoid);
---finaliza parte alterna
 
 create table CONTRATO(
     contratoID int,
@@ -241,10 +226,6 @@ create table CONTRATO(
     CONSTRAINT direccionFinFK FOREIGN KEY (dir_finID) REFERENCES DIRECCION (direccionID)
 );
 
-alter table contrato drop CONSTRAINT solicitudContratoFK;
-alter table contrato drop CONSTRAINT direccionInicioFK;
-alter table contrato drop column dir_inicioID;
-alter table contrato drop column dir_finID;
 
 create table TIPO_PAGO(
     tipo_PagoID int,
