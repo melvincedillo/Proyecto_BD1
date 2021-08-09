@@ -15,7 +15,7 @@ namespace Rentadora
     {
         private OracleConnection oracle = new OracleConnection(Variable.conexion);
         private List<int> idSucursales = new List<int>();
-        private int idempleado;
+        private int idempleado = 0;
         private int idSucursal;
 
         
@@ -199,12 +199,19 @@ namespace Rentadora
         {
             if (Variable.controltotal == true)
             {
-                add_empleado.Visible = false;
-                delete_empleado.Visible = false;
-                editar_empleado.Visible = false;
-                aceptar.Visible = true;
-                cancelar.Visible = true;
-                cargarEmpleadoEditar();
+                if (idempleado != 0)
+                {
+                    add_empleado.Visible = false;
+                    delete_empleado.Visible = false;
+                    editar_empleado.Visible = false;
+                    aceptar.Visible = true;
+                    cancelar.Visible = true;
+                    cargarEmpleadoEditar();
+                }
+                else
+                {
+                    MessageBox.Show("Seleccione un empleado");
+                }
             }
             else
             {
@@ -237,9 +244,16 @@ namespace Rentadora
         {
             if (Variable.controltotal == true)
             {
-                deleteEmpleado();
-                idempleado = 0;
-                mostrarEmpleados();
+                if (idempleado != 0)
+                {
+                    deleteEmpleado();
+                    idempleado = 0;
+                    mostrarEmpleados();
+                }
+                else
+                {
+                    MessageBox.Show("Seleccione un empleado");
+                }
             }
             else
             {

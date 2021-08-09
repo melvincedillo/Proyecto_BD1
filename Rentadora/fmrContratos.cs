@@ -285,12 +285,19 @@ namespace Rentadora
 
         private void Detalles_Click(object sender, EventArgs e)
         {
-            cargarSolicitud();
-            idSoliciudGenerar.Enabled = false;
-            buscarSolicitud.Visible = false;
-            addContrato.Visible = false;
-            cancelarDeatlles.Visible = true;
-            Detalles.Visible = false;
+            if (idSolicitud != 0)
+            {
+                cargarSolicitud();
+                idSoliciudGenerar.Enabled = false;
+                buscarSolicitud.Visible = false;
+                addContrato.Visible = false;
+                cancelarDeatlles.Visible = true;
+                Detalles.Visible = false;
+            }
+            else
+            {
+                MessageBox.Show("Seleccione un contrato");
+            }
         }
 
         private void cargarContratos()

@@ -259,6 +259,8 @@ CREATE TABLE DEVOLUCIONxDANIOS(
     CONSTRAINT danioFK FOREIGN KEY (danioID) REFERENCES DANIO(danioID)
 );
 
+
+
 -------------------------------------------------------------------------------------------------------------------------------------
 --                                                 D M L SISTEMA RENTAS DE AUTOS
 -------------------------------------------------------------------------------------------------------------------------------------
@@ -292,8 +294,9 @@ INSERT INTO TIPO_RENTA VALUES(4,'Por Año', 60000);
 INSERT INTO VERSION VALUES(1,'JAPONES');
 INSERT INTO VERSION VALUES(2,'AMERICANO');
 INSERT INTO VERSION VALUES(3,'CANADINSE');
-INSERT INTO VERSION VALUES(4,'UROPERO');
+INSERT INTO VERSION VALUES(4,'EUROPERO');
 INSERT INTO VERSION VALUES(5,'RUSO');
+
 
 --Insetando datos Color
 INSERT INTO COLOR VALUES(1, 'Blanco');
@@ -350,9 +353,11 @@ INSERT INTO TIPO_VEHICULO VALUES (4,'6 cilindros');
 INSERT INTO TIPO_VEHICULO VALUES (5,'8 cilindros');
 
 --insertando tabla estado
-INSERT INTO ESTADO VALUES(1,'Disponible');
+INSERT INTO ESTADO VALUES(0,'Disponible');
+INSERT INTO ESTADO VALUES(1,'En espera');
 INSERT INTO ESTADO VALUES(2,'Rentado');
 INSERT INTO ESTADO VALUES(3,'En Mantenimiento');
+
 
 --Insertando datos tabla tipo Danio;
 INSERT INTO DANIO VALUES (1, 'Cambio de Aceite', 1000);

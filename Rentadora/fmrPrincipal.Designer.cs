@@ -65,10 +65,9 @@ namespace Rentadora
             this.Pcabeza.Controls.Add(this.salir);
             this.Pcabeza.Controls.Add(this.label1);
             this.Pcabeza.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Pcabeza.Location = new System.Drawing.Point(300, 0);
-            this.Pcabeza.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Pcabeza.Location = new System.Drawing.Point(200, 0);
             this.Pcabeza.Name = "Pcabeza";
-            this.Pcabeza.Size = new System.Drawing.Size(1500, 77);
+            this.Pcabeza.Size = new System.Drawing.Size(1000, 50);
             this.Pcabeza.TabIndex = 2;
             // 
             // pictureBox2
@@ -76,9 +75,8 @@ namespace Rentadora
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.Image = global::Rentadora.Properties.Resources.logo__1_;
             this.pictureBox2.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(150, 77);
+            this.pictureBox2.Size = new System.Drawing.Size(100, 50);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 4;
             this.pictureBox2.TabStop = false;
@@ -91,11 +89,10 @@ namespace Rentadora
             this.salir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.salir.ForeColor = System.Drawing.Color.Transparent;
             this.salir.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.salir.Location = new System.Drawing.Point(1419, 9);
-            this.salir.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.salir.Location = new System.Drawing.Point(946, 6);
             this.salir.Name = "salir";
             this.salir.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.salir.Size = new System.Drawing.Size(63, 58);
+            this.salir.Size = new System.Drawing.Size(42, 38);
             this.salir.TabIndex = 0;
             this.salir.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             this.salir.UseVisualStyleBackColor = true;
@@ -107,10 +104,9 @@ namespace Rentadora
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Rockwell", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(497, 9);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(331, 6);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(696, 50);
+            this.label1.Size = new System.Drawing.Size(470, 33);
             this.label1.TabIndex = 1;
             this.label1.Text = "SISTEMA RENTADORA DE AUTOS";
             // 
@@ -132,9 +128,8 @@ namespace Rentadora
             this.Plateral.Controls.Add(this.pictureBox1);
             this.Plateral.Dock = System.Windows.Forms.DockStyle.Left;
             this.Plateral.Location = new System.Drawing.Point(0, 0);
-            this.Plateral.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Plateral.Name = "Plateral";
-            this.Plateral.Size = new System.Drawing.Size(300, 923);
+            this.Plateral.Size = new System.Drawing.Size(200, 600);
             this.Plateral.TabIndex = 3;
             // 
             // finalizar
@@ -145,10 +140,9 @@ namespace Rentadora
             this.finalizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.finalizar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.finalizar.ForeColor = System.Drawing.Color.White;
-            this.finalizar.Location = new System.Drawing.Point(32, 612);
-            this.finalizar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.finalizar.Location = new System.Drawing.Point(21, 398);
             this.finalizar.Name = "finalizar";
-            this.finalizar.Size = new System.Drawing.Size(188, 49);
+            this.finalizar.Size = new System.Drawing.Size(125, 32);
             this.finalizar.TabIndex = 10;
             this.finalizar.Text = "Finalización";
             this.finalizar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -163,10 +157,9 @@ namespace Rentadora
             this.btnMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMenu.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMenu.ForeColor = System.Drawing.Color.White;
-            this.btnMenu.Location = new System.Drawing.Point(99, 318);
-            this.btnMenu.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnMenu.Location = new System.Drawing.Point(66, 207);
             this.btnMenu.Name = "btnMenu";
-            this.btnMenu.Size = new System.Drawing.Size(120, 49);
+            this.btnMenu.Size = new System.Drawing.Size(80, 32);
             this.btnMenu.TabIndex = 9;
             this.btnMenu.Text = "MENÚ";
             this.btnMenu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -181,10 +174,9 @@ namespace Rentadora
             this.auto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.auto.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.auto.ForeColor = System.Drawing.Color.White;
-            this.auto.Location = new System.Drawing.Point(33, 729);
-            this.auto.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.auto.Location = new System.Drawing.Point(22, 474);
             this.auto.Name = "auto";
-            this.auto.Size = new System.Drawing.Size(186, 49);
+            this.auto.Size = new System.Drawing.Size(124, 32);
             this.auto.TabIndex = 8;
             this.auto.Text = "Autos";
             this.auto.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -199,10 +191,9 @@ namespace Rentadora
             this.empleados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.empleados.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.empleados.ForeColor = System.Drawing.Color.White;
-            this.empleados.Location = new System.Drawing.Point(32, 671);
-            this.empleados.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.empleados.Location = new System.Drawing.Point(21, 436);
             this.empleados.Name = "empleados";
-            this.empleados.Size = new System.Drawing.Size(188, 49);
+            this.empleados.Size = new System.Drawing.Size(125, 32);
             this.empleados.TabIndex = 7;
             this.empleados.Text = "Empleados";
             this.empleados.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -217,10 +208,9 @@ namespace Rentadora
             this.cliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cliente.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cliente.ForeColor = System.Drawing.Color.White;
-            this.cliente.Location = new System.Drawing.Point(33, 437);
-            this.cliente.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cliente.Location = new System.Drawing.Point(22, 284);
             this.cliente.Name = "cliente";
-            this.cliente.Size = new System.Drawing.Size(186, 49);
+            this.cliente.Size = new System.Drawing.Size(124, 32);
             this.cliente.TabIndex = 4;
             this.cliente.Text = "Clientes";
             this.cliente.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -235,10 +225,9 @@ namespace Rentadora
             this.historial.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.historial.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.historial.ForeColor = System.Drawing.Color.White;
-            this.historial.Location = new System.Drawing.Point(32, 788);
-            this.historial.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.historial.Location = new System.Drawing.Point(21, 512);
             this.historial.Name = "historial";
-            this.historial.Size = new System.Drawing.Size(188, 49);
+            this.historial.Size = new System.Drawing.Size(125, 32);
             this.historial.TabIndex = 6;
             this.historial.Text = "Historial";
             this.historial.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -248,10 +237,9 @@ namespace Rentadora
             // flecha
             // 
             this.flecha.Image = global::Rentadora.Properties.Resources.Flecha;
-            this.flecha.Location = new System.Drawing.Point(244, 434);
-            this.flecha.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.flecha.Location = new System.Drawing.Point(163, 282);
             this.flecha.Name = "flecha";
-            this.flecha.Size = new System.Drawing.Size(56, 52);
+            this.flecha.Size = new System.Drawing.Size(37, 34);
             this.flecha.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.flecha.TabIndex = 0;
             this.flecha.TabStop = false;
@@ -265,10 +253,9 @@ namespace Rentadora
             this.contrato.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.contrato.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.contrato.ForeColor = System.Drawing.Color.White;
-            this.contrato.Location = new System.Drawing.Point(32, 554);
-            this.contrato.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.contrato.Location = new System.Drawing.Point(21, 360);
             this.contrato.Name = "contrato";
-            this.contrato.Size = new System.Drawing.Size(188, 49);
+            this.contrato.Size = new System.Drawing.Size(125, 32);
             this.contrato.TabIndex = 5;
             this.contrato.Text = "Contrato";
             this.contrato.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -283,10 +270,9 @@ namespace Rentadora
             this.solicitud.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.solicitud.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.solicitud.ForeColor = System.Drawing.Color.White;
-            this.solicitud.Location = new System.Drawing.Point(32, 495);
-            this.solicitud.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.solicitud.Location = new System.Drawing.Point(21, 322);
             this.solicitud.Name = "solicitud";
-            this.solicitud.Size = new System.Drawing.Size(188, 49);
+            this.solicitud.Size = new System.Drawing.Size(125, 32);
             this.solicitud.TabIndex = 0;
             this.solicitud.Text = "Solicitudes";
             this.solicitud.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -300,10 +286,9 @@ namespace Rentadora
             this.label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label4.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.Control;
-            this.label4.Location = new System.Drawing.Point(18, 262);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(12, 170);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(269, 37);
+            this.label4.Size = new System.Drawing.Size(178, 24);
             this.label4.TabIndex = 3;
             this.label4.Text = "______________";
             // 
@@ -313,10 +298,9 @@ namespace Rentadora
             this.textNameUser.BackColor = System.Drawing.Color.Transparent;
             this.textNameUser.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textNameUser.ForeColor = System.Drawing.Color.Brown;
-            this.textNameUser.Location = new System.Drawing.Point(94, 235);
-            this.textNameUser.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.textNameUser.Location = new System.Drawing.Point(63, 153);
             this.textNameUser.Name = "textNameUser";
-            this.textNameUser.Size = new System.Drawing.Size(100, 27);
+            this.textNameUser.Size = new System.Drawing.Size(63, 18);
             this.textNameUser.TabIndex = 2;
             this.textNameUser.Text = "Usuario";
             this.textNameUser.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -326,20 +310,18 @@ namespace Rentadora
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.Control;
-            this.label3.Location = new System.Drawing.Point(50, 197);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(33, 128);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(209, 37);
+            this.label3.Size = new System.Drawing.Size(135, 24);
             this.label3.TabIndex = 1;
             this.label3.Text = "BIENVENIDO";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Rentadora.Properties.Resources.Administrador;
-            this.pictureBox1.Location = new System.Drawing.Point(50, 2);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pictureBox1.Location = new System.Drawing.Point(33, 1);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(202, 191);
+            this.pictureBox1.Size = new System.Drawing.Size(135, 124);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -348,10 +330,9 @@ namespace Rentadora
             // 
             this.Pfmrs.Controls.Add(this.pictureBox3);
             this.Pfmrs.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Pfmrs.Location = new System.Drawing.Point(300, 77);
-            this.Pfmrs.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Pfmrs.Location = new System.Drawing.Point(200, 50);
             this.Pfmrs.Name = "Pfmrs";
-            this.Pfmrs.Size = new System.Drawing.Size(1500, 846);
+            this.Pfmrs.Size = new System.Drawing.Size(1000, 550);
             this.Pfmrs.TabIndex = 4;
             // 
             // pictureBox3
@@ -359,23 +340,21 @@ namespace Rentadora
             this.pictureBox3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox3.Image = global::Rentadora.Properties.Resources.premier_renta_de_autos_cancun_economico_web__1_;
             this.pictureBox3.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(1500, 846);
+            this.pictureBox3.Size = new System.Drawing.Size(1000, 550);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 1;
             this.pictureBox3.TabStop = false;
             // 
             // fmrPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1800, 923);
+            this.ClientSize = new System.Drawing.Size(1200, 600);
             this.Controls.Add(this.Pfmrs);
             this.Controls.Add(this.Pcabeza);
             this.Controls.Add(this.Plateral);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "fmrPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fmrPrincipal";

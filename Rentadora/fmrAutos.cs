@@ -14,7 +14,7 @@ namespace Rentadora
     public partial class fmrAutos : Form
     {
         private OracleConnection oracle = new OracleConnection(Variable.conexion);
-        private int idvehiculo;
+        private int idvehiculo = 0;
         private List<int> idCombustibles = new List<int>();
         private List<int> idModelos = new List<int>();
         private List<int> idMarcas = new List<int>();
@@ -29,7 +29,7 @@ namespace Rentadora
         private int idTipo_Vehiculo;
         private int idVersion;
         private int idEstado;
-        private int idEstadoOpc=0;
+        private int idEstadoOpc = 0;
         public fmrAutos()
         {
             InitializeComponent();
@@ -311,7 +311,7 @@ namespace Rentadora
             }
             catch
             {
-                MessageBox.Show("Error al actualizar Empleado");
+                MessageBox.Show("Error al actualizar auto");
             }
             oracle.Close();
         }
@@ -338,9 +338,16 @@ namespace Rentadora
         {
             if (Variable.controltotal == true)
             {
-                deleteVehiculo();
-                idvehiculo = 0;
-                mostrarAutos();
+                if (idvehiculo != 0)
+                {
+                    deleteVehiculo();
+                    idvehiculo = 0;
+                    mostrarAutos();
+                }
+                else
+                {
+                    MessageBox.Show("Seleccione un auto");
+                }
             }
             else
             {
@@ -352,14 +359,21 @@ namespace Rentadora
         {
             if (Variable.controltotal == true)
             {
-                add_auto.Visible = false;
-                delete_auto.Visible = false;
-                editar_auto.Visible = false;
-                aceptar.Visible = true;
-                cEstado.Visible = false;
-                cbEstado.Visible = true;
-                cancelar.Visible = true;
-                cargarAutoEditar();
+                if (idvehiculo != 0)
+                {
+                    add_auto.Visible = false;
+                    delete_auto.Visible = false;
+                    editar_auto.Visible = false;
+                    aceptar.Visible = true;
+                    cEstado.Visible = false;
+                    cbEstado.Visible = true;
+                    cancelar.Visible = true;
+                    cargarAutoEditar();
+                }
+                else
+                {
+                    MessageBox.Show("Seleccione un auto");
+                }
             }
             else
             {

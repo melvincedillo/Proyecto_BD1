@@ -21,6 +21,7 @@ namespace Rentadora
         private int idcliente;
         DateTime fecha_i;
         DateTime fecha_f;
+        private int idvehiculo;
 
 
         public EditarSolicitud()
@@ -37,6 +38,7 @@ namespace Rentadora
                 OracleDataReader registro = comando.ExecuteReader();
                 registro.Read();
                 Variable.idSelectAuto = Convert.ToInt32(registro["vehiculoid"].ToString());
+                idvehiculo = Variable.idSelectAuto;
                 idcliente = Convert.ToInt32(registro["clienteid"].ToString());
                 fecha_i = Convert.ToDateTime(registro["fecharinicio"].ToString());
                 fecha_f = Convert.ToDateTime(registro["fechafin"].ToString());
@@ -117,13 +119,13 @@ namespace Rentadora
             if (auto.ShowDialog() == DialogResult.OK) { 
                 cargarAuto();
                 totalDias();
-                sSubtotal.Text = subtotal.ToString();
             }
         }
 
         private void cbSeguro_SelectedIndexChanged(object sender, EventArgs e)
         {
             opcionSeguro = cbSeguro.SelectedIndex;
+            totalDias();
         }
 
         private void totalDias()
@@ -132,7 +134,7 @@ namespace Rentadora
             int dias = dif.Days;
             if (opcionSeguro == 0) { subtotal = seguro + (costo_renta * dias); }
             else { subtotal = costo_renta * dias; }
-
+            sSubtotal.Text = subtotal.ToString();
         }
 
         private void sFin_ValueChanged(object sender, EventArgs e)
@@ -165,9 +167,18 @@ namespace Rentadora
                 comando.Parameters.Add("vehiculo", OracleType.Int32).Value = Variable.idSelectAuto;
                 comando.Parameters.Add("fechai", OracleType.DateTime).Value = sInicio.Value;
                 comando.Parameters.Add("fechaf", OracleType.DateTime).Value = sFin.Value;
-                comando.Parameters.Add("seguro", OracleType.VarChar).Value = cbSeguro;
+                comando.Parameters.Add("segur", OracleType.VarChar).Value = cbSeguro.Text;
                 comando.Parameters.Add("subt", OracleType.Float).Value = subtotal;
                 comando.ExecuteNonQuery();
+
+                if(idvehiculo != Variable.idSelectAuto)
+                {
+                    OracleCommand estado = new OracleCommand("UPDATE VEHICULO SET ESTADOID=1 WHERE vehiculoid= " + Variable.idSelectAuto, oracle);
+                    estado.ExecuteNonQuery();
+
+                    OracleCommand estado2 = new OracleCommand("UPDATE VEHICULO SET ESTADOID=0 WHERE vehiculoid= " + idvehiculo, oracle);
+                    estado2.ExecuteNonQuery();
+                }
             }
             catch
             {

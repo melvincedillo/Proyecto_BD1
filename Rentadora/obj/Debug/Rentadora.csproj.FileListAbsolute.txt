@@ -75,3 +75,6 @@ C:\Users\DELL\Desktop\Proyecto_BD1\Rentadora\obj\Debug\Rentadora.pdb
 C:\Users\DELL\Documents\GitHub\Proyecto_BD1\Rentadora\obj\Debug\Rentadora.EditarSolicitud.resources
 C:\Users\DELL\Documents\GitHub\Proyecto_BD1\Rentadora\obj\Debug\Rentadora.fmrFinalizar.resources
 C:\Users\DELL\Documents\GitHub\Proyecto_BD1\Rentadora\obj\Debug\Rentadora.SelectAuto.resources
+C:\Users\M.Elias Cedillo\Desktop\Proyecto_BD1\Rentadora\obj\Debug\Rentadora.EditarSolicitud.resources
+C:\Users\M.Elias Cedillo\Desktop\Proyecto_BD1\Rentadora\obj\Debug\Rentadora.fmrFinalizar.resources
+C:\Users\M.Elias Cedillo\Desktop\Proyecto_BD1\Rentadora\obj\Debug\Rentadora.SelectAuto.resources

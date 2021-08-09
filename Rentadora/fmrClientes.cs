@@ -17,7 +17,7 @@ namespace Rentadora
         private List<int> idmunicipios = new List<int>();
         private int idmunicipio;
         private int iddireccion;
-        private int idcliente;
+        private int idcliente = 0;
 
         public fmrClientes()
         {
@@ -188,10 +188,17 @@ namespace Rentadora
         {
             if(Variable.controltotal == true)
             {
-                deleteCliente();
-                idcliente = 0;
-                iddireccion = 0;
-                mostrarClientes();
+                if (idcliente != 0)
+                {
+                    deleteCliente();
+                    idcliente = 0;
+                    iddireccion = 0;
+                    mostrarClientes();
+                }
+                else
+                {
+                    MessageBox.Show("Seleccione un cliente");
+                }
             }
             else
             {
@@ -220,12 +227,19 @@ namespace Rentadora
         {
             if (Variable.controltotal == true)
             {
-                add_cliente.Visible = false;
-                delete_cliente.Visible = false;
-                editar_cliente.Visible = false;
-                aceptar.Visible = true;
-                cancelar.Visible = true;
-                cargarClienteEditar();
+                if (idcliente != 0)
+                {
+                    add_cliente.Visible = false;
+                    delete_cliente.Visible = false;
+                    editar_cliente.Visible = false;
+                    aceptar.Visible = true;
+                    cancelar.Visible = true;
+                    cargarClienteEditar();
+                }
+                else
+                {
+                    MessageBox.Show("Seleccione un cliente");
+                }
             }
             else
             {

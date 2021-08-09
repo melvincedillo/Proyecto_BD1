@@ -171,7 +171,14 @@ namespace Rentadora
 
         private void cargarCliente_Click(object sender, EventArgs e)
         {
-            cargarClienteEditar(cIdentidad.Text);
+            if (Variable.controltotal == true)
+            {
+                cargarClienteEditar(cIdentidad.Text);
+            }
+            else
+            {
+                MessageBox.Show("PRIVILEGIOS INSUFUCIENTES");
+            }
         }
 
         private void cerrarCliente_Click(object sender, EventArgs e)
@@ -275,13 +282,21 @@ namespace Rentadora
 
         private void add_soli_Click(object sender, EventArgs e)
         {
-            if (idcliente == 0) {
-                crearDireccion();
-                crearCliente();
+            if (Variable.controltotal == true)
+            {
+                if (idcliente == 0)
+                {
+                    crearDireccion();
+                    crearCliente();
+                }
+                crearSolicitud();
+                mostrarSolicitudes();
+                limpiarForm2();
             }
-            crearSolicitud();
-            mostrarSolicitudes();
-            limpiarForm2();
+            else
+            {
+                MessageBox.Show("PRIVILEGIOS INSUFUCIENTES");
+            }
         }
 
         private void cargarSucursales()
@@ -316,8 +331,15 @@ namespace Rentadora
 
         private void sVehiculo_Click(object sender, EventArgs e)
         {
-            SelectAuto auto = new SelectAuto();
-            if (auto.ShowDialog() == DialogResult.OK) { cargarAuto(); }
+            if (Variable.controltotal == true)
+            {
+                SelectAuto auto = new SelectAuto();
+                if (auto.ShowDialog() == DialogResult.OK) { cargarAuto(); }
+            }
+            else
+            {
+                MessageBox.Show("PRIVILEGIOS INSUFUCIENTES");
+            }
         }
 
         private void cargarAuto()
@@ -439,32 +461,59 @@ namespace Rentadora
 
         private void eliminar_Click(object sender, EventArgs e)
         {
-            if (idsolicitud != 0)
+            if (Variable.controltotal == true)
             {
-                try {
-                    oracle.Open();
-                    OracleCommand comando = new OracleCommand("rentadora.delete_solicitud", oracle);
-                    comando.CommandType = System.Data.CommandType.StoredProcedure;
-                    comando.Parameters.Add("idS", OracleType.Int32).Value = idsolicitud;
-
-                    OracleCommand estado = new OracleCommand("UPDATE VEHICULO SET ESTADOID=0 WHERE vehiculoid=(SELECT vehiculoid FROM solicitud WHERE solicitudid= " + idsolicitud + ")", oracle);
-                    estado.ExecuteNonQuery();
-                    comando.ExecuteNonQuery();
-                } catch 
+                if (idsolicitud != 0)
                 {
-                    MessageBox.Show("Imposible borrar");
+                    try
+                    {
+                        oracle.Open();
+                        OracleCommand comando = new OracleCommand("rentadora.delete_solicitud", oracle);
+                        comando.CommandType = System.Data.CommandType.StoredProcedure;
+                        comando.Parameters.Add("idS", OracleType.Int32).Value = idsolicitud;
+
+                        OracleCommand estado = new OracleCommand("UPDATE VEHICULO SET ESTADOID=0 WHERE vehiculoid=(SELECT vehiculoid FROM solicitud WHERE solicitudid= " + idsolicitud + ")", oracle);
+                        estado.ExecuteNonQuery();
+                        comando.ExecuteNonQuery();
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Imposible borrar");
+                    }
+                    oracle.Close();
+                    mostrarSolicitudes();
                 }
-                oracle.Close();
-                mostrarSolicitudes();
+                else
+                {
+                    MessageBox.Show("Seleccione una solicitud");
+                }
+            }
+            else
+            {
+                MessageBox.Show("PRIVILEGIOS INSUFUCIENTES");
             }
         }
 
         private void editar_Click(object sender, EventArgs e)
         {
-            Variable.idsolicitud = idsolicitud;
-            EditarSolicitud nuevo = new EditarSolicitud();
-            nuevo.ShowDialog();
-            mostrarSolicitudes();
+            if (Variable.controltotal == true)
+            {
+                if (idsolicitud != 0)
+                {
+                    Variable.idsolicitud = idsolicitud;
+                    EditarSolicitud nuevo = new EditarSolicitud();
+                    nuevo.ShowDialog();
+                    mostrarSolicitudes();
+                }
+                else
+                {
+                    MessageBox.Show("Seleccione una solicitud");
+                }
+            }
+            else
+            {
+                MessageBox.Show("PRIVILEGIOS INSUFUCIENTES");
+            }
         }
 
         
