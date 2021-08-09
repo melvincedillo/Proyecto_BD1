@@ -25,6 +25,7 @@ create or replace procedure insert_direccion(idM int, colonia VARCHAR2, callea v
         SELECT DIRECCION_SECUENCIA.currval into iddir from dual;
     end;
     
+    
 --Procedimiento insertar cliente
 create or replace procedure insert_cliente(pn VARCHAR, sn VARCHAR, pa VARCHAR, sa VARCHAR, tid VARCHAR, rtn VARCHAR, sex VARCHAR, dir int, idC out int)
     as
@@ -34,6 +35,7 @@ create or replace procedure insert_cliente(pn VARCHAR, sn VARCHAR, pa VARCHAR, s
         SELECT CLIENTE_SECUENCIA.currval into idC from dual;
     end;
     
+    
 --Eliminar cliente
 create or replace procedure delete_cliente (idC rentadora.cliente.clienteid%TYPE, idDir rentadora.direccion.direccionid%Type)
     as
@@ -42,7 +44,8 @@ create or replace procedure delete_cliente (idC rentadora.cliente.clienteid%TYPE
         delete from rentadora.cliente where clienteid = idC;
         delete from rentadora.direccion where direccionid = idDir;
     end;
-
+    
+    
 --Actualizar cliente
 create or replace procedure update_cliente(pn VARCHAR, sn VARCHAR, pa VARCHAR, sa VARCHAR, tid VARCHAR, rtnC VARCHAR, sex VARCHAR2, idC int)
     as
@@ -60,6 +63,7 @@ create or replace procedure update_cliente(pn VARCHAR, sn VARCHAR, pa VARCHAR, s
         WHEN NO_DATA_FOUND THEN
             null;
     end update_cliente;
+
     
 --Actualizar direccion
 create or replace procedure update_direccion(idDir int, idM int, colonia varchar2, cal varchar, cas int)

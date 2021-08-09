@@ -24,7 +24,7 @@ create or replace procedure select_solicitud(registros out SYS_REFCURSOR)
             where 
                  s.estadoid = 0;
         end;
-
+        
 --PROCEDIMIENTO ELIMINAR SOLICITUD
 create or replace procedure delete_solicitud(idS int)
     as
@@ -33,19 +33,19 @@ create or replace procedure delete_solicitud(idS int)
     end;
 
 --PROCEDIMIENTO CREAR SOLICITUD
-create or replace procedure insertar_solicitud(fechas date, subt float, sucursal int, cliente int, empleado int, vehiculo int, fechai date, fechaf date)
+create or replace procedure insertar_solicitud(fechas date, subt float, sucursal int, cliente int, empleado int, vehiculo int, fechai date, fechaf date,seguro varchar)
     as
     begin
-        insert into solicitud (fecha_solicitud, fecharinicio, fechafin, subtotal, vehiculoid, clienteid, sucursalid, empleadoid, estadoid) 
-        values(fechas, fechai, fechaf, subt, vehiculo, cliente, sucursal, empleado, 0);
+        insert into solicitud (fecha_solicitud, fecharinicio, fechafin, subtotal, vehiculoid, clienteid, sucursalid, empleadoid, seguro,estadoid) 
+        values(fechas, fechai, fechaf, subt, vehiculo, cliente, sucursal, empleado, seguro,0);
     end;
     
     
 --PROCEDIMIENTO ACTUALIZAR SOLICITUD
-create or replace procedure update_solicitud(idS int, fechai date, fechaf date, vehiculo int, subt float)
+create or replace procedure update_solicitud(idS int, fechai date, fechaf date, vehiculo int, subt float,seguro varchar)
 as
 begin
-    update solicitud set fecharinicio = fechai, fechafin = fechaf, vehiculoid = vehiculo, subtotal = subt where solicitudid = idS;
+    update solicitud set fecharinicio = fechai, fechafin = fechaf, vehiculoid = vehiculo, subtotal = subt ,seguro=seguro where solicitudid = idS;
 EXCEPTION
     WHEN NO_DATA_FOUND THEN
         null;
