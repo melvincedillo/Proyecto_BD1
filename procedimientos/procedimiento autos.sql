@@ -69,7 +69,7 @@ create or replace procedure delete_vehiculo (idV rentadora.vehiculo.vehiculoid%T
     end;
 
 --Procedimiento para actualizar auto
-create or replace procedure update_vehiculo(placa VARCHAR,fecha DATE, costo_a FLOAT, costo_r FLOAT, cb INT, modelo INT,mar INT, color INT, tv INT, vers INT, est INT, seguro FLOAT, idV INT)
+create or replace procedure update_vehiculo(placa VARCHAR,fecha DATE, costo_a FLOAT, costo_r FLOAT, cb INT, modelo INT,mar INT, color INT, tv INT, vers INT, seguro FLOAT, idV INT)
     as
         vPLACA varchar(30) := placa;
         vFECHA date := fecha;
@@ -81,12 +81,11 @@ create or replace procedure update_vehiculo(placa VARCHAR,fecha DATE, costo_a FL
         vCOLOR int := color;
         vTV int:= tv;
         vVers int := vers;
-        vEST int := est;
         vSEGURO float := seguro;
         vIDV int := idV;
     begin
         update vehiculo set placa=vPLACA, fecha_adquisicion=vFECHA,costo_vehiculo=vCOSTO_A, combustibleid=vCB, modeloid=vModelo, marcaid=vMar,
-        colorid=vCOLOR, tipo_vehiculoid=vTV,versionid=vVers,estadoid=vEST,seguro=vSEGURO, costo_renta = vcosto_r where vehiculoid = vIDV;
+        colorid=vCOLOR, tipo_vehiculoid=vTV,versionid=vVers,seguro=vSEGURO, costo_renta = vcosto_r where vehiculoid = vIDV;
     EXCEPTION
         WHEN NO_DATA_FOUND THEN
             null;

@@ -28,8 +28,9 @@ namespace Rentadora
         private int idColor;
         private int idTipo_Vehiculo;
         private int idVersion;
-        private int idEstado;
-        private int idEstadoOpc = 0;
+        private int idEstado=0;
+        private int estadoM;
+        private int estadoD;
         public fmrAutos()
         {
             InitializeComponent();
@@ -44,9 +45,9 @@ namespace Rentadora
             cargarColores();
             cargarTipo_Vehiculos();
             cargarVersiones();
-            cargarEstados();
+            //cargarEstados();
             aceptar.Visible = false;
-            cbEstado.Visible = false;
+            //cbEstado.Visible = false;
             cancelar.Visible = false;
         }
 
@@ -182,6 +183,7 @@ namespace Rentadora
             idVersion = idVersiones[cb_Version.SelectedIndex];
         }
         
+        /*
         private void cargarEstados()
         {
             oracle.Open();
@@ -195,9 +197,9 @@ namespace Rentadora
             }
             oracle.Close();
         }
-
+        */
         
-
+        /*
         private void cbEstado_SelectedIndexChanged(object sender, EventArgs e)
         {
             idEstado = idEstados[cbEstado.SelectedIndex];
@@ -205,7 +207,7 @@ namespace Rentadora
 
         }
         
-
+        */
 
         private void add_auto_Click(object sender, EventArgs e)
         {
@@ -239,7 +241,7 @@ namespace Rentadora
             cbColor.Text = "";
             cbTipo_Vehiculo.Text = "";
             cb_Version.Text = "";
-            cbEstado.Text = "";
+            //cbEstado.Text = "";
             cSeguro.Text = "";
             vCosto_renta.Text = "";
         }
@@ -261,7 +263,7 @@ namespace Rentadora
                 comando.Parameters.Add("color", OracleType.Int32).Value = idColor;
                 comando.Parameters.Add("tv", OracleType.Int32).Value = idTipo_Vehiculo;
                 comando.Parameters.Add("vers", OracleType.Int32).Value = idVersion;
-                comando.Parameters.Add("est", OracleType.Int32).Value = idEstadoOpc;
+                comando.Parameters.Add("est", OracleType.Int32).Value = idEstado;
                 comando.Parameters.Add("segur", OracleType.Float).Value = Convert.ToDouble(cSeguro.Text);
                 comando.ExecuteNonQuery();
             }
@@ -279,9 +281,9 @@ namespace Rentadora
             delete_auto.Visible = true;
             editar_auto.Visible = true;
             aceptar.Visible = false;
-            cbEstado.Visible = false;
-            cEstado.Visible = true;
-            cEstado.Enabled = false;
+            //cbEstado.Visible = false;
+            //cEstado.Visible = true;
+            //cEstado.Enabled = false;
             cancelar.Visible = false;
         }
 
@@ -303,7 +305,7 @@ namespace Rentadora
                 comando.Parameters.Add("color", OracleType.Int32).Value = idColor;
                 comando.Parameters.Add("tv", OracleType.Int32).Value = idTipo_Vehiculo;
                 comando.Parameters.Add("vers", OracleType.Int32).Value = idVersion;
-                comando.Parameters.Add("est", OracleType.Int32).Value = idEstado;
+                //comando.Parameters.Add("est", OracleType.Int32).Value = idEstado;
                 comando.Parameters.Add("seguro", OracleType.Float).Value = Convert.ToDouble(cSeguro.Text);
                 comando.Parameters.Add("idV", OracleType.Int32).Value = idvehiculo;
                 comando.ExecuteNonQuery();
@@ -365,8 +367,8 @@ namespace Rentadora
                     delete_auto.Visible = false;
                     editar_auto.Visible = false;
                     aceptar.Visible = true;
-                    cEstado.Visible = false;
-                    cbEstado.Visible = true;
+                    //cEstado.Visible = false;
+                    //cbEstado.Visible = true;
                     cancelar.Visible = true;
                     cargarAutoEditar();
                 }
@@ -397,7 +399,7 @@ namespace Rentadora
             cbColor.Text = registro["color"].ToString();
             cbTipo_Vehiculo.Text = registro["tipo_vehiculo"].ToString();
             cb_Version.Text = registro["version"].ToString();
-            cbEstado.Text = registro["estado"].ToString();
+            //cbEstado.Text = registro["estado"].ToString();
             cSeguro.Text = registro["seguro"].ToString();
             vCosto_renta.Text = registro["costo_renta"].ToString();
 
@@ -410,7 +412,7 @@ namespace Rentadora
             delete_auto.Visible = true;
             editar_auto.Visible = true;
             aceptar.Visible = false;
-            cbEstado.Visible = true;
+            //cbEstado.Visible = true;
             cancelar.Visible = false;
             limpiarForm();
         }
@@ -423,5 +425,77 @@ namespace Rentadora
             idAuto.Text = idvehiculo.ToString();
         }
 
+        private void mantenimientoAuto()
+        {
+            try
+            {
+                oracle.Open();
+                OracleCommand comando = new OracleCommand("Select estadoid from rentadora.VEHICULO where vehiculoid =" + idvehiculo, oracle);
+                OracleDataReader registro = comando.ExecuteReader();
+                registro.Read();
+                OracleCommand update = new OracleCommand("UPDATE rentadora.VEHICULO SET ESTADOID=3 WHERE vehiculoid= " + idvehiculo, oracle);
+
+                estadoM = Int32.Parse(registro["estadoid"].ToString());
+
+                if (estadoM == 0){
+                    update.ExecuteNonQuery();
+                }else
+                    MessageBox.Show("El auto debe estar disponible.");
+            }
+            catch
+            {
+                MessageBox.Show("Imposible mandar a Mantenimiento");
+            }
+            oracle.Close();
+        }
+
+        private void disponibleAuto()
+        {
+            try
+            {
+                oracle.Open();
+                OracleCommand comando = new OracleCommand("Select estadoid from rentadora.VEHICULO where vehiculoid =" + idvehiculo, oracle);
+                OracleDataReader registro = comando.ExecuteReader();
+                registro.Read();
+                OracleCommand update = new OracleCommand("UPDATE rentadora.VEHICULO SET ESTADOID=0 WHERE vehiculoid= " + idvehiculo, oracle);
+
+                estadoD = Int32.Parse(registro["estadoid"].ToString());
+
+                if (estadoD == 3){
+                    update.ExecuteNonQuery();
+                }else
+                    MessageBox.Show("El auto debe estar en mantenimiento.");
+            }
+            catch
+            {
+                MessageBox.Show("Imposible mandar a Mantenimiento");
+            }
+            oracle.Close();
+        }
+
+        private void mantenimiento_Click(object sender, EventArgs e)
+        {
+            mantenimientoAuto();
+            mostrarAutos();
+            add_auto.Visible = true;
+            delete_auto.Visible = true;
+            editar_auto.Visible = true;
+            aceptar.Visible = false;
+            //cbEstado.Visible = true;
+            cancelar.Visible = false;
+            
+        }
+
+        private void disponible_Click(object sender, EventArgs e)
+        {
+            disponibleAuto();
+            mostrarAutos();
+            add_auto.Visible = true;
+            delete_auto.Visible = true;
+            editar_auto.Visible = true;
+            aceptar.Visible = false;
+            //cbEstado.Visible = true;
+            cancelar.Visible = false;
+        }
     }
 }
