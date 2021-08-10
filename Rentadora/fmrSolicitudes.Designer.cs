@@ -29,8 +29,8 @@ namespace Rentadora
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.vSeguro = new System.Windows.Forms.TextBox();
             this.label35 = new System.Windows.Forms.Label();
@@ -192,7 +192,7 @@ namespace Rentadora
             // vSeguro
             // 
             this.vSeguro.Enabled = false;
-            this.vSeguro.Location = new System.Drawing.Point(917, 128);
+            this.vSeguro.Location = new System.Drawing.Point(605, 212);
             this.vSeguro.Name = "vSeguro";
             this.vSeguro.Size = new System.Drawing.Size(63, 20);
             this.vSeguro.TabIndex = 120;
@@ -201,11 +201,11 @@ namespace Rentadora
             // 
             this.label35.AutoSize = true;
             this.label35.ForeColor = System.Drawing.Color.Black;
-            this.label35.Location = new System.Drawing.Point(921, 114);
+            this.label35.Location = new System.Drawing.Point(489, 219);
             this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(53, 13);
+            this.label35.Size = new System.Drawing.Size(112, 13);
             this.label35.TabIndex = 119;
-            this.label35.Text = "SEGURO";
+            this.label35.Text = "SEGURO POR DIA L:";
             // 
             // cbSeguro
             // 
@@ -213,7 +213,7 @@ namespace Rentadora
             this.cbSeguro.Items.AddRange(new object[] {
             "SI",
             "NO"});
-            this.cbSeguro.Location = new System.Drawing.Point(747, 293);
+            this.cbSeguro.Location = new System.Drawing.Point(839, 212);
             this.cbSeguro.Margin = new System.Windows.Forms.Padding(2);
             this.cbSeguro.Name = "cbSeguro";
             this.cbSeguro.Size = new System.Drawing.Size(68, 21);
@@ -224,7 +224,7 @@ namespace Rentadora
             // 
             this.label32.AutoSize = true;
             this.label32.ForeColor = System.Drawing.Color.Black;
-            this.label32.Location = new System.Drawing.Point(576, 296);
+            this.label32.Location = new System.Drawing.Point(674, 219);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(160, 13);
             this.label32.TabIndex = 117;
@@ -297,24 +297,24 @@ namespace Rentadora
             this.dgvSolicitudes.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvSolicitudes.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvSolicitudes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvSolicitudes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSolicitudes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvSolicitudes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial Narrow", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(8);
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvSolicitudes.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial Narrow", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(8);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvSolicitudes.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvSolicitudes.Location = new System.Drawing.Point(18, 438);
             this.dgvSolicitudes.Name = "dgvSolicitudes";
             this.dgvSolicitudes.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -395,7 +395,7 @@ namespace Rentadora
             // 
             this.label28.AutoSize = true;
             this.label28.ForeColor = System.Drawing.Color.Black;
-            this.label28.Location = new System.Drawing.Point(736, 246);
+            this.label28.Location = new System.Drawing.Point(735, 277);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(66, 13);
             this.label28.TabIndex = 99;
@@ -404,7 +404,7 @@ namespace Rentadora
             // sEmpleado
             // 
             this.sEmpleado.FormattingEnabled = true;
-            this.sEmpleado.Location = new System.Drawing.Point(739, 261);
+            this.sEmpleado.Location = new System.Drawing.Point(738, 292);
             this.sEmpleado.Margin = new System.Windows.Forms.Padding(2);
             this.sEmpleado.Name = "sEmpleado";
             this.sEmpleado.Size = new System.Drawing.Size(172, 21);
@@ -415,7 +415,7 @@ namespace Rentadora
             // 
             this.label27.AutoSize = true;
             this.label27.ForeColor = System.Drawing.Color.Black;
-            this.label27.Location = new System.Drawing.Point(513, 245);
+            this.label27.Location = new System.Drawing.Point(514, 276);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(65, 13);
             this.label27.TabIndex = 97;
@@ -424,7 +424,7 @@ namespace Rentadora
             // cbSucursal
             // 
             this.cbSucursal.FormattingEnabled = true;
-            this.cbSucursal.Location = new System.Drawing.Point(516, 261);
+            this.cbSucursal.Location = new System.Drawing.Point(517, 292);
             this.cbSucursal.Margin = new System.Windows.Forms.Padding(2);
             this.cbSucursal.Name = "cbSucursal";
             this.cbSucursal.Size = new System.Drawing.Size(168, 21);
@@ -436,7 +436,7 @@ namespace Rentadora
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label24.ForeColor = System.Drawing.Color.Black;
-            this.label24.Location = new System.Drawing.Point(601, 223);
+            this.label24.Location = new System.Drawing.Point(606, 255);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(168, 16);
             this.label24.TabIndex = 95;
@@ -527,9 +527,9 @@ namespace Rentadora
             this.label25.ForeColor = System.Drawing.Color.Black;
             this.label25.Location = new System.Drawing.Point(828, 112);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(84, 13);
+            this.label25.Size = new System.Drawing.Size(124, 13);
             this.label25.TabIndex = 85;
-            this.label25.Text = "COSTO RENTA";
+            this.label25.Text = "COSTO RENTA DIARIO";
             // 
             // label23
             // 

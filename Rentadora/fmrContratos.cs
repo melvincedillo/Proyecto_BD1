@@ -44,6 +44,7 @@ namespace Rentadora
                 buscarSolicitud.Visible = false;
                 cancelarContrato.Visible = true;
                 Detalles.Visible = false;
+                addContrato.Visible = true;
             }
             else
             {
@@ -249,6 +250,7 @@ namespace Rentadora
                 buscarSolicitud.Visible = true;
                 cancelarContrato.Visible = false;
                 Detalles.Visible = true;
+                addContrato.Visible = false;
                 cargarContratos();
             }
             else
@@ -276,6 +278,7 @@ namespace Rentadora
             buscarSolicitud.Visible = true;
             cancelarContrato.Visible = false;
             Detalles.Visible = true;
+            addContrato.Visible = false;
         }
 
         private void dgvContratos_CellClick(object sender, DataGridViewCellEventArgs e)

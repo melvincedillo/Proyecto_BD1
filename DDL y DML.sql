@@ -237,6 +237,7 @@ CREATE TABLE PAGO(
 	pagoID INT,
 	total_pagado FLOAT NOT NULL,
 	tipo_pagoID INT,
+    n_tajeta VARCHAR(20),
     contratoID INT,
 	CONSTRAINT pagoPK PRIMARY KEY (pagoID),
 	CONSTRAINT tipo_pagoFK FOREIGN KEY (tipo_pagoID) REFERENCES TIPO_PAGO (tipo_pagoID),

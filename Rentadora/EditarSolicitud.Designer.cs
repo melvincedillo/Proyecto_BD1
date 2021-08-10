@@ -154,8 +154,8 @@ namespace Rentadora
             this.cbSeguro.Items.AddRange(new object[] {
             "SI",
             "NO"});
-            this.cbSeguro.Location = new System.Drawing.Point(194, 211);
-            this.cbSeguro.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbSeguro.Location = new System.Drawing.Point(336, 199);
+            this.cbSeguro.Margin = new System.Windows.Forms.Padding(2);
             this.cbSeguro.Name = "cbSeguro";
             this.cbSeguro.Size = new System.Drawing.Size(70, 21);
             this.cbSeguro.TabIndex = 120;
@@ -165,7 +165,7 @@ namespace Rentadora
             // 
             this.label15.AutoSize = true;
             this.label15.ForeColor = System.Drawing.Color.Black;
-            this.label15.Location = new System.Drawing.Point(29, 211);
+            this.label15.Location = new System.Drawing.Point(171, 202);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(160, 13);
             this.label15.TabIndex = 119;
@@ -174,20 +174,20 @@ namespace Rentadora
             // vSeguro
             // 
             this.vSeguro.Enabled = false;
-            this.vSeguro.Location = new System.Drawing.Point(156, 165);
+            this.vSeguro.Location = new System.Drawing.Point(116, 199);
             this.vSeguro.Name = "vSeguro";
-            this.vSeguro.Size = new System.Drawing.Size(79, 20);
+            this.vSeguro.Size = new System.Drawing.Size(49, 20);
             this.vSeguro.TabIndex = 118;
             // 
             // label14
             // 
             this.label14.AutoSize = true;
             this.label14.ForeColor = System.Drawing.Color.Black;
-            this.label14.Location = new System.Drawing.Point(153, 148);
+            this.label14.Location = new System.Drawing.Point(9, 202);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(53, 13);
+            this.label14.Size = new System.Drawing.Size(105, 13);
             this.label14.TabIndex = 117;
-            this.label14.Text = "SEGURO";
+            this.label14.Text = "SEGURO DIARIO L.";
             // 
             // sSubtotal
             // 
@@ -351,9 +351,9 @@ namespace Rentadora
             this.label25.ForeColor = System.Drawing.Color.Black;
             this.label25.Location = new System.Drawing.Point(33, 149);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(84, 13);
+            this.label25.Size = new System.Drawing.Size(124, 13);
             this.label25.TabIndex = 100;
-            this.label25.Text = "COSTO RENTA";
+            this.label25.Text = "COSTO RENTA DIARIO";
             // 
             // label23
             // 

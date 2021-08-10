@@ -104,6 +104,12 @@
     <Compile Include="fmrHistorial.Designer.cs">
       <DependentUpon>fmrHistorial.cs</DependentUpon>
     </Compile>
+    <Compile Include="fmrPago.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fmrPago.Designer.cs">
+      <DependentUpon>fmrPago.cs</DependentUpon>
+    </Compile>
     <Compile Include="fmrPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -151,6 +157,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fmrHistorial.resx">
       <DependentUpon>fmrHistorial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fmrPago.resx">
+      <DependentUpon>fmrPago.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fmrPrincipal.resx">
       <DependentUpon>fmrPrincipal.cs</DependentUpon>
@@ -231,12 +240,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\premier-renta-de-autos-cancun-economico-web %281%29.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\mantenimietno.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Disponible.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

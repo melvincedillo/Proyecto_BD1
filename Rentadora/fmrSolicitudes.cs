@@ -417,7 +417,7 @@ namespace Rentadora
             TimeSpan dif = fecha_f - fecha_i;
             int dias = dif.Days;
             //Console.WriteLine("Opcion Combobox: "+opcionSeguro);
-            if (opcionSeguro == 0){ subtotal = seguro + (costo_renta * dias); }
+            if (opcionSeguro == 0){ subtotal = (seguro + costo_renta) * dias; }
             else { subtotal = costo_renta * dias; }
             //Console.WriteLine("Subtotal: "+subtotal);
             
