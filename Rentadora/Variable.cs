@@ -14,5 +14,7 @@ namespace Rentadora
         static public int idSelectAuto = 0;
         static public int idsolicitud;
         static public bool controltotal = true;
+
+        static public double total = 0;
     }
 }
