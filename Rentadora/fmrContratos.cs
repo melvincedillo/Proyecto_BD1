@@ -227,7 +227,7 @@ namespace Rentadora
                 comando.Parameters.Add("totalc", OracleType.Float).Value = total;
                 comando.ExecuteNonQuery();
 
-                OracleCommand estado = new OracleCommand("UPDATE VEHICULO SET ESTADOID=2 WHERE vehiculoid=(SELECT s.vehiculoid FROM contrato c INNER JOIN solicitud s on s.solicitudid=c.solicitudid WHERE contratoid= " + idSolicitud + ")", oracle);
+                OracleCommand estado = new OracleCommand("UPDATE rentadora.VEHICULO SET ESTADOID=2 WHERE vehiculoid=(SELECT s.vehiculoid FROM rentadora.contrato c INNER JOIN rentadora.solicitud s on s.solicitudid=c.solicitudid WHERE contratoid= " + idSolicitud + ")", oracle);
                 estado.ExecuteNonQuery();
                 
                 oracle.Close();

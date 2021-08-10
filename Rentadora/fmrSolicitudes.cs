@@ -391,7 +391,7 @@ namespace Rentadora
                 comando.Parameters.Add("seguro", OracleType.VarChar).Value = cbSeguro.Text;
                 comando.ExecuteNonQuery();
 
-                OracleCommand estado = new OracleCommand("UPDATE VEHICULO SET ESTADOID=1 WHERE vehiculoid= " + Variable.idSelectAuto, oracle);
+                OracleCommand estado = new OracleCommand("UPDATE rentadora.VEHICULO SET ESTADOID=1 WHERE vehiculoid= " + Variable.idSelectAuto, oracle);
                 estado.ExecuteNonQuery();
             }
             catch

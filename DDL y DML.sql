@@ -236,7 +236,6 @@ create table TIPO_PAGO(
 CREATE TABLE PAGO(
 	pagoID INT,
 	total_pagado FLOAT NOT NULL,
-	cambio FLOAT NOT NULL,
 	tipo_pagoID INT,
     contratoID INT,
 	CONSTRAINT pagoPK PRIMARY KEY (pagoID),

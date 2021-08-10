@@ -173,10 +173,10 @@ namespace Rentadora
 
                 if(idvehiculo != Variable.idSelectAuto)
                 {
-                    OracleCommand estado = new OracleCommand("UPDATE VEHICULO SET ESTADOID=1 WHERE vehiculoid= " + Variable.idSelectAuto, oracle);
+                    OracleCommand estado = new OracleCommand("UPDATE rentadora.VEHICULO SET ESTADOID=1 WHERE vehiculoid= " + Variable.idSelectAuto, oracle);
                     estado.ExecuteNonQuery();
 
-                    OracleCommand estado2 = new OracleCommand("UPDATE VEHICULO SET ESTADOID=0 WHERE vehiculoid= " + idvehiculo, oracle);
+                    OracleCommand estado2 = new OracleCommand("UPDATE rentadora.VEHICULO SET ESTADOID=0 WHERE vehiculoid= " + idvehiculo, oracle);
                     estado2.ExecuteNonQuery();
                 }
             }
