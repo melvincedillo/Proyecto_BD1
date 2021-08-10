@@ -93,6 +93,16 @@ namespace Rentadora.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Disponible {
+            get {
+                object obj = ResourceManager.GetObject("Disponible", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Flecha {
             get {
                 object obj = ResourceManager.GetObject("Flecha", resourceCulture);
@@ -116,6 +126,16 @@ namespace Rentadora.Properties {
         internal static System.Drawing.Bitmap logo__1_1 {
             get {
                 object obj = ResourceManager.GetObject("logo (1)1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap mantenimietno {
+            get {
+                object obj = ResourceManager.GetObject("mantenimietno", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

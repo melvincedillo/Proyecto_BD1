@@ -78,3 +78,23 @@ C:\Users\DELL\Documents\GitHub\Proyecto_BD1\Rentadora\obj\Debug\Rentadora.Select
 C:\Users\M.Elias Cedillo\Desktop\Proyecto_BD1\Rentadora\obj\Debug\Rentadora.EditarSolicitud.resources
 C:\Users\M.Elias Cedillo\Desktop\Proyecto_BD1\Rentadora\obj\Debug\Rentadora.fmrFinalizar.resources
 C:\Users\M.Elias Cedillo\Desktop\Proyecto_BD1\Rentadora\obj\Debug\Rentadora.SelectAuto.resources
+C:\Users\DELL\Pictures\Proyecto_BD1\Rentadora\obj\Debug\Rentadora.csproj.AssemblyReference.cache
+C:\Users\DELL\Pictures\Proyecto_BD1\Rentadora\obj\Debug\Rentadora.EditarSolicitud.resources
+C:\Users\DELL\Pictures\Proyecto_BD1\Rentadora\obj\Debug\Rentadora.fmrAutos.resources
+C:\Users\DELL\Pictures\Proyecto_BD1\Rentadora\obj\Debug\Rentadora.fmrClientes.resources
+C:\Users\DELL\Pictures\Proyecto_BD1\Rentadora\obj\Debug\Rentadora.fmrContratos.resources
+C:\Users\DELL\Pictures\Proyecto_BD1\Rentadora\obj\Debug\Rentadora.fmrEmpleados.resources
+C:\Users\DELL\Pictures\Proyecto_BD1\Rentadora\obj\Debug\Rentadora.fmrFinalizar.resources
+C:\Users\DELL\Pictures\Proyecto_BD1\Rentadora\obj\Debug\Rentadora.fmrHistorial.resources
+C:\Users\DELL\Pictures\Proyecto_BD1\Rentadora\obj\Debug\Rentadora.fmrPrincipal.resources
+C:\Users\DELL\Pictures\Proyecto_BD1\Rentadora\obj\Debug\Rentadora.fmrSolicitudes.resources
+C:\Users\DELL\Pictures\Proyecto_BD1\Rentadora\obj\Debug\Rentadora.Form1.resources
+C:\Users\DELL\Pictures\Proyecto_BD1\Rentadora\obj\Debug\Rentadora.Properties.Resources.resources
+C:\Users\DELL\Pictures\Proyecto_BD1\Rentadora\obj\Debug\Rentadora.SelectAuto.resources
+C:\Users\DELL\Pictures\Proyecto_BD1\Rentadora\obj\Debug\Rentadora.csproj.GenerateResource.cache
+C:\Users\DELL\Pictures\Proyecto_BD1\Rentadora\obj\Debug\Rentadora.csproj.CoreCompileInputs.cache
+C:\Users\DELL\Pictures\Proyecto_BD1\Rentadora\obj\Debug\Rentadora.exe
+C:\Users\DELL\Pictures\Proyecto_BD1\Rentadora\obj\Debug\Rentadora.pdb
+C:\Users\DELL\Pictures\Proyecto_BD1\Rentadora\bin\Debug\Rentadora.exe.config
+C:\Users\DELL\Pictures\Proyecto_BD1\Rentadora\bin\Debug\Rentadora.exe
+C:\Users\DELL\Pictures\Proyecto_BD1\Rentadora\bin\Debug\Rentadora.pdb
