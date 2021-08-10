@@ -34,3 +34,15 @@ create or replace procedure select_contrato(registros out sys_refcursor)
             where
                 s.estadoid = 1 OR s.estadoid = 2;
     end;
+    
+    
+--Procedimiento para pagar
+create or replace procedure pagar(idC int, total float, tipo int, tarjeta varchar)
+    as
+    begin
+        insert into pago (pagoid, total_pagado, tipo_pagoid, contratoid, n_tarjeta) values (idC, total, tipo, idC, tarjeta);
+    end;
+
+
+
+

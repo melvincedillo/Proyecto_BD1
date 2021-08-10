@@ -245,13 +245,27 @@ namespace Rentadora
             if (Variable.controltotal == true)
             {
                 crearContrato();
+
+                Variable.idsolicitud = idSolicitud;
+                Variable.total = total;
+
+                fmrPago pago = new fmrPago();
+                if(pago.ShowDialog() == DialogResult.OK)
+                {
+                    cargarContratos();
+                }
+                else
+                {
+                    MessageBox.Show("Error al pagar");
+                }
+
                 limpiarform();
                 idSoliciudGenerar.Enabled = true;
                 buscarSolicitud.Visible = true;
                 cancelarContrato.Visible = false;
                 Detalles.Visible = true;
                 addContrato.Visible = false;
-                cargarContratos();
+
             }
             else
             {
