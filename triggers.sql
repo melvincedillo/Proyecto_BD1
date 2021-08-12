@@ -3,6 +3,7 @@ create SEQUENCE direccion_secuencia START WITH 10;
 create SEQUENCE empleado_secuencia START WITH 10;
 create SEQUENCE vehiculo_secuencia START WITH 10;
 create SEQUENCE solicitud_secuencia START WITH 100;
+create SEQUENCE danio_secuencia START WITH 10;
 
 
 --Auto incremental cliente
@@ -57,3 +58,13 @@ create or replace trigger solicitud_tri
         from dual;
     end solicitud_tri;
     
+    
+--Autoincremental solicitud
+create or replace trigger danio_tri
+    before insert on danio
+        for EACH row
+    begin
+        select DANIO_SECUENCIA.nextval
+        into :new.danioid
+        from dual;
+    end danio_tri;

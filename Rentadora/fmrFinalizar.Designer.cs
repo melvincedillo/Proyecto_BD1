@@ -76,6 +76,8 @@ namespace Rentadora
             this.label16 = new System.Windows.Forms.Label();
             this.cTelefonos = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.seguroEstado = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.sNumero = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
@@ -89,16 +91,14 @@ namespace Rentadora
             this.label21 = new System.Windows.Forms.Label();
             this.empleado = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnFinalizar = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.btnBuscar = new System.Windows.Forms.Button();
             this.label26 = new System.Windows.Forms.Label();
             this.idSoliciudGenerar = new System.Windows.Forms.TextBox();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.cfecha = new System.Windows.Forms.DateTimePicker();
-            this.seguroEstado = new System.Windows.Forms.Label();
-            this.label31 = new System.Windows.Forms.Label();
-            this.btnFinalizar = new System.Windows.Forms.Button();
+            this.fechaD = new System.Windows.Forms.DateTimePicker();
             this.Panel.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -726,6 +726,30 @@ namespace Rentadora
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "INFORMACION GENERAL";
             // 
+            // seguroEstado
+            // 
+            this.seguroEstado.AutoSize = true;
+            this.seguroEstado.BackColor = System.Drawing.Color.Transparent;
+            this.seguroEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.seguroEstado.ForeColor = System.Drawing.Color.Black;
+            this.seguroEstado.Location = new System.Drawing.Point(66, 179);
+            this.seguroEstado.Name = "seguroEstado";
+            this.seguroEstado.Size = new System.Drawing.Size(22, 13);
+            this.seguroEstado.TabIndex = 242;
+            this.seguroEstado.Text = "-----";
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.BackColor = System.Drawing.Color.Transparent;
+            this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label31.ForeColor = System.Drawing.Color.Black;
+            this.label31.Location = new System.Drawing.Point(8, 179);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(51, 13);
+            this.label31.TabIndex = 241;
+            this.label31.Text = "Seguro:";
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -878,24 +902,57 @@ namespace Rentadora
             this.panel2.Controls.Add(this.btnFinalizar);
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.cfecha);
+            this.panel2.Controls.Add(this.fechaD);
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1000, 85);
             this.panel2.TabIndex = 1;
+            // 
+            // btnFinalizar
+            // 
+            this.btnFinalizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnFinalizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnFinalizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Lime;
+            this.btnFinalizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFinalizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFinalizar.Location = new System.Drawing.Point(646, 50);
+            this.btnFinalizar.Name = "btnFinalizar";
+            this.btnFinalizar.Size = new System.Drawing.Size(107, 32);
+            this.btnFinalizar.TabIndex = 248;
+            this.btnFinalizar.Text = "FINALIZAR";
+            this.btnFinalizar.UseVisualStyleBackColor = false;
+            this.btnFinalizar.Visible = false;
+            this.btnFinalizar.Click += new System.EventHandler(this.btnFinalizar_Click);
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Silver;
             this.panel3.Controls.Add(this.label26);
             this.panel3.Controls.Add(this.idSoliciudGenerar);
-            this.panel3.Controls.Add(this.btnCancelar);
             this.panel3.Controls.Add(this.btnBuscar);
+            this.panel3.Controls.Add(this.btnCancelar);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel3.Location = new System.Drawing.Point(759, 0);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(241, 85);
             this.panel3.TabIndex = 2;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.Location = new System.Drawing.Point(6, 15);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(101, 13);
+            this.label26.TabIndex = 162;
+            this.label26.Text = "N° CONTRATO: ";
+            // 
+            // idSoliciudGenerar
+            // 
+            this.idSoliciudGenerar.Location = new System.Drawing.Point(113, 12);
+            this.idSoliciudGenerar.Name = "idSoliciudGenerar";
+            this.idSoliciudGenerar.Size = new System.Drawing.Size(114, 20);
+            this.idSoliciudGenerar.TabIndex = 161;
             // 
             // btnCancelar
             // 
@@ -926,23 +983,6 @@ namespace Rentadora
             this.btnBuscar.UseVisualStyleBackColor = false;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(6, 15);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(101, 13);
-            this.label26.TabIndex = 162;
-            this.label26.Text = "N° CONTRATO: ";
-            // 
-            // idSoliciudGenerar
-            // 
-            this.idSoliciudGenerar.Location = new System.Drawing.Point(113, 12);
-            this.idSoliciudGenerar.Name = "idSoliciudGenerar";
-            this.idSoliciudGenerar.Size = new System.Drawing.Size(114, 20);
-            this.idSoliciudGenerar.TabIndex = 161;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -954,54 +994,15 @@ namespace Rentadora
             this.label1.TabIndex = 104;
             this.label1.Text = "FINALIZACION DE CONTRATO";
             // 
-            // cfecha
+            // fechaD
             // 
-            this.cfecha.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cfecha.Enabled = false;
-            this.cfecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cfecha.Location = new System.Drawing.Point(493, 7);
-            this.cfecha.Name = "cfecha";
-            this.cfecha.Size = new System.Drawing.Size(260, 21);
-            this.cfecha.TabIndex = 103;
-            // 
-            // seguroEstado
-            // 
-            this.seguroEstado.AutoSize = true;
-            this.seguroEstado.BackColor = System.Drawing.Color.Transparent;
-            this.seguroEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.seguroEstado.ForeColor = System.Drawing.Color.Black;
-            this.seguroEstado.Location = new System.Drawing.Point(66, 179);
-            this.seguroEstado.Name = "seguroEstado";
-            this.seguroEstado.Size = new System.Drawing.Size(22, 13);
-            this.seguroEstado.TabIndex = 242;
-            this.seguroEstado.Text = "-----";
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.BackColor = System.Drawing.Color.Transparent;
-            this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label31.ForeColor = System.Drawing.Color.Black;
-            this.label31.Location = new System.Drawing.Point(8, 179);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(51, 13);
-            this.label31.TabIndex = 241;
-            this.label31.Text = "Seguro:";
-            // 
-            // btnFinalizar
-            // 
-            this.btnFinalizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnFinalizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnFinalizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Lime;
-            this.btnFinalizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFinalizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFinalizar.Location = new System.Drawing.Point(646, 50);
-            this.btnFinalizar.Name = "btnFinalizar";
-            this.btnFinalizar.Size = new System.Drawing.Size(107, 32);
-            this.btnFinalizar.TabIndex = 248;
-            this.btnFinalizar.Text = "FINALIZAR";
-            this.btnFinalizar.UseVisualStyleBackColor = false;
-            this.btnFinalizar.Visible = false;
+            this.fechaD.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.fechaD.Enabled = false;
+            this.fechaD.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fechaD.Location = new System.Drawing.Point(493, 7);
+            this.fechaD.Name = "fechaD";
+            this.fechaD.Size = new System.Drawing.Size(260, 21);
+            this.fechaD.TabIndex = 103;
             // 
             // fmrFinalizar
             // 
@@ -1039,7 +1040,7 @@ namespace Rentadora
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DateTimePicker cfecha;
+        private System.Windows.Forms.DateTimePicker fechaD;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label tipo_pago;

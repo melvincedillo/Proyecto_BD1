@@ -221,17 +221,24 @@ namespace Rentadora
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            try
+            if(Variable.controltotal == true)
             {
-                idContrato = Convert.ToInt32(idSoliciudGenerar.Text);
-                cargarContrato();
-                btnBuscar.Visible = false;
-                btnCancelar.Visible = true;
-                btnFinalizar.Visible = true;
+                try
+                {
+                    idContrato = Convert.ToInt32(idSoliciudGenerar.Text);
+                    cargarContrato();
+                    btnBuscar.Visible = false;
+                    btnCancelar.Visible = true;
+                    btnFinalizar.Visible = true;
+                }
+                catch
+                {
+                    MessageBox.Show("Error en la busqueda");
+                }
             }
-            catch
+            else
             {
-                MessageBox.Show("Error en la busqueda");
+                MessageBox.Show("PRIVILEGIOS INSUFICIENTES");
             }
         }
 
@@ -254,6 +261,43 @@ namespace Rentadora
             btnCancelar.Visible = false;
             btnBuscar.Visible = true;
             btnFinalizar.Visible = false;
+        }
+
+        private void btnFinalizar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                oracle.Open();
+                OracleCommand comando = new OracleCommand("rentadora.insert_devolucion", oracle);
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.Parameters.Add("idC_D", OracleType.Int32).Value = idContrato;
+                comando.Parameters.Add("fechad", OracleType.DateTime).Value = fechaD.Text;
+                comando.ExecuteNonQuery();
+
+                OracleCommand estado = new OracleCommand("UPDATE rentadora.VEHICULO SET ESTADOID=0 WHERE vehiculoid= " + idVehiculo, oracle);
+                estado.ExecuteNonQuery();
+
+                OracleCommand estado2 = new OracleCommand("UPDATE rentadora.SOLICITUD SET ESTADOID=3 WHERE solicitudid= " + idSolicitud, oracle);
+                estado2.ExecuteNonQuery();
+
+                oracle.Close();
+
+                Variable.idsolicitud = idContrato;
+                fmrDaños daño = new fmrDaños();
+                if(daño.ShowDialog() == DialogResult.OK)
+                {
+                    limpiarform();
+                    btnBuscar.Visible = true;
+                    btnCancelar.Visible = false;
+                    btnFinalizar.Visible = false;
+                    MessageBox.Show("CONTRATO FINALIZADO");
+                }
+            }
+            catch
+            {
+                oracle.Close();
+                MessageBox.Show("IMPOSIBLE CREAR DEVOLUCION");
+            }
         }
     }
 }
