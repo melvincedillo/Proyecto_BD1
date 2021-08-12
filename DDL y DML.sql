@@ -238,11 +238,15 @@ CREATE TABLE PAGO(
 	total_pagado FLOAT NOT NULL,
 	tipo_pagoID INT,
     n_tarjeta VARCHAR(20),
+    expira VARCHAR(5),
+    codigo INT,
     contratoID INT,
 	CONSTRAINT pagoPK PRIMARY KEY (pagoID),
 	CONSTRAINT tipo_pagoFK FOREIGN KEY (tipo_pagoID) REFERENCES TIPO_PAGO (tipo_pagoID),
     CONSTRAINT contrato_pagoFK FOREIGN KEY (contratoID) REFERENCES CONTRATO(contratoID)
 );
+
+drop table pago;
 
 CREATE TABLE DEVOLUCION(
     devolucionID INT,

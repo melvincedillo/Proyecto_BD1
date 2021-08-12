@@ -27,11 +27,32 @@ namespace Rentadora
         {
             try
             {
+                //Captura los datos del login y crea una conexion
                 Variable.conexion = "DATA SOURCE = xe; PASSWORD =" + passwordTxt.Text + "; USER ID =" + usuarioTxt.Text + ";";
                 OracleConnection oracle = new OracleConnection(Variable.conexion);
+
+                //Abre la conexion
                 oracle.Open();
-                Variable.usuario = usuarioTxt.Text;
+                    Variable.usuario = usuarioTxt.Text;
+
+                    //Comprueba el tipo de usuario
+                    OracleCommand comando = new OracleCommand("select role from role_sys_privs", oracle);
+                    OracleDataReader registro = comando.ExecuteReader();
+                    registro.Read();
+                    //Guarda el tipo de usuario
+                    string rol = registro["role"].ToString();
                 oracle.Close();
+
+                //Asigna el tipo de usuario al sistema
+                    if (rol == "LECTURA")
+                    {
+                        Variable.controltotal = false;
+                    }
+                    else
+                    {
+                        Variable.controltotal = true;
+                    }
+                //Abre el formulario principal
                 fmrPrincipal entrar = new fmrPrincipal();
                 entrar.Show();
                 this.Hide();
@@ -45,20 +66,9 @@ namespace Rentadora
             passwordTxt.Text = null;
         }
 
-
-        private void passwordTxt_TextChanged(object sender, EventArgs e)
+        private void salir_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void usuarioTxt_TextChanged(object sender, EventArgs e)
-        {
-
+            this.Close();
         }
     }
 }

@@ -115,21 +115,6 @@ namespace Rentadora
         {
             this.Size = Screen.PrimaryScreen.WorkingArea.Size;
             this.Location = Screen.PrimaryScreen.WorkingArea.Location;
-           
-            oracle.Open();
-            OracleCommand comando = new OracleCommand("select role from role_sys_privs", oracle);
-            OracleDataReader registro =  comando.ExecuteReader();
-            registro.Read();
-            string rol = registro["role"].ToString();
-            oracle.Close();
-            if(rol == "LECTURA")
-            {
-                Variable.controltotal = false;
-            }
-            else
-            {
-                Variable.controltotal = true;
-            }
         }
 
         private void finalizar_Click(object sender, EventArgs e)

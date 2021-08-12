@@ -37,10 +37,10 @@ create or replace procedure select_contrato(registros out sys_refcursor)
     
     
 --Procedimiento para pagar
-create or replace procedure pagar(idC int, total float, tipo int, tarjeta varchar)
+create or replace procedure pagar(idC int, total float, tipo int, tarjeta varchar, expi varchar, cod int)
     as
     begin
-        insert into pago (pagoid, total_pagado, tipo_pagoid, contratoid, n_tarjeta) values (idC, total, tipo, idC, tarjeta);
+        insert into pago (pagoid, total_pagado, tipo_pagoid, contratoid, n_tarjeta, expira, codigo) values (idC, total, tipo, idC, tarjeta, expi, cod);
     end;
 
 

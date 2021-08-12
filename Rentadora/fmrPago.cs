@@ -33,6 +33,8 @@ namespace Rentadora
                     comando.Parameters.Add("total", OracleType.Int32).Value = Variable.total;
                     comando.Parameters.Add("tipo", OracleType.Int32).Value = 1;
                     comando.Parameters.Add("tarjeta", OracleType.VarChar).Value = "";
+                    comando.Parameters.Add("expi", OracleType.VarChar).Value = "";
+                    comando.Parameters.Add("cod", OracleType.Int32).Value = 0;
                     comando.ExecuteNonQuery();
                     oracle.Close();
                 }
@@ -52,6 +54,8 @@ namespace Rentadora
                     comando.Parameters.Add("total", OracleType.Int32).Value = Variable.total;
                     comando.Parameters.Add("tipo", OracleType.Int32).Value = 2;
                     comando.Parameters.Add("tarjeta", OracleType.VarChar).Value = tarj.Text;
+                    comando.Parameters.Add("expi", OracleType.VarChar).Value = exp.Text;
+                    comando.Parameters.Add("cod", OracleType.Int32).Value = Convert.ToInt32(cod.Text);
                     comando.ExecuteNonQuery();
                     oracle.Close();
                 }
@@ -66,6 +70,39 @@ namespace Rentadora
             }
 
             DialogResult = DialogResult.OK;
+        }
+
+        private void fmrPago_Load(object sender, EventArgs e)
+        {
+            Total.Text = "Total a pagar L. " + Variable.total;
+        }
+
+        private void exp_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (exp.Text.ToString().Length == 2 && e.KeyValue != 8)
+            {
+                exp.Text = exp.Text + "/";
+                exp.Select(exp.Text.Length, 0);
+            }
+        }
+
+        private void tarjeta_CheckedChanged(object sender, EventArgs e)
+        {
+            PanelTarjeta.Visible = true;
+        }
+
+        private void efectivo_CheckedChanged(object sender, EventArgs e)
+        {
+            PanelTarjeta.Visible = false;
+        }
+
+        private void tarj_KeyDown(object sender, KeyEventArgs e)
+        {
+            if ((tarj.Text.ToString().Length == 4 || tarj.Text.ToString().Length == 9 || tarj.Text.ToString().Length == 14) && e.KeyValue != 8)
+            {
+                tarj.Text = tarj.Text + " ";
+                tarj.Select(tarj.Text.Length, 0);
+            }
         }
     }
 }

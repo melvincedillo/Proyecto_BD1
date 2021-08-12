@@ -99,3 +99,4 @@ C:\Users\DELL\Pictures\Proyecto_BD1\Rentadora\bin\Debug\Rentadora.exe.config
 C:\Users\DELL\Pictures\Proyecto_BD1\Rentadora\bin\Debug\Rentadora.exe
 C:\Users\DELL\Pictures\Proyecto_BD1\Rentadora\bin\Debug\Rentadora.pdb
 C:\Users\M.Elias Cedillo\Desktop\Proyecto_BD1\Rentadora\obj\Debug\Rentadora.fmrPago.resources
+C:\Users\M.Elias Cedillo\Desktop\Respaldo Proyecto\Rentadora\obj\Debug\Rentadora.fmrPago.resources
