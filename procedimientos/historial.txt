@@ -1,0 +1,24 @@
+create or replace procedure select_historial(historial out SYS_REFCURSOR)
+    as
+    begin
+        open historial for 
+            select 
+                d.devolucionid as NUMERO,
+                d.fecha as FECHA,
+                (cl.p_nombre||' '||cl.p_apellido) as CLIENTE,
+                cl.identidad AS "ID Cliente",
+                e.nombre as EMPLEADO,
+                (v.placa) AS VEHICULO,
+                c.total as TOTAL,
+                s.vehiculoid,
+                s.fecharinicio,
+                s.fechafin
+            from 
+                devolucion d 
+                inner join contrato c on c.contratoid=d.contratoid
+                inner join solicitud s on s.solicitudid=c.solicitudid
+                inner join cliente cl on cl.clienteid=s.clienteid
+                inner join vehiculo v on v.vehiculoid=s.vehiculoid
+                inner join empleado e on e.empleadoid=s.empleadoid;
+
+        end;
