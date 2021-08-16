@@ -92,6 +92,12 @@
     <Compile Include="fmrDaños.Designer.cs">
       <DependentUpon>fmrDaños.cs</DependentUpon>
     </Compile>
+    <Compile Include="fmrDetalleHistorial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fmrDetalleHistorial.Designer.cs">
+      <DependentUpon>fmrDetalleHistorial.cs</DependentUpon>
+    </Compile>
     <Compile Include="fmrEmpleados.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -157,6 +163,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fmrDaños.resx">
       <DependentUpon>fmrDaños.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fmrDetalleHistorial.resx">
+      <DependentUpon>fmrDetalleHistorial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fmrEmpleados.resx">
       <DependentUpon>fmrEmpleados.cs</DependentUpon>

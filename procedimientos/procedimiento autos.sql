@@ -169,7 +169,7 @@ create or replace procedure select_vehiculos_Rentados(vehiculo out SYS_REFCURSOR
             
         end;
         
-        create or replace procedure select_vehiculos_Mantenimiento(vehiculo out SYS_REFCURSOR)
+    create or replace procedure select_vehiculos_Mantenimiento(vehiculo out SYS_REFCURSOR)
     as
     begin
         open vehiculo for

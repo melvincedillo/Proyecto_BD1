@@ -21,6 +21,7 @@ namespace Rentadora
         int idVehiculo = 0;
         int idEmpleado = 0;
         int idSucursal = 0;
+        bool seguro = true;
 
 
         public fmrFinalizar()
@@ -49,6 +50,8 @@ namespace Rentadora
                 sInicio.Text = registro["fecharinicio"].ToString();
                 sFin.Text = registro["fechafin"].ToString();
                 seguroEstado.Text = registro["seguro"].ToString();
+
+                if (seguroEstado.Text == "NO") { seguro = false; }
 
                 idEmpleado = Convert.ToInt32(registro["empleadoid"].ToString());
                 idSucursal = Convert.ToInt32(registro["sucursalid"].ToString());
@@ -286,6 +289,11 @@ namespace Rentadora
                 fmrDaños daño = new fmrDaños();
                 if(daño.ShowDialog() == DialogResult.OK)
                 {
+                    if(seguro == false && Variable.total != 0)
+                    {
+                        fmrPago pago = new fmrPago();
+                        pago.ShowDialog();
+                    }
                     limpiarform();
                     btnBuscar.Visible = true;
                     btnCancelar.Visible = false;
