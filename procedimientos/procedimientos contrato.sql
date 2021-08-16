@@ -32,7 +32,7 @@ create or replace procedure select_contrato(registros out sys_refcursor)
                 inner join rentadora.modelo mo on mo.modeloid = v.modeloid
                 inner join rentadora.marca ma on ma.marcaid = v.marcaid
             where
-                s.estadoid = 1 OR s.estadoid = 2;
+                s.estadoid = 1;
     end;
     
     

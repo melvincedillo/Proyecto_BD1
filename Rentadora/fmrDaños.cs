@@ -14,7 +14,6 @@ namespace Rentadora
     public partial class fmrDaños : Form
     {
         private OracleConnection oracle = new OracleConnection(Variable.conexion);
-        private int idDaño = 0;
 
         public fmrDaños()
         {
@@ -23,91 +22,37 @@ namespace Rentadora
 
         private void fmrDaños_Load(object sender, EventArgs e)
         {
-            mostrarDaños();
+            
         }
 
-        private void mostrarDaños()
+        private void actualizar(int grado)
         {
             try
             {
                 oracle.Open();
-                OracleCommand comando = new OracleCommand("rentadora.select_daño", oracle);
-                comando.CommandType = System.Data.CommandType.StoredProcedure;
-                comando.Parameters.Add("idD", OracleType.Int32).Value = Variable.idsolicitud;
-                comando.Parameters.Add("registros", OracleType.Cursor).Direction = ParameterDirection.Output;
-
-                OracleDataAdapter adaptador = new OracleDataAdapter();
-                adaptador.SelectCommand = comando;
-                DataTable table = new DataTable();
-                adaptador.Fill(table);
-                dgvDaños.DataSource = table;
+                OracleCommand estado = new OracleCommand("UPDATE rentadora.DEVOLUCION SET DANIOID = " + grado +" WHERE devolucionid= " + Variable.idsolicitud, oracle);
+                estado.ExecuteNonQuery();
                 oracle.Close();
-                dgvDaños.Columns[0].Visible = false;
             }
             catch
             {
                 oracle.Close();
-                MessageBox.Show("Error al cargar");
-            }
-        }
-
-        private void dgvDaños_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            idDaño = Convert.ToInt32(dgvDaños.SelectedRows[0].Cells[0].Value);
-        }
-
-        private void delete_cliente_Click(object sender, EventArgs e)
-        {
-            if (idDaño != 0) {
-                try
-                {
-                    oracle.Open();
-                    OracleCommand comando = new OracleCommand("rentadora.delete_danios", oracle);
-                    comando.CommandType = System.Data.CommandType.StoredProcedure;
-                    comando.Parameters.Add("idD", OracleType.Int32).Value = Variable.idsolicitud;
-                    comando.Parameters.Add("idDa", OracleType.Int32).Value = idDaño;
-                    comando.ExecuteNonQuery();
-                    oracle.Close();
-                    mostrarDaños();
-                }
-                catch
-                {
-                    oracle.Close();
-                    MessageBox.Show("Error al borrar");
-                }
-            }
-            else
-            {
-                MessageBox.Show("Seleccione un daño");
-            }
-        }
-
-        private void disponible_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                oracle.Open();
-                OracleCommand comando = new OracleCommand("rentadora.insert_danios", oracle);
-                comando.CommandType = System.Data.CommandType.StoredProcedure;
-                comando.Parameters.Add("idD", OracleType.Int32).Value = Variable.idsolicitud;
-                comando.Parameters.Add("precio", OracleType.Float).Value = Convert.ToDouble(costo.Text);
-                comando.Parameters.Add("daño", OracleType.VarChar).Value = descrpcion.Text;
-                comando.Parameters.Add("idDa", OracleType.Int32).Direction = ParameterDirection.Output;
-                comando.ExecuteNonQuery();
-                oracle.Close();
-                descrpcion.Text = "";
-                costo.Text = "";
-                mostrarDaños();
-            }
-            catch
-            {
-                oracle.Close();
-                MessageBox.Show("Error al insertar");
+                MessageBox.Show("Error al actualizar");
             }
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
+            int g = 0;
+            if (sinDaño.Checked) { g = 0; }
+            else if (grado1.Checked) { g = 1;}
+            else if (grado2.Checked) { g = 2;}
+            else if (grado3.Checked) { g = 3;}
+            else if (grado4.Checked) { g = 4;}
+            else if (grado5.Checked) { g = 5;}
+            else if (grave.Checked) { g = 6;}
+
+            actualizar(g);
             DialogResult = DialogResult.OK;
         }
     }

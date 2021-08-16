@@ -2,9 +2,10 @@
 create or replace procedure insert_devolucion(idC_D int, fechad date)
     as
     begin
-        insert into devolucion (devolucionid, contratoid, fecha) values (idC_D, idC_D, fechad);
+        insert into devolucion (devolucionid, contratoid, fecha, danioid) values (idC_D, idC_D, fechad, 0);
     end;
 
+/*
 --PROCEDIMIENTO INSERTAR DAÑO
 create or replace procedure insert_danios(daño varchar, precio float, idD int, idDa out int)
     as
@@ -33,3 +34,4 @@ create or replace procedure select_daño(idD int, registros out SYS_REFCURSOR)
             from devolucionxdanios dd inner join danio d on dd.danioid = d.danioid 
             where dd.devolucionid = idD;
         end;
+*/

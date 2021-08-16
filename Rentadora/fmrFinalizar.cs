@@ -277,7 +277,7 @@ namespace Rentadora
                 OracleCommand estado = new OracleCommand("UPDATE rentadora.VEHICULO SET ESTADOID=0 WHERE vehiculoid= " + idVehiculo, oracle);
                 estado.ExecuteNonQuery();
 
-                OracleCommand estado2 = new OracleCommand("UPDATE rentadora.SOLICITUD SET ESTADOID=3 WHERE solicitudid= " + idSolicitud, oracle);
+                OracleCommand estado2 = new OracleCommand("UPDATE rentadora.SOLICITUD SET ESTADOID=2 WHERE solicitudid= " + idSolicitud, oracle);
                 estado2.ExecuteNonQuery();
 
                 oracle.Close();

@@ -29,8 +29,8 @@ CREATE TABLE DIRECCION(
 
 create table DANIO(
     danioID int,
-    danio varchar(20) not null,
-    costo float not null,
+    grado varchar(20) not null,
+    costo_aproximado float not null,
     CONSTRAINT danioPK PRIMARY KEY(danioID)
 ); 
 
@@ -252,10 +252,13 @@ CREATE TABLE DEVOLUCION(
     devolucionID INT,
     contratoID INT,
     fecha DATE,
+    danioID int,
     CONSTRAINT devPK PRIMARY KEY(devolucionID),
-    CONSTRAINT contratoDevolucionFK FOREIGN KEY (contratoID) REFERENCES CONTRATO(contratoID)
+    CONSTRAINT contratoDevolucionFK FOREIGN KEY (contratoID) REFERENCES CONTRATO(contratoID),
+    CONSTRAINT danioDevolucionFK FOREIGN KEY (danioID) REFERENCES DANIO(danioID)
 );
 
+/*
 CREATE TABLE DEVOLUCIONxDANIOS(
     devolucionID INT,
     danioID INT,
@@ -263,16 +266,24 @@ CREATE TABLE DEVOLUCIONxDANIOS(
     CONSTRAINT danioFK FOREIGN KEY (danioID) REFERENCES DANIO(danioID)
 );
 
-
+*/
 
 -------------------------------------------------------------------------------------------------------------------------------------
 --                                                 D M L SISTEMA RENTAS DE AUTOS
 -------------------------------------------------------------------------------------------------------------------------------------
 --Insertar datos estado_Solicitud
-insert into estado_solicitud values (0, 'En espera');
-insert into estado_solicitud values (1, 'Ejecutando');
-insert into estado_solicitud values (2, 'Sin cancelar');
-insert into estado_solicitud values (3, 'Cerrado');
+insert into estado_solicitud values (0, 'En proceso');
+insert into estado_solicitud values (1, 'Vigente');
+insert into estado_solicitud values (2, 'Terminado');
+
+--Daños
+Insert into danio values (0, 'Sin daños', 0);
+Insert into danio values (1, 'Grado 1', 200);
+Insert into danio values (2, 'Grado 2', 400);
+Insert into danio values (3, 'Grado 3', 800);
+Insert into danio values (4, 'Grado 4', 1600);
+Insert into danio values (5, 'Grado 5', 3500);
+Insert into danio values (6, 'Daño grave', 4500);
 
 
 --Insertando Datos Municipio
