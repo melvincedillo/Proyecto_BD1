@@ -3,6 +3,7 @@ create SEQUENCE direccion_secuencia START WITH 10;
 create SEQUENCE empleado_secuencia START WITH 10;
 create SEQUENCE vehiculo_secuencia START WITH 10;
 create SEQUENCE solicitud_secuencia START WITH 100;
+create SEQUENCE pago_secuencia START WITH 200;
 
 
 --Auto incremental cliente
@@ -56,5 +57,16 @@ create or replace trigger solicitud_tri
         into :new.solicitudid
         from dual;
     end solicitud_tri;
+    
+
+--Autoincremental pago
+create or replace trigger pago_tri
+    before insert on pago
+        for EACH row
+    begin
+        select PAGO_SECUENCIA.nextval
+        into :new.pagoid
+        from dual;
+    end pago_tri;
     
 
