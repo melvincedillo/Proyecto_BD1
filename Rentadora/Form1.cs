@@ -36,7 +36,7 @@ namespace Rentadora
                     Variable.usuario = usuarioTxt.Text;
 
                     //Comprueba el tipo de usuario
-                    OracleCommand comando = new OracleCommand("select role from role_sys_privs", oracle);
+                    OracleCommand comando = new OracleCommand("select role from role_sys_privs WHERE ROWNUM <= 1", oracle);
                     OracleDataReader registro = comando.ExecuteReader();
                     registro.Read();
                     //Guarda el tipo de usuario
@@ -44,14 +44,14 @@ namespace Rentadora
                 oracle.Close();
 
                 //Asigna el tipo de usuario al sistema
-                    if (rol == "LECTURA")
-                    {
-                        Variable.controltotal = false;
-                    }
-                    else
-                    {
-                        Variable.controltotal = true;
-                    }
+                if (rol == "ESCRITURA" || rol == "ADMINBD" || rol == "DBA")
+                {
+                    Variable.controltotal = true;
+                }
+                else
+                {
+                    Variable.controltotal = false;
+                }
                 //Abre el formulario principal
                 fmrPrincipal entrar = new fmrPrincipal();
                 entrar.Show();
