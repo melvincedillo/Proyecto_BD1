@@ -13,6 +13,7 @@ namespace Rentadora
         static public Form1 Login;
         static public int idSelectAuto = 0;
         static public int idsolicitud;
+        static public int id_dev;
         static public bool controltotal = true;
 
         static public double total = 0;

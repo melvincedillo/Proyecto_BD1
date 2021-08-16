@@ -180,8 +180,6 @@ namespace Rentadora
             idcliente = Convert.ToInt32(dgvClientes.SelectedRows[0].Cells[0].Value);
             iddireccion = Convert.ToInt32(dgvClientes.SelectedRows[0].Cells[5].Value);
 
-            clid.Text = idcliente.ToString();
-            drid.Text = iddireccion.ToString();
         }
 
         private void delete_cliente_Click(object sender, EventArgs e)
@@ -363,7 +361,6 @@ namespace Rentadora
         private void cbMunicipio_SelectedIndexChanged(object sender, EventArgs e)
         {
             idmunicipio = idmunicipios[cbMunicipio.SelectedIndex];
-            mnid.Text = idmunicipio.ToString();
         }
 
         private void insertarTelefono(string telA, int pos)

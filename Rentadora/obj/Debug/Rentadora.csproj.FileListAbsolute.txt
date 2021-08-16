@@ -102,3 +102,26 @@ C:\Users\M.Elias Cedillo\Desktop\Proyecto_BD1\Rentadora\obj\Debug\Rentadora.fmrP
 C:\Users\M.Elias Cedillo\Desktop\Respaldo Proyecto\Rentadora\obj\Debug\Rentadora.fmrPago.resources
 C:\Users\M.Elias Cedillo\Desktop\Respaldo Proyecto\Rentadora\obj\Debug\Rentadora.fmrDaños.resources
 C:\Users\M.Elias Cedillo\Desktop\Respaldo Proyecto\Rentadora\obj\Debug\Rentadora.fmrDetalleHistorial.resources
+E:\IIPAC2021\BASES I\Proyecto_BD1\Rentadora\bin\Debug\Rentadora.exe.config
+E:\IIPAC2021\BASES I\Proyecto_BD1\Rentadora\bin\Debug\Rentadora.exe
+E:\IIPAC2021\BASES I\Proyecto_BD1\Rentadora\bin\Debug\Rentadora.pdb
+E:\IIPAC2021\BASES I\Proyecto_BD1\Rentadora\obj\Debug\Rentadora.csproj.AssemblyReference.cache
+E:\IIPAC2021\BASES I\Proyecto_BD1\Rentadora\obj\Debug\Rentadora.EditarSolicitud.resources
+E:\IIPAC2021\BASES I\Proyecto_BD1\Rentadora\obj\Debug\Rentadora.fmrAutos.resources
+E:\IIPAC2021\BASES I\Proyecto_BD1\Rentadora\obj\Debug\Rentadora.fmrClientes.resources
+E:\IIPAC2021\BASES I\Proyecto_BD1\Rentadora\obj\Debug\Rentadora.fmrContratos.resources
+E:\IIPAC2021\BASES I\Proyecto_BD1\Rentadora\obj\Debug\Rentadora.fmrDaños.resources
+E:\IIPAC2021\BASES I\Proyecto_BD1\Rentadora\obj\Debug\Rentadora.fmrDetalleHistorial.resources
+E:\IIPAC2021\BASES I\Proyecto_BD1\Rentadora\obj\Debug\Rentadora.fmrEmpleados.resources
+E:\IIPAC2021\BASES I\Proyecto_BD1\Rentadora\obj\Debug\Rentadora.fmrFinalizar.resources
+E:\IIPAC2021\BASES I\Proyecto_BD1\Rentadora\obj\Debug\Rentadora.fmrHistorial.resources
+E:\IIPAC2021\BASES I\Proyecto_BD1\Rentadora\obj\Debug\Rentadora.fmrPago.resources
+E:\IIPAC2021\BASES I\Proyecto_BD1\Rentadora\obj\Debug\Rentadora.fmrPrincipal.resources
+E:\IIPAC2021\BASES I\Proyecto_BD1\Rentadora\obj\Debug\Rentadora.fmrSolicitudes.resources
+E:\IIPAC2021\BASES I\Proyecto_BD1\Rentadora\obj\Debug\Rentadora.Form1.resources
+E:\IIPAC2021\BASES I\Proyecto_BD1\Rentadora\obj\Debug\Rentadora.Properties.Resources.resources
+E:\IIPAC2021\BASES I\Proyecto_BD1\Rentadora\obj\Debug\Rentadora.SelectAuto.resources
+E:\IIPAC2021\BASES I\Proyecto_BD1\Rentadora\obj\Debug\Rentadora.csproj.GenerateResource.cache
+E:\IIPAC2021\BASES I\Proyecto_BD1\Rentadora\obj\Debug\Rentadora.csproj.CoreCompileInputs.cache
+E:\IIPAC2021\BASES I\Proyecto_BD1\Rentadora\obj\Debug\Rentadora.exe
+E:\IIPAC2021\BASES I\Proyecto_BD1\Rentadora\obj\Debug\Rentadora.pdb
