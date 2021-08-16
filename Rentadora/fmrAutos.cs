@@ -38,7 +38,7 @@ namespace Rentadora
 
         private void fmrAutos_Load(object sender, EventArgs e)
         {
-            mostrarAutos();
+            mostrarAutosDisponibles();
             cargarCombustibles();
             cargarModelos();
             cargarMarcas();
@@ -51,28 +51,28 @@ namespace Rentadora
             cancelar.Visible = false;
         }
 
-        private void mostrarAutos()
+        private void mostrarAutosDisponibles()
         {
             oracle.Open();
-            OracleCommand comando = new OracleCommand("rentadora.select_vehiculos", oracle);
-            comando.CommandType = System.Data.CommandType.StoredProcedure;
-            comando.Parameters.Add("vehiculo", OracleType.Cursor).Direction = ParameterDirection.Output;
-            OracleDataAdapter adaptador = new OracleDataAdapter();
-            adaptador.SelectCommand = comando;
+            OracleCommand disponibles = new OracleCommand("rentadora.select_vehiculos", oracle);
+            disponibles.CommandType = System.Data.CommandType.StoredProcedure;
+            disponibles.Parameters.Add("vehiculo", OracleType.Cursor).Direction = ParameterDirection.Output;
+            OracleDataAdapter adaptador1 = new OracleDataAdapter();
+            adaptador1.SelectCommand = disponibles;
             DataTable table = new DataTable();
-            adaptador.Fill(table);
-            dgvAutos.DataSource = table;
+            adaptador1.Fill(table);
+            dgvDisponibles.DataSource = table;
             if (idEstado == 2)
             {
                 
             }
             oracle.Close();
             //dgvAutos.Columns[4].Visible = false;
-            dgvAutos.Columns[0].Visible = false;
-            dgvAutos.Columns[5].Visible = false;
-            dgvAutos.Columns[7].Visible = false;
-            dgvAutos.Columns[8].Visible = false;
-            dgvAutos.Columns[9].Visible = false;
+            dgvDisponibles.Columns[0].Visible = false;
+            dgvDisponibles.Columns[5].Visible = false;
+            dgvDisponibles.Columns[7].Visible = false;
+            dgvDisponibles.Columns[8].Visible = false;
+            dgvDisponibles.Columns[9].Visible = false;
         }
 
         private void cargarCombustibles()
@@ -216,7 +216,7 @@ namespace Rentadora
                 try
                 {
                     crearAuto();
-                    mostrarAutos();
+                    mostrarAutosDisponibles();
                     limpiarForm();
                 }
                 catch
@@ -276,7 +276,7 @@ namespace Rentadora
         {
             updateAuto();
             limpiarForm();
-            mostrarAutos();
+            mostrarAutosDisponibles();
             add_auto.Visible = true;
             delete_auto.Visible = true;
             editar_auto.Visible = true;
@@ -344,7 +344,7 @@ namespace Rentadora
                 {
                     deleteVehiculo();
                     idvehiculo = 0;
-                    mostrarAutos();
+                    mostrarAutosDisponibles();
                 }
                 else
                 {
@@ -419,7 +419,7 @@ namespace Rentadora
 
         private void dgvAutos_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            idvehiculo = Convert.ToInt32(dgvAutos.SelectedRows[0].Cells[0].Value);
+            idvehiculo = Convert.ToInt32(dgvDisponibles.SelectedRows[0].Cells[0].Value);
 
             //Label para verificar que se seleccione el empleado con el id correcto
             idAuto.Text = idvehiculo.ToString();
@@ -476,7 +476,7 @@ namespace Rentadora
         private void mantenimiento_Click(object sender, EventArgs e)
         {
             mantenimientoAuto();
-            mostrarAutos();
+            mostrarAutosDisponibles();
             add_auto.Visible = true;
             delete_auto.Visible = true;
             editar_auto.Visible = true;
@@ -489,13 +489,93 @@ namespace Rentadora
         private void disponible_Click(object sender, EventArgs e)
         {
             disponibleAuto();
-            mostrarAutos();
+            mostrarAutosDisponibles();
             add_auto.Visible = true;
             delete_auto.Visible = true;
             editar_auto.Visible = true;
             aceptar.Visible = false;
             //cbEstado.Visible = true;
             cancelar.Visible = false;
+        }
+
+        private void disponibless_Click(object sender, EventArgs e)
+        {
+            oracle.Open();
+            OracleCommand disponibles = new OracleCommand("rentadora.select_vehiculos", oracle);
+            disponibles.CommandType = System.Data.CommandType.StoredProcedure;
+            disponibles.Parameters.Add("vehiculo", OracleType.Cursor).Direction = ParameterDirection.Output;
+            OracleDataAdapter adaptador1 = new OracleDataAdapter();
+            adaptador1.SelectCommand = disponibles;
+            DataTable table = new DataTable();
+            adaptador1.Fill(table);
+            dgvDisponibles.DataSource = table;
+            oracle.Close();
+            //dgvAutos.Columns[4].Visible = false;
+            dgvDisponibles.Columns[0].Visible = false;
+            dgvDisponibles.Columns[5].Visible = false;
+            dgvDisponibles.Columns[7].Visible = false;
+            dgvDisponibles.Columns[8].Visible = false;
+            dgvDisponibles.Columns[9].Visible = false;
+        }
+
+        private void enEspera_Click(object sender, EventArgs e)
+        {
+            oracle.Open();
+            OracleCommand disponibles = new OracleCommand("rentadora.select_vehiculos_espera", oracle);
+            disponibles.CommandType = System.Data.CommandType.StoredProcedure;
+            disponibles.Parameters.Add("vehiculo", OracleType.Cursor).Direction = ParameterDirection.Output;
+            OracleDataAdapter adaptador1 = new OracleDataAdapter();
+            adaptador1.SelectCommand = disponibles;
+            DataTable table = new DataTable();
+            adaptador1.Fill(table);
+            dgvDisponibles.DataSource = table;
+            oracle.Close();
+            //dgvAutos.Columns[4].Visible = false;
+            dgvDisponibles.Columns[0].Visible = false;
+            dgvDisponibles.Columns[5].Visible = false;
+            dgvDisponibles.Columns[7].Visible = false;
+            dgvDisponibles.Columns[8].Visible = false;
+            dgvDisponibles.Columns[9].Visible = false;
+        }
+
+        private void rentado_Click(object sender, EventArgs e)
+        {
+            oracle.Open();
+            OracleCommand disponibles = new OracleCommand("rentadora.select_vehiculos_rentados", oracle);
+            disponibles.CommandType = System.Data.CommandType.StoredProcedure;
+            disponibles.Parameters.Add("vehiculo", OracleType.Cursor).Direction = ParameterDirection.Output;
+            OracleDataAdapter adaptador1 = new OracleDataAdapter();
+            adaptador1.SelectCommand = disponibles;
+            DataTable table = new DataTable();
+            adaptador1.Fill(table);
+            dgvDisponibles.DataSource = table;
+            oracle.Close();
+            //dgvAutos.Columns[4].Visible = false;
+            dgvDisponibles.Columns[0].Visible = false;
+            dgvDisponibles.Columns[5].Visible = false;
+            dgvDisponibles.Columns[7].Visible = false;
+            dgvDisponibles.Columns[8].Visible = false;
+            dgvDisponibles.Columns[9].Visible = false;
+        }
+
+        private void mantenimientos_Click(object sender, EventArgs e)
+        {
+            oracle.Open();
+            OracleCommand disponibles = new OracleCommand("rentadora.select_vehiculos_mantenimiento", oracle);
+            disponibles.CommandType = System.Data.CommandType.StoredProcedure;
+            disponibles.Parameters.Add("vehiculo", OracleType.Cursor).Direction = ParameterDirection.Output;
+            OracleDataAdapter adaptador1 = new OracleDataAdapter();
+            adaptador1.SelectCommand = disponibles;
+            DataTable table = new DataTable();
+            adaptador1.Fill(table);
+            dgvDisponibles.DataSource = table;
+            oracle.Close();
+            //dgvAutos.Columns[4].Visible = false;
+            dgvDisponibles.Columns[0].Visible = false;
+            dgvDisponibles.Columns[5].Visible = false;
+            dgvDisponibles.Columns[7].Visible = false;
+            dgvDisponibles.Columns[8].Visible = false;
+            dgvDisponibles.Columns[9].Visible = false;
         }
     }
 }

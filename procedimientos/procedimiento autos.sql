@@ -1,35 +1,5 @@
 
---Procedimiento para seleccionar Autos
-create or replace procedure select_vehiculos(vehiculo out SYS_REFCURSOR)
-    as
-    begin
-        open vehiculo for
-            SELECT 
-                v.vehiculoID AS ID, 
-                v.placa,
-                m.modelo AS Modelo,
-                ma.marca,
-                c.color AS Color,
-                ve.version,
-                co.combustible,
-                tv.tipo_vehiculo AS "Tipo",
-                o.pais AS "Pais Origen",
-                v.costo_vehiculo AS "Costo Adquisicion",
-                v.costo_renta AS "Costo Renta",
-                e.estado AS Estado
-            FROM 
-                vehiculo v
-            INNER JOIN Modelo m ON m.modeloID=v.modeloID
-            INNER JOIN Color c ON c.colorID=v.colorID
-            INNER JOIN Estado e ON e.estadoID=v.estadoID
-            INNER JOIN marca ma ON ma.marcaid =  v.marcaid
-            INNER JOIN origen o ON o.origenid =  ma.origenid
-            INNER JOIN combustible co ON co.combustibleid = v.combustibleid
-            INNER JOIN version ve ON ve.versionid = v.versionid
-            INNER JOIN tipo_vehiculo tv ON tv.tipo_vehiculoid = v.tipo_vehiculoid;
-        end;
-        
-        
+     
 --Procedimiento para elegir Autos
 create or replace procedure elegir_vehiculos(vehiculo out SYS_REFCURSOR)
     as
@@ -97,3 +67,136 @@ create or replace procedure insert_vehiculos(plac VARCHAR,fecha DATE, costo_a FL
         insert into vehiculo (placa,fecha_adquisicion,costo_vehiculo, costo_renta,combustibleid,modeloid,marcaid,colorid,tipo_vehiculoid,versionid,estadoid,seguro) 
         values (plac,fecha,costo_a, costo_r,cb,modelo,mar,color,tv,vers,est,segur);
     end;
+
+--PROCEDIMIENTOS NUEVOS PARA LA PAGINACION
+--Estado 0
+create or replace procedure select_vehiculos(vehiculo out SYS_REFCURSOR)
+    as
+    begin
+        open vehiculo for
+            SELECT 
+                v.vehiculoID AS ID, 
+                v.placa,
+                m.modelo AS Modelo,
+                ma.marca,
+                c.color AS Color,
+                ve.version,
+                co.combustible,
+                tv.tipo_vehiculo AS "Tipo",
+                o.pais AS "Pais Origen",
+                v.costo_vehiculo AS "Costo Adquisicion",
+                v.costo_renta AS "Costo Renta",
+                e.estado AS Estado
+            FROM 
+                vehiculo v
+            INNER JOIN Modelo m ON m.modeloID=v.modeloID
+            INNER JOIN Color c ON c.colorID=v.colorID
+            INNER JOIN Estado e ON e.estadoID=v.estadoID
+            INNER JOIN marca ma ON ma.marcaid =  v.marcaid
+            INNER JOIN origen o ON o.origenid =  ma.origenid
+            INNER JOIN combustible co ON co.combustibleid = v.combustibleid
+            INNER JOIN version ve ON ve.versionid = v.versionid
+            INNER JOIN tipo_vehiculo tv ON tv.tipo_vehiculoid = v.tipo_vehiculoid
+            WHERE
+                v.estadoid=0;
+            
+        end;
+
+--Estado 1
+
+create or replace procedure select_vehiculos_Espera(vehiculo out SYS_REFCURSOR)
+    as
+    begin
+        open vehiculo for
+            SELECT 
+                v.vehiculoID AS ID, 
+                v.placa,
+                m.modelo AS Modelo,
+                ma.marca,
+                c.color AS Color,
+                ve.version,
+                co.combustible,
+                tv.tipo_vehiculo AS "Tipo",
+                o.pais AS "Pais Origen",
+                v.costo_vehiculo AS "Costo Adquisicion",
+                v.costo_renta AS "Costo Renta",
+                e.estado AS Estado
+            FROM 
+                vehiculo v
+            INNER JOIN Modelo m ON m.modeloID=v.modeloID
+            INNER JOIN Color c ON c.colorID=v.colorID
+            INNER JOIN Estado e ON e.estadoID=v.estadoID
+            INNER JOIN marca ma ON ma.marcaid =  v.marcaid
+            INNER JOIN origen o ON o.origenid =  ma.origenid
+            INNER JOIN combustible co ON co.combustibleid = v.combustibleid
+            INNER JOIN version ve ON ve.versionid = v.versionid
+            INNER JOIN tipo_vehiculo tv ON tv.tipo_vehiculoid = v.tipo_vehiculoid
+            WHERE
+                v.estadoid=1;
+            
+        end;
+        
+        
+create or replace procedure select_vehiculos_Rentados(vehiculo out SYS_REFCURSOR)
+    as
+    begin
+        open vehiculo for
+            SELECT 
+                v.vehiculoID AS ID, 
+                v.placa,
+                m.modelo AS Modelo,
+                ma.marca,
+                c.color AS Color,
+                ve.version,
+                co.combustible,
+                tv.tipo_vehiculo AS "Tipo",
+                o.pais AS "Pais Origen",
+                v.costo_vehiculo AS "Costo Adquisicion",
+                v.costo_renta AS "Costo Renta",
+                e.estado AS Estado
+            FROM 
+                vehiculo v
+            INNER JOIN Modelo m ON m.modeloID=v.modeloID
+            INNER JOIN Color c ON c.colorID=v.colorID
+            INNER JOIN Estado e ON e.estadoID=v.estadoID
+            INNER JOIN marca ma ON ma.marcaid =  v.marcaid
+            INNER JOIN origen o ON o.origenid =  ma.origenid
+            INNER JOIN combustible co ON co.combustibleid = v.combustibleid
+            INNER JOIN version ve ON ve.versionid = v.versionid
+            INNER JOIN tipo_vehiculo tv ON tv.tipo_vehiculoid = v.tipo_vehiculoid
+            WHERE
+                v.estadoid=2;
+            
+        end;
+        
+        create or replace procedure select_vehiculos_Mantenimiento(vehiculo out SYS_REFCURSOR)
+    as
+    begin
+        open vehiculo for
+            SELECT 
+                v.vehiculoID AS ID, 
+                v.placa,
+                m.modelo AS Modelo,
+                ma.marca,
+                c.color AS Color,
+                ve.version,
+                co.combustible,
+                tv.tipo_vehiculo AS "Tipo",
+                o.pais AS "Pais Origen",
+                v.costo_vehiculo AS "Costo Adquisicion",
+                v.costo_renta AS "Costo Renta",
+                e.estado AS Estado
+            FROM 
+                vehiculo v
+            INNER JOIN Modelo m ON m.modeloID=v.modeloID
+            INNER JOIN Color c ON c.colorID=v.colorID
+            INNER JOIN Estado e ON e.estadoID=v.estadoID
+            INNER JOIN marca ma ON ma.marcaid =  v.marcaid
+            INNER JOIN origen o ON o.origenid =  ma.origenid
+            INNER JOIN combustible co ON co.combustibleid = v.combustibleid
+            INNER JOIN version ve ON ve.versionid = v.versionid
+            INNER JOIN tipo_vehiculo tv ON tv.tipo_vehiculoid = v.tipo_vehiculoid
+            WHERE
+                v.estadoid=3;
+            
+        end;
