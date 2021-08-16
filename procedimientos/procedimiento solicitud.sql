@@ -42,10 +42,10 @@ create or replace procedure insertar_solicitud(fechas date, subt float, sucursal
     
     
 --PROCEDIMIENTO ACTUALIZAR SOLICITUD
-create or replace procedure update_solicitud(idS int, fechai date, fechaf date, vehiculo int, subt float,seguro varchar)
+create or replace procedure update_solicitud(idS int, fechai date, fechaf date, vehiculo int, subt float,segur varchar)
 as
 begin
-    update solicitud set fecharinicio = fechai, fechafin = fechaf, vehiculoid = vehiculo, subtotal = subt ,seguro=seguro where solicitudid = idS;
+    update solicitud set fecharinicio = fechai, fechafin = fechaf, vehiculoid = vehiculo, subtotal = subt ,seguro=segur where solicitudid = idS;
 EXCEPTION
     WHEN NO_DATA_FOUND THEN
         null;
