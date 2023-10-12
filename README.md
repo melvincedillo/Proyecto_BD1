@@ -1,4 +1,4 @@
-#  PROYECTO DE LA CLASE BASE DE DATOS 1
+#  RENTADORA DE AUTOMOVILES (2020)
 
 - # Descripcion general 
 Este proyecto conciste en la creación de un sistema de renta de automiviles, utilizando el lenjuage de programacion C# y como Gestor de Base de datos Oracle 11g.
